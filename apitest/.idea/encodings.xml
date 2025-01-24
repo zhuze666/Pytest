@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/common/recordlog.py" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/run.py" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/testcase/logistic/test_getMaterial.py" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/testcase/product/getProductList.yaml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/testcase/product/test_productModule.py" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/testcase/publicApi/addUser.yaml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/testcase/publicApi/deleteUser.yaml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/testcase/publicApi/queryUser.yaml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/testcase/publicApi/test_debug_api.py" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/testcase/publicApi/updateUser.yaml" charset="GBK" />
+  </component>
+</project>
