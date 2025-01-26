@@ -1,9 +1,8 @@
 import pymysql
 import redis
-from rediscluster import RedisCluster
-
 from common.recordlog import logs
 from conf.operationConfig import OperationConfig
+from rediscluster import RedisCluster
 
 conf = OperationConfig()
 

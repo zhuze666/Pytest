@@ -1,11 +1,10 @@
-import json
-
 import allure
+import json
 import requests
 import urllib3
+from common.operyaml import ReadYamlData
 from common.recordlog import logs
 from conf.setting import API_TIMEOUT
-from common.operyaml import ReadYamlData
 from requests import utils
 
 

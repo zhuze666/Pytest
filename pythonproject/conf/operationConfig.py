@@ -1,11 +1,11 @@
+import configparser
 import sys
 import traceback
+from common.recordlog import logs
+from conf import setting
+
 
 # sys.path.insert(0, "..")
-
-import configparser
-from conf import setting
-from common.recordlog import logs
 
 
 class OperationConfig:

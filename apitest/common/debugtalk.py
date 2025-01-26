@@ -1,8 +1,7 @@
-import re
-
-from common.operyaml import get_testcase_yaml,ReadYamlData
 import datetime
 import random
+import re
+from common.operyaml import get_testcase_yaml, ReadYamlData
 
 
 class DebugTalk:

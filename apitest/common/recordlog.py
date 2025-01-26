@@ -1,12 +1,11 @@
 # -*- coding: utf-8 -*-
-import os
-import logging
-import time
-from logging.handlers import RotatingFileHandler
-import datetime
 import colorlog
-
+import datetime
+import logging
+import os
+import time
 from conf import setting
+from logging.handlers import RotatingFileHandler
 
 LOG_PATH = setting.FILE_PATH["LOG"]
 if not os.path.exists(LOG_PATH):

@@ -1,8 +1,6 @@
-import operator
-
 import allure
 import jsonpath
-
+import operator
 from common.recordlog import logs
 
 

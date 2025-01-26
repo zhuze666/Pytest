@@ -1,7 +1,5 @@
-import re
-
 import jenkins
-
+import re
 # 首先需要安装：pip install python-jenkins
 from conf.operationConfig import OperationConfig
 

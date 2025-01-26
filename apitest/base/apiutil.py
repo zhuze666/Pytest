@@ -1,10 +1,7 @@
-import json
-import re
-from json.decoder import JSONDecodeError
-
 import allure
+import json
 import jsonpath
-
+import re
 from common.assertions import Assertions
 from common.debugtalk import DebugTalk
 from common.operyaml import get_testcase_yaml, ReadYamlData
@@ -12,6 +9,7 @@ from common.recordlog import logs
 from common.sendrequests import SendRequests
 from conf.operationConfig import OperationConfig
 from conf.setting import FILE_PATH
+from json.decoder import JSONDecodeError
 
 
 class RequestBase:

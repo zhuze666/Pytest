@@ -1,7 +1,5 @@
-import time
-
 import pytest
-
+import time
 from base.apiutil import RequestBase
 from common.operyaml import get_testcase_yaml
 from common.recordlog import logs

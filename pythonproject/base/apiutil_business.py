@@ -2,17 +2,17 @@
 # sys.path.insert(0, "..")
 
 
-from common.sendrequest import SendRequest
-from common.readyaml import ReadYamlData
-from common.recordlog import logs
-from conf.operationConfig import OperationConfig
-from common.assertions import Assertions
-from common.debugtalk import DebugTalk
 import allure
 import json
 import jsonpath
 import re
 import traceback
+from common.assertions import Assertions
+from common.debugtalk import DebugTalk
+from common.readyaml import ReadYamlData
+from common.recordlog import logs
+from common.sendrequest import SendRequest
+from conf.operationConfig import OperationConfig
 from json.decoder import JSONDecodeError
 
 assert_res = Assertions()

@@ -1,19 +1,19 @@
-import datetime
-import os
-import cgitb
-from PyQt5.uic import loadUi
-from PyQt5.QtWidgets import *
-from PyQt5.QtCore import *
-import sys
-from PyQt5 import QtGui, QtWidgets
-import json
-import traceback
-import yaml
-import requests
-from PyQt5 import QtCore
-from hashlib import sha1
 import base64
+import cgitb
+import datetime
+import json
+import os
+import requests
+import sys
+import traceback
 import urllib3
+import yaml
+from PyQt5 import QtCore
+from PyQt5 import QtGui, QtWidgets
+from PyQt5.QtCore import *
+from PyQt5.QtWidgets import *
+from PyQt5.uic import loadUi
+from hashlib import sha1
 
 cgitb.enable(format='text')
 
