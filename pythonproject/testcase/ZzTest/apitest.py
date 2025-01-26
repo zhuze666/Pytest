@@ -33,3 +33,4 @@ print(req2.text)
 # 例3：
 req3 = requests.get(url=url3, headers=header, params=data3)
 print(req3.text)
+

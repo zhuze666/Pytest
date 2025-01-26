@@ -82,4 +82,5 @@ if __name__ == '__main__':
     Token_dict = {'token': md5_token}
     write_yaml(Token_dict, './test.yaml')
     #获取login.yaml文件的
+    #测试代码是否一致
 
