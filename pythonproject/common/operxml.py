@@ -1,9 +1,10 @@
+from builtins import object
 import xml.etree.ElementTree as et
-from conf.setting import FILE_PATH
-from common.recordlog import logs
+from pythonproject.conf.setting import FILE_PATH
+from pythonproject.common.recordlog import logs
 
 
-class OperXML:
+class OperXML(object):
 
     def read_xml(self, filename, tags, attr_value):
         """

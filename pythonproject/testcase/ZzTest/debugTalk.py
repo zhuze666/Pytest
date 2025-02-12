@@ -1,6 +1,8 @@
+from builtins import str
+from builtins import object
 import hashlib
 
-class DebugTalk:
+class DebugTalk(object):
     def __init__(self):
         self.read = ReadYamlData()
         self.get_data = GetData()

@@ -1,12 +1,14 @@
 # -*- coding: utf-8 -*-
+from __future__ import print_function
+from __future__ import absolute_import
 import time
 
 import pytest
 
-from common.readyaml import ReadYamlData
-from base.removefile import remove_file
-from common.dingRobot import send_dd_msg
-from conf.setting import dd_msg
+from pythonproject.common.readyaml import ReadYamlData
+from pythonproject.base.removefile import remove_file
+from pythonproject.common.dingRobot import send_dd_msg
+from pythonproject.conf.setting import dd_msg
 
 import warnings
 

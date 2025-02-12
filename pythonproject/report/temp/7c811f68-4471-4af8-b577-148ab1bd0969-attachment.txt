@@ -1,0 +1,16 @@
+INFO     pythonproject.common.recordlog:sendrequest.py:138 接口名称：用户登录
+INFO     pythonproject.common.recordlog:sendrequest.py:139 请求地址：http://127.0.0.1:8787/dar/user/login
+INFO     pythonproject.common.recordlog:sendrequest.py:140 请求方式：post
+INFO     pythonproject.common.recordlog:sendrequest.py:141 测试用例名称：用户名和密码正确登录验证
+INFO     pythonproject.common.recordlog:sendrequest.py:142 请求头：{'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
+INFO     pythonproject.common.recordlog:sendrequest.py:143 Cookie：None
+INFO     pythonproject.common.recordlog:sendrequest.py:147 请求参数：{'data': {'user_name': 'test01', 'passwd': 'admin123'}}
+INFO     pythonproject.common.recordlog:sendrequest.py:110 cookie：{'Cookie': {'access_token_cookie': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTczOTM1MTE1MywianRpIjoiOWFmZjcwZmMtYTYyOS00OGYxLTg5ZDctZmQ0NWUzOTRkZGViIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImV4YW1wbGVfdXNlciIsIm5iZiI6MTczOTM1MTE1MywiZXhwIjoxNzM5MzUyMDUzfQ.tMSH-flFMqxIkNVkNObAANSUvHKy7AuhRwG_8p30rX4'}}
+INFO     pythonproject.common.recordlog:sendrequest.py:111 接口返回信息：{"error_code":null,"msg":"登录成功","msg_code":200,"orgId":"6140913758128971280","token":"1bBBEA1E25e92D7eaB0B1cB8FfF1C","userId":"6003463028919123340"}
+
+INFO     pythonproject.common.recordlog:apiutil.py:153 提取接口的返回值：
+INFO     pythonproject.common.recordlog:assertions.py:172 yaml文件预期结果：[{'contains': {'error_code': 'none'}}, {'eq': {'msg': '登录成功'}}]
+INFO     pythonproject.common.recordlog:assertions.py:47 字符串包含断言成功：预期结果【None】,实际结果【[None]】
+ERROR    pythonproject.common.recordlog:assertions.py:196 接口断言异常，请检查yaml预期结果值是否正确填写!
+ERROR    pythonproject.common.recordlog:apiutil.py:114 unsupported operand type(s) for &: 'list' and 'list'
+ERROR    pythonproject.common.recordlog:conftest.py:32 登录接口出现异常，导致后续接口无法继续运行，请检查程序！，unsupported operand type(s) for &: 'list' and 'list'

@@ -1,10 +1,12 @@
+from __future__ import absolute_import
 import os
 import shutil
 import webbrowser
-
+import allure
 import pytest
+import logging
 
-from conf.setting import REPORT_TYPE
+from pythonproject.conf.setting import REPORT_TYPE
 
 if __name__ == '__main__':
 

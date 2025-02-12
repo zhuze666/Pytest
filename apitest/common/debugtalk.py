@@ -1,10 +1,12 @@
+from __future__ import print_function
+from builtins import object
 import datetime
 import random
 import re
 from common.operyaml import get_testcase_yaml, ReadYamlData
 
 
-class DebugTalk:
+class DebugTalk(object):
 
     def __init__(self):
         self.read = ReadYamlData()

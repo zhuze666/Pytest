@@ -2,9 +2,9 @@ import yaml
 import traceback
 import os
 
-from common.recordlog import logs
-from conf.operationConfig import OperationConfig
-from conf.setting import FILE_PATH
+from pythonproject.common.recordlog import logs
+from pythonproject.conf.operationConfig import OperationConfig
+from pythonproject.conf.setting import FILE_PATH
 from yaml.scanner import ScannerError
 
 
@@ -30,7 +30,7 @@ def get_testcase_yaml(file):
         logs.error(f'获取【{file}】文件数据时出现未知错误: {str(e)}')
 
 
-class ReadYamlData:
+class ReadYamlData(object):
     """读写接口的YAML格式测试数据"""
 
     def __init__(self, yaml_file=None):

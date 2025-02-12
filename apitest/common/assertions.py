@@ -1,3 +1,5 @@
+from builtins import str
+from builtins import object
 import allure
 import jsonpath
 import operator
@@ -17,7 +19,7 @@ class Assertions(object):
         """
         # 断言状态标识，0成功，其他失败
         flag = 0
-        for assert_key, assert_value in value.items():
+        for assert_key, assert_value in list(value.items()):
             if assert_key == "status_code":
                 if assert_value != status_code:
                     flag += 1
@@ -87,7 +89,7 @@ class Assertions(object):
         try:
             logs.info(f'yaml文件的预期结果：{expected}')
             for yq in expected:
-                for key, value in yq.items():
+                for key, value in list(yq.items()):
                     if key == 'contains':
                         flag = self.contains_assert(value, response, status_code)
                         all_flag = all_flag + flag

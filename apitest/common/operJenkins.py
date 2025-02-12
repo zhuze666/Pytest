@@ -1,3 +1,4 @@
+from builtins import object
 import jenkins
 import re
 # 首先需要安装：pip install python-jenkins
@@ -6,7 +7,7 @@ from conf.operationConfig import OperationConfig
 conf = OperationConfig()
 
 
-class OperJenkins:
+class OperJenkins(object):
     """读取Jenkins持续集成的测试报告"""
 
     def __init__(self):

@@ -1,18 +1,19 @@
+from __future__ import print_function
 import allure
 import json
 import jsonpath
 import re
-from common.assertions import Assertions
-from common.debugtalk import DebugTalk
-from common.readyaml import get_testcase_yaml, ReadYamlData
-from common.recordlog import logs
-from common.sendrequest import SendRequest
-from conf.operationConfig import OperationConfig
-from conf.setting import FILE_PATH
+from pythonproject.common.assertions import Assertions
+from pythonproject.common.debugtalk import DebugTalk
+from pythonproject.common.readyaml import get_testcase_yaml, ReadYamlData
+from pythonproject.common.recordlog import logs
+from pythonproject.common.sendrequest import SendRequest
+from pythonproject.conf.operationConfig import OperationConfig
+from pythonproject.conf.setting import FILE_PATH
 from json.decoder import JSONDecodeError
 
 
-class RequestBase:
+class RequestBase(object):
 
     def __init__(self):
         self.run = SendRequest()
@@ -82,14 +83,14 @@ class RequestBase:
             extract = test_case.pop('extract', None)
             extract_list = test_case.pop('extract_list', None)
             # 处理接口的请求参数
-            for key, value in test_case.items():
+            for key, value in list(test_case.items()):
                 if key in params_type:
                     test_case[key] = self.replace_load(value)
 
             # 处理文件上传接口
             file, files = test_case.pop('files', None), None
             if file is not None:
-                for fk, fv in file.items():
+                for fk, fv in list(file.items()):
                     allure.attach(json.dumps(file), '导入文件')
                     files = {fk: open(fv, mode='rb')}
 
@@ -133,7 +134,7 @@ class RequestBase:
         """
         try:
             pattern_lst = ['(.*?)', '(.+?)', r'(\d)', r'(\d*)']
-            for key, value in testcase_extarct.items():
+            for key, value in list(testcase_extarct.items()):
 
                 # 处理正则表达式提取
                 for pat in pattern_lst:
@@ -164,7 +165,7 @@ class RequestBase:
         :return:
         """
         try:
-            for key, value in testcase_extract_list.items():
+            for key, value in list(testcase_extract_list.items()):
                 if "(.+?)" in value or "(.*?)" in value:
                     ext_list = re.findall(value, response, re.S)
                     if ext_list:

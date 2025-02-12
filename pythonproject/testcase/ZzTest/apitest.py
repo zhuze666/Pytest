@@ -1,3 +1,4 @@
+from __future__ import print_function
 import requests
 
 url = "http://127.0.0.1:8787/dar/user/login"

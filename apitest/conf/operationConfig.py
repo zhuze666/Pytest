@@ -1,3 +1,5 @@
+from __future__ import print_function
+from builtins import object
 import configparser
 
 from conf.setting import FILE_PATH

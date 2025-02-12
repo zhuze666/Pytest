@@ -1,3 +1,5 @@
+from builtins import next
+from builtins import object
 import allure
 import pytest
 
@@ -7,7 +9,7 @@ from common.operyaml import get_testcase_yaml
 
 
 @allure.feature(next(m_id) + '智慧物流项目')
-class TestProductModule:
+class TestProductModule(object):
 
     @allure.story(next(c_id) + "获取物料信息")
     @pytest.mark.run(order=1)

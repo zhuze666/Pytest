@@ -1,3 +1,5 @@
+from builtins import str
+from builtins import object
 import base64
 import calendar
 import datetime
@@ -7,14 +9,14 @@ import random
 import re
 import time
 from hashlib import sha1
-from conf.setting import DIR_BASE
+from pythonproject.conf.setting import DIR_BASE
 from pandas.tseries.offsets import Day
-from common.operationcsv import read_csv
-from common.readyaml import ReadYamlData
+from pythonproject.common.operationcsv import read_csv
+from pythonproject.common.readyaml import ReadYamlData
 import csv
 
 
-class DebugTalk:
+class DebugTalk(object):
 
     def __init__(self):
         self.read = ReadYamlData()

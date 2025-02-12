@@ -1,13 +1,15 @@
+from builtins import str
+from builtins import object
 import traceback
 import allure
 import jsonpath
 import operator
 
-from common.recordlog import logs
-from common.connection import ConnectMysql
+from pythonproject.common.recordlog import logs
+from pythonproject.common.connection import ConnectMysql
 
 
-class Assertions:
+class Assertions(object):
     """"
     接口断言模式，支持
     1）响应文本字符串包含模式断言
@@ -28,7 +30,7 @@ class Assertions:
         """
         # 断言状态标识，0成功，其他失败
         flag = 0
-        for assert_key, assert_value in value.items():
+        for assert_key, assert_value in list(value.items()):
             if assert_key == "status_code":
                 if assert_value != status_code:
                     flag += 1
@@ -60,7 +62,7 @@ class Assertions:
         flag = 0
         if isinstance(actual_results, dict) and isinstance(expected_results, dict):
             # 找出实际结果与预期结果共同的key
-            common_keys = list(expected_results.keys() & actual_results.keys())[0]
+            common_keys = list(list(expected_results.keys()) & list(actual_results.keys()))[0]
             # 根据相同的key去实际结果中获取，并重新生成一个实际结果的字典
             new_actual_results = {common_keys: actual_results[common_keys]}
             eq_assert = operator.eq(new_actual_results, expected_results)
@@ -87,7 +89,7 @@ class Assertions:
         flag = 0
         if isinstance(actual_results, dict) and isinstance(expected_results, dict):
             # 找出实际结果与预期结果共同的key
-            common_keys = list(expected_results.keys() & actual_results.keys())[0]
+            common_keys = list(list(expected_results.keys()) & list(actual_results.keys()))[0]
             # 根据相同的key去实际结果中获取，并重新生成一个实际结果的字典
             new_actual_results = {common_keys: actual_results[common_keys]}
             eq_assert = operator.ne(new_actual_results, expected_results)
@@ -171,7 +173,7 @@ class Assertions:
             # logs.info("实际结果：%s" % response)
             # all_flag = 0
             for yq in expected:
-                for key, value in yq.items():
+                for key, value in list(yq.items()):
                     if key == "contains":
                         flag = self.contains_assert(value, response, status_code)
                         all_flag = all_flag + flag

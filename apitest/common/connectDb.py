@@ -1,3 +1,6 @@
+from __future__ import print_function
+from builtins import str
+from builtins import object
 import pymysql
 import redis
 from common.recordlog import logs
@@ -7,7 +10,7 @@ from rediscluster import RedisCluster
 conf = OperationConfig()
 
 
-class MysqlDbClient:
+class MysqlDbClient(object):
     """
     操作MySQL数据库
     """
@@ -69,7 +72,7 @@ class MysqlDbClient:
             raise
 
 
-class RedisClient:
+class RedisClient(object):
     """
     从Redis中读取、设置相关数据
     """

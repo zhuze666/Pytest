@@ -1,3 +1,6 @@
+from __future__ import print_function
+from builtins import str
+from builtins import range
 import base64
 import cgitb
 import datetime
@@ -350,7 +353,7 @@ class NewTestCaseTools(QtWidgets.QMainWindow):
                 # 字典的列索引值固定
                 tables_data[self.tableWidget_5.item(i, 0).text()] = self.tableWidget_5.item(i, j).text()
 
-        for key, value in tables_data.items():
+        for key, value in list(tables_data.items()):
             assert_list.append({assert_type: {key: value}})
 
         if not assert_list:
@@ -544,7 +547,7 @@ class NewTestCaseTools(QtWidgets.QMainWindow):
             # 判断files标签页中table表格中是否有数据，有的话追加到字典中
             file_tab = self.get_files()
             if file_tab:
-                for value in testcase.values():
+                for value in list(testcase.values()):
                     value[0]['data'] = file_tab
 
             return testcase_data

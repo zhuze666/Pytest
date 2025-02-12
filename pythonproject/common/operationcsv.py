@@ -1,5 +1,6 @@
+from builtins import str
 import pandas as pd
-from common.recordlog import logs
+from pythonproject.common.recordlog import logs
 import traceback
 
 

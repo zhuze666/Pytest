@@ -7,12 +7,12 @@ import json
 import jsonpath
 import re
 import traceback
-from common.assertions import Assertions
-from common.debugtalk import DebugTalk
-from common.readyaml import ReadYamlData
-from common.recordlog import logs
-from common.sendrequest import SendRequest
-from conf.operationConfig import OperationConfig
+from pythonproject.common.assertions import Assertions
+from pythonproject.common.debugtalk import DebugTalk
+from pythonproject.common.readyaml import ReadYamlData
+from pythonproject.common.recordlog import logs
+from pythonproject.common.sendrequest import SendRequest
+from pythonproject.conf.operationConfig import OperationConfig
 from json.decoder import JSONDecodeError
 
 assert_res = Assertions()
@@ -27,7 +27,7 @@ class RequestBase(object):
     def handler_yaml_list(self, data_dict):
         """处理yaml文件测试用例请求参数为list情况，以数组形式"""
         try:
-            for key, value in data_dict.items():
+            for key, value in list(data_dict.items()):
                 if isinstance(value, list):
                     value_lst = ','.join(value).split(',')
                     data_dict[key] = value_lst
@@ -100,12 +100,12 @@ class RequestBase(object):
                 allure.attach(allure_validation, "预期结果", allure.attachment_type.TEXT)
                 extract = tc.pop('extract', None)
                 extract_lst = tc.pop('extract_list', None)
-                for key, value in tc.items():
+                for key, value in list(tc.items()):
                     if key in params_type:
                         tc[key] = self.replace_load(value)
                 file, files = tc.pop("files", None), None
                 if file is not None:
-                    for fk, fv in file.items():
+                    for fk, fv in list(file.items()):
                         allure.attach(json.dumps(file), '导入文件')
                         files = {fk: open(fv, 'rb')}
                 res = self.run.run_main(name=api_name,
@@ -155,7 +155,7 @@ class RequestBase(object):
         """
         pattern_lst = ['(.+?)', '(.*?)', r'(\d+)', r'(\d*)']
         try:
-            for key, value in testcase_extract.items():
+            for key, value in list(testcase_extract.items()):
                 for pat in pattern_lst:
                     if pat in value:
                         ext_list = re.search(value, response)
@@ -184,7 +184,7 @@ class RequestBase(object):
         :return:
         """
         try:
-            for key, value in testcase_extract_list.items():
+            for key, value in list(testcase_extract_list.items()):
                 if "(.+?)" in value or "(.*?)" in value:
                     ext_list = re.findall(value, response, re.S)
                     if ext_list:

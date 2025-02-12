@@ -1,13 +1,15 @@
+from builtins import next
+from builtins import object
 import allure
 import pytest
 
-from common.readyaml import get_testcase_yaml
-from base.apiutil import RequestBase
-from base.generateId import m_id, c_id
+from pythonproject.common.readyaml import get_testcase_yaml
+from pythonproject.base.apiutil import RequestBase
+from pythonproject.base.generateId import m_id, c_id
 
 
 @allure.feature(next(m_id) + '用户管理模块（单接口）')
-class TestUserManager:
+class TestUserManager(object):
 
     # 场景，allure报告的目录结构
     @allure.story(next(c_id) + "新增用户")

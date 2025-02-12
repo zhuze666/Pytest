@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from builtins import object
 import colorlog
 import datetime
 import logging
@@ -67,7 +68,7 @@ def init_logging(log_level=logging.DEBUG, stream_log_level=logging.INFO):
     return logger
 
 
-class RecordLog:
+class RecordLog(object):
     """日志模块"""
 
     def __init__(self):

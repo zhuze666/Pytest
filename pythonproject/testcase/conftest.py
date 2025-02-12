@@ -1,9 +1,9 @@
 import pytest
 import allure
-from common.readyaml import get_testcase_yaml
-from base.apiutil import RequestBase
-from common.recordlog import logs
-from common.connection import ConnectMysql
+from pythonproject.common.readyaml import get_testcase_yaml
+from pythonproject.base.apiutil import RequestBase
+from pythonproject.common.recordlog import logs
+from pythonproject.common.connection import ConnectMysql
 
 """
 -function：每一个函数或方法都会调用

@@ -1,3 +1,6 @@
+from __future__ import print_function
+from builtins import str
+from builtins import range
 def print_table(two_dimension_list):
     """
     打印表格函数

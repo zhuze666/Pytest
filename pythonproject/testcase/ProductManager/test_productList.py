@@ -1,13 +1,13 @@
 import allure
 import pytest
 
-from base.generateId import m_id, c_id
-from base.apiutil import RequestBase
-from common.readyaml import get_testcase_yaml
+from pythonproject.base.generateId import m_id, c_id
+from pythonproject.base.apiutil import RequestBase
+from pythonproject.common.readyaml import get_testcase_yaml
 
 
 @allure.feature(next(m_id) + '商品管理（单接口）')
-class TestLogin:
+class TestLogin(object):
 
     @allure.story(next(c_id) + "获取商品列表")
     @pytest.mark.run(order=1)

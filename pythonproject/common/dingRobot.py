@@ -1,3 +1,4 @@
+from builtins import str
 import urllib.parse
 import requests
 import time

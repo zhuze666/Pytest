@@ -1,9 +1,10 @@
+from builtins import object
 import os
 
 import xlrd
 from conf import setting
 from xlutils.copy import copy
-from common.recordlog import logs
+from pythonproject.common.recordlog import logs
 import xlwt
 
 

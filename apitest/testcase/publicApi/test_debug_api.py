@@ -1,3 +1,5 @@
+from builtins import next
+from builtins import object
 import allure
 import pytest
 
@@ -8,7 +10,7 @@ from common.recordlog import logs
 
 
 @allure.feature(next(m_id) + '公用接口，供调试使用')
-class TestDebugApi:
+class TestDebugApi(object):
 
     def setup_class(self):
         """执行测试类之前，需要做的操作"""

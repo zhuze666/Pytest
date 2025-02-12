@@ -1,3 +1,4 @@
+from builtins import object
 import allure
 import json
 import requests
@@ -8,7 +9,7 @@ from conf.setting import API_TIMEOUT
 from requests import utils
 
 
-class SendRequests:
+class SendRequests(object):
 
     def __init__(self):
         self.read = ReadYamlData()
@@ -36,13 +37,13 @@ class SendRequests:
             req_params = json.dumps(kwargs, ensure_ascii=False)
 
             # kwargs = {'data': {'user_name': '${get_params()}', 'passwd': 'admin123'}}
-            if 'data' in kwargs.keys():
+            if 'data' in list(kwargs.keys()):
                 allure.attach(req_params, '请求参数', allure.attachment_type.TEXT)
                 logs.info(f'请求参数：{kwargs}')
-            elif 'json' in kwargs.keys():
+            elif 'json' in list(kwargs.keys()):
                 allure.attach(req_params, '请求参数', allure.attachment_type.TEXT)
                 logs.info(f'请求参数：{kwargs}')
-            elif 'params' in kwargs.keys():
+            elif 'params' in list(kwargs.keys()):
                 allure.attach(req_params, '请求参数', allure.attachment_type.TEXT)
                 logs.info(f'请求参数：{kwargs}')
             response = self.send_requests(method=method, url=url, headers=header, cookies=cookies, files=file,

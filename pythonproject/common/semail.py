@@ -1,10 +1,13 @@
+from __future__ import division
+from past.utils import old_div
+from builtins import object
 import smtplib
 from email.mime.text import MIMEText
-from conf.operationConfig import OperationConfig
+from pythonproject.conf.operationConfig import OperationConfig
 from email.mime.multipart import MIMEMultipart
 from email.mime.application import MIMEApplication  # 附件
 from conf import setting
-from common.recordlog import logs
+from pythonproject.common.recordlog import logs
 import re
 
 conf = OperationConfig()
@@ -93,9 +96,9 @@ class BuildEmail(SendEmail):
         notrun_num = len(not_running)
         total = success_num + fail_num + error_num + notrun_num
         execute_case = success_num + fail_num
-        pass_result = "%.2f%%" % (success_num / execute_case * 100)
-        fail_result = "%.2f%%" % (fail_num / execute_case * 100)
-        err_result = "%.2f%%" % (error_num / execute_case * 100)
+        pass_result = "%.2f%%" % (old_div(success_num, execute_case) * 100)
+        fail_result = "%.2f%%" % (old_div(fail_num, execute_case) * 100)
+        err_result = "%.2f%%" % (old_div(error_num, execute_case) * 100)
         # 设置邮件主题、收件人、内容
         subject = conf.get_section_for_data('EMAIL', 'subject')
         addressee = conf.get_section_for_data('EMAIL', 'addressee').split(';')

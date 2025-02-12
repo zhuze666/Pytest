@@ -1,3 +1,5 @@
+from builtins import str
+from builtins import range
 def generate_module_id():
     """
     生成测试模块编号，为了保证allure报告的顺序与pytest设定的执行顺序保持一致

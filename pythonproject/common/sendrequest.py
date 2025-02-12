@@ -1,3 +1,6 @@
+from __future__ import division
+from builtins import object
+from past.utils import old_div
 import json
 import allure
 import pytest
@@ -5,14 +8,14 @@ import requests
 import urllib3
 import time
 
-from conf import setting
-from common.recordlog import logs
+from pythonproject.conf import setting
+from pythonproject.common.recordlog import logs
 from requests import utils
-from common.readyaml import ReadYamlData
+from pythonproject.common.readyaml import ReadYamlData
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
 
 
-class SendRequest:
+class SendRequest(object):
     """发送接口请求，暂时只写了get和post方法的请求"""
 
     def __init__(self, cookie=None):
@@ -39,7 +42,7 @@ class SendRequest:
             logs.error(e)
             return None
         # 响应时间/毫秒
-        res_ms = response.elapsed.microseconds / 1000
+        res_ms = old_div(response.elapsed.microseconds, 1000)
         # 响应时间/秒
         res_second = response.elapsed.total_seconds()
         response_dict = dict()
@@ -77,7 +80,7 @@ class SendRequest:
             logs.error(e)
             return None
         # 响应时间/毫秒
-        res_ms = response.elapsed.microseconds / 1000
+        res_ms = old_div(response.elapsed.microseconds, 1000)
         # 响应时间/秒
         res_second = response.elapsed.total_seconds()
         response_dict = dict()
@@ -139,13 +142,13 @@ class SendRequest:
             logs.info('请求头：%s' % header)
             logs.info('Cookie：%s' % cookies)
             req_params = json.dumps(kwargs, ensure_ascii=False)
-            if "data" in kwargs.keys():
+            if "data" in list(kwargs.keys()):
                 allure.attach(req_params, '请求参数', allure.attachment_type.TEXT)
                 logs.info("请求参数：%s" % kwargs)
-            elif "json" in kwargs.keys():
+            elif "json" in list(kwargs.keys()):
                 allure.attach(req_params, '请求参数', allure.attachment_type.TEXT)
                 logs.info("请求参数：%s" % kwargs)
-            elif "params" in kwargs.keys():
+            elif "params" in list(kwargs.keys()):
                 allure.attach(req_params, '请求参数', allure.attachment_type.TEXT)
                 logs.info("请求参数：%s" % kwargs)
         except Exception as e:

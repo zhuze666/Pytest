@@ -1,1 +1,1293 @@
-<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="0" skipped="0" tests="19" time="1.286" timestamp="2025-01-21T14:52:02.233531+08:00" hostname="Henry"><testcase classname="testcase.Business interface.test_business_scenario.TestEBusinessScenario" name="test_business_scenario[case_info0]" time="0.334" /><testcase classname="testcase.Business interface.test_business_scenario.TestEBusinessScenario" name="test_business_scenario[case_info1]" time="0.035" /><testcase classname="testcase.Business interface.test_business_scenario.TestEBusinessScenario" name="test_business_scenario[case_info2]" time="0.046" /><testcase classname="testcase.Business interface.test_business_scenario.TestEBusinessScenario" name="test_business_scenario[case_info3]" time="0.031" /><testcase classname="testcase.Business interface.test_business_scenario.TestEBusinessScenario" name="test_business_scenario[case_info4]" time="0.038" /><testcase classname="testcase.ProductManager.test_productList.TestLogin" name="test_get_product_list[base_info0-testcase0]" time="0.044" /><testcase classname="testcase.ProductManager.test_productList.TestLogin" name="test_get_product_detail[base_info0-testcase0]" time="0.027" /><testcase classname="testcase.ProductManager.test_productList.TestLogin" name="test_commit_order[base_info0-testcase0]" time="0.047" /><testcase classname="testcase.ProductManager.test_productList.TestLogin" name="test_order_pay[base_info0-testcase0]" time="0.055" /><testcase classname="testcase.Single interface.test_debug_api.TestUserManager" name="test_add_user[base_info0-testcase0]" time="0.043" /><testcase classname="testcase.Single interface.test_debug_api.TestUserManager" name="test_add_user[base_info1-testcase1]" time="0.068" /><testcase classname="testcase.Single interface.test_debug_api.TestUserManager" name="test_add_user[base_info2-testcase2]" time="0.048" /><testcase classname="testcase.Single interface.test_debug_api.TestUserManager" name="test_add_user[base_info3-testcase3]" time="0.043" /><testcase classname="testcase.Single interface.test_debug_api.TestUserManager" name="test_update_user[base_info0-testcase0]" time="0.047" /><testcase classname="testcase.Single interface.test_debug_api.TestUserManager" name="test_delete_user[base_info0-testcase0]" time="0.043" /><testcase classname="testcase.Single interface.test_debug_api.TestUserManager" name="test_delete_user[base_info1-testcase1]" time="0.042" /><testcase classname="testcase.Single interface.test_debug_api.TestUserManager" name="test_delete_user[base_info2-testcase2]" time="0.043" /><testcase classname="testcase.Single interface.test_debug_api.TestUserManager" name="test_delete_user[base_info3-testcase3]" time="0.047" /><testcase classname="testcase.Single interface.test_debug_api.TestUserManager" name="test_query_user[base_info0-testcase0]" time="0.034" /></testsuite></testsuites>
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="19" failures="0" skipped="0" tests="19" time="4.329" timestamp="2025-02-12T17:05:50.800046+08:00" hostname="Henry"><testcase classname="testcase.Business interface.test_business_scenario.TestEBusinessScenario" name="test_business_scenario[case_info0]" time="0.465"><error message="failed on setup with &quot;SystemExit: None&quot;">@pytest.fixture(scope='session', autouse=True)
+    @allure.story("登录")
+    def system_login():
+        try:
+            api_info = get_testcase_yaml('./data/loginName.yaml')
+&gt;           RequestBase().specification_yaml(api_info[0][0], api_info[0][1])
+
+testcase\conftest.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+base\apiutil.py:118: in specification_yaml
+    raise e
+base\apiutil.py:115: in specification_yaml
+    raise e
+base\apiutil.py:109: in specification_yaml
+    self.asserts.assert_result(validation, res_json, status_code)
+common\assertions.py:197: in assert_result
+    raise exceptions
+common\assertions.py:181: in assert_result
+    flag = self.equal_assert(value, response)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = &lt;pythonproject.common.assertions.Assertions object at 0x0000023CBBFE55E0&gt;
+expected_results = {'msg': '登录成功'}
+actual_results = {'error_code': None, 'msg': '登录成功', 'msg_code': 200, 'orgId': '4140913758110176843', ...}
+statuc_code = None
+
+    def equal_assert(self, expected_results, actual_results, statuc_code=None):
+        """
+        相等断言模式
+        :param expected_results: 预期结果，yaml文件validation值
+        :param actual_results: 接口实际响应结果
+        :return:
+        """
+        flag = 0
+        if isinstance(actual_results, dict) and isinstance(expected_results, dict):
+            # 找出实际结果与预期结果共同的key
+&gt;           common_keys = list(list(expected_results.keys()) &amp; list(actual_results.keys()))[0]
+E           TypeError: unsupported operand type(s) for &amp;: 'list' and 'list'
+
+common\assertions.py:65: TypeError
+
+During handling of the above exception, another exception occurred:
+
+    @pytest.fixture(scope='session', autouse=True)
+    @allure.story("登录")
+    def system_login():
+        try:
+            api_info = get_testcase_yaml('./data/loginName.yaml')
+            RequestBase().specification_yaml(api_info[0][0], api_info[0][1])
+        except Exception as e:
+            logs.error(f'登录接口出现异常，导致后续接口无法继续运行，请检查程序！，{e}')
+&gt;           exit()
+
+testcase\conftest.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = Use exit() or Ctrl-Z plus Return to exit, code = None
+
+    def __call__(self, code=None):
+        # Shells like IDLE catch the SystemExit, but listen when their
+        # stdin wrapper is closed.
+        try:
+            sys.stdin.close()
+        except:
+            pass
+&gt;       raise SystemExit(code)
+E       SystemExit: None
+
+C:\Users\86135\AppData\Local\Programs\Python\Python39\lib\_sitebuiltins.py:26: SystemExit</error></testcase><testcase classname="testcase.Business interface.test_business_scenario.TestEBusinessScenario" name="test_business_scenario[case_info1]" time="0.032"><error message="failed on setup with &quot;SystemExit: None&quot;">@pytest.fixture(scope='session', autouse=True)
+    @allure.story("登录")
+    def system_login():
+        try:
+            api_info = get_testcase_yaml('./data/loginName.yaml')
+&gt;           RequestBase().specification_yaml(api_info[0][0], api_info[0][1])
+
+testcase\conftest.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+base\apiutil.py:118: in specification_yaml
+    raise e
+base\apiutil.py:115: in specification_yaml
+    raise e
+base\apiutil.py:109: in specification_yaml
+    self.asserts.assert_result(validation, res_json, status_code)
+common\assertions.py:197: in assert_result
+    raise exceptions
+common\assertions.py:181: in assert_result
+    flag = self.equal_assert(value, response)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = &lt;pythonproject.common.assertions.Assertions object at 0x0000023CBC1E6D00&gt;
+expected_results = {'msg': '登录成功'}
+actual_results = {'error_code': None, 'msg': '登录成功', 'msg_code': 200, 'orgId': '6140913758128971280', ...}
+statuc_code = None
+
+    def equal_assert(self, expected_results, actual_results, statuc_code=None):
+        """
+        相等断言模式
+        :param expected_results: 预期结果，yaml文件validation值
+        :param actual_results: 接口实际响应结果
+        :return:
+        """
+        flag = 0
+        if isinstance(actual_results, dict) and isinstance(expected_results, dict):
+            # 找出实际结果与预期结果共同的key
+&gt;           common_keys = list(list(expected_results.keys()) &amp; list(actual_results.keys()))[0]
+E           TypeError: unsupported operand type(s) for &amp;: 'list' and 'list'
+
+common\assertions.py:65: TypeError
+
+During handling of the above exception, another exception occurred:
+
+    @pytest.fixture(scope='session', autouse=True)
+    @allure.story("登录")
+    def system_login():
+        try:
+            api_info = get_testcase_yaml('./data/loginName.yaml')
+            RequestBase().specification_yaml(api_info[0][0], api_info[0][1])
+        except Exception as e:
+            logs.error(f'登录接口出现异常，导致后续接口无法继续运行，请检查程序！，{e}')
+&gt;           exit()
+
+testcase\conftest.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = Use exit() or Ctrl-Z plus Return to exit, code = None
+
+    def __call__(self, code=None):
+        # Shells like IDLE catch the SystemExit, but listen when their
+        # stdin wrapper is closed.
+        try:
+            sys.stdin.close()
+        except:
+            pass
+&gt;       raise SystemExit(code)
+E       SystemExit: None
+
+C:\Users\86135\AppData\Local\Programs\Python\Python39\lib\_sitebuiltins.py:26: SystemExit</error></testcase><testcase classname="testcase.Business interface.test_business_scenario.TestEBusinessScenario" name="test_business_scenario[case_info2]" time="0.023"><error message="failed on setup with &quot;SystemExit: None&quot;">@pytest.fixture(scope='session', autouse=True)
+    @allure.story("登录")
+    def system_login():
+        try:
+            api_info = get_testcase_yaml('./data/loginName.yaml')
+&gt;           RequestBase().specification_yaml(api_info[0][0], api_info[0][1])
+
+testcase\conftest.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+base\apiutil.py:118: in specification_yaml
+    raise e
+base\apiutil.py:115: in specification_yaml
+    raise e
+base\apiutil.py:109: in specification_yaml
+    self.asserts.assert_result(validation, res_json, status_code)
+common\assertions.py:197: in assert_result
+    raise exceptions
+common\assertions.py:181: in assert_result
+    flag = self.equal_assert(value, response)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = &lt;pythonproject.common.assertions.Assertions object at 0x0000023CBC1EBA60&gt;
+expected_results = {'msg': '登录成功'}
+actual_results = {'error_code': None, 'msg': '登录成功', 'msg_code': 200, 'orgId': '4140913758110176843', ...}
+statuc_code = None
+
+    def equal_assert(self, expected_results, actual_results, statuc_code=None):
+        """
+        相等断言模式
+        :param expected_results: 预期结果，yaml文件validation值
+        :param actual_results: 接口实际响应结果
+        :return:
+        """
+        flag = 0
+        if isinstance(actual_results, dict) and isinstance(expected_results, dict):
+            # 找出实际结果与预期结果共同的key
+&gt;           common_keys = list(list(expected_results.keys()) &amp; list(actual_results.keys()))[0]
+E           TypeError: unsupported operand type(s) for &amp;: 'list' and 'list'
+
+common\assertions.py:65: TypeError
+
+During handling of the above exception, another exception occurred:
+
+    @pytest.fixture(scope='session', autouse=True)
+    @allure.story("登录")
+    def system_login():
+        try:
+            api_info = get_testcase_yaml('./data/loginName.yaml')
+            RequestBase().specification_yaml(api_info[0][0], api_info[0][1])
+        except Exception as e:
+            logs.error(f'登录接口出现异常，导致后续接口无法继续运行，请检查程序！，{e}')
+&gt;           exit()
+
+testcase\conftest.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = Use exit() or Ctrl-Z plus Return to exit, code = None
+
+    def __call__(self, code=None):
+        # Shells like IDLE catch the SystemExit, but listen when their
+        # stdin wrapper is closed.
+        try:
+            sys.stdin.close()
+        except:
+            pass
+&gt;       raise SystemExit(code)
+E       SystemExit: None
+
+C:\Users\86135\AppData\Local\Programs\Python\Python39\lib\_sitebuiltins.py:26: SystemExit</error></testcase><testcase classname="testcase.Business interface.test_business_scenario.TestEBusinessScenario" name="test_business_scenario[case_info3]" time="0.030"><error message="failed on setup with &quot;SystemExit: None&quot;">@pytest.fixture(scope='session', autouse=True)
+    @allure.story("登录")
+    def system_login():
+        try:
+            api_info = get_testcase_yaml('./data/loginName.yaml')
+&gt;           RequestBase().specification_yaml(api_info[0][0], api_info[0][1])
+
+testcase\conftest.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+base\apiutil.py:118: in specification_yaml
+    raise e
+base\apiutil.py:115: in specification_yaml
+    raise e
+base\apiutil.py:109: in specification_yaml
+    self.asserts.assert_result(validation, res_json, status_code)
+common\assertions.py:197: in assert_result
+    raise exceptions
+common\assertions.py:181: in assert_result
+    flag = self.equal_assert(value, response)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = &lt;pythonproject.common.assertions.Assertions object at 0x0000023CBC1E5250&gt;
+expected_results = {'msg': '登录成功'}
+actual_results = {'error_code': None, 'msg': '登录成功', 'msg_code': 200, 'orgId': '6140913758128971280', ...}
+statuc_code = None
+
+    def equal_assert(self, expected_results, actual_results, statuc_code=None):
+        """
+        相等断言模式
+        :param expected_results: 预期结果，yaml文件validation值
+        :param actual_results: 接口实际响应结果
+        :return:
+        """
+        flag = 0
+        if isinstance(actual_results, dict) and isinstance(expected_results, dict):
+            # 找出实际结果与预期结果共同的key
+&gt;           common_keys = list(list(expected_results.keys()) &amp; list(actual_results.keys()))[0]
+E           TypeError: unsupported operand type(s) for &amp;: 'list' and 'list'
+
+common\assertions.py:65: TypeError
+
+During handling of the above exception, another exception occurred:
+
+    @pytest.fixture(scope='session', autouse=True)
+    @allure.story("登录")
+    def system_login():
+        try:
+            api_info = get_testcase_yaml('./data/loginName.yaml')
+            RequestBase().specification_yaml(api_info[0][0], api_info[0][1])
+        except Exception as e:
+            logs.error(f'登录接口出现异常，导致后续接口无法继续运行，请检查程序！，{e}')
+&gt;           exit()
+
+testcase\conftest.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = Use exit() or Ctrl-Z plus Return to exit, code = None
+
+    def __call__(self, code=None):
+        # Shells like IDLE catch the SystemExit, but listen when their
+        # stdin wrapper is closed.
+        try:
+            sys.stdin.close()
+        except:
+            pass
+&gt;       raise SystemExit(code)
+E       SystemExit: None
+
+C:\Users\86135\AppData\Local\Programs\Python\Python39\lib\_sitebuiltins.py:26: SystemExit</error></testcase><testcase classname="testcase.Business interface.test_business_scenario.TestEBusinessScenario" name="test_business_scenario[case_info4]" time="0.031"><error message="failed on setup with &quot;SystemExit: None&quot;">@pytest.fixture(scope='session', autouse=True)
+    @allure.story("登录")
+    def system_login():
+        try:
+            api_info = get_testcase_yaml('./data/loginName.yaml')
+&gt;           RequestBase().specification_yaml(api_info[0][0], api_info[0][1])
+
+testcase\conftest.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+base\apiutil.py:118: in specification_yaml
+    raise e
+base\apiutil.py:115: in specification_yaml
+    raise e
+base\apiutil.py:109: in specification_yaml
+    self.asserts.assert_result(validation, res_json, status_code)
+common\assertions.py:197: in assert_result
+    raise exceptions
+common\assertions.py:181: in assert_result
+    flag = self.equal_assert(value, response)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = &lt;pythonproject.common.assertions.Assertions object at 0x0000023CBC2437F0&gt;
+expected_results = {'msg': '登录成功'}
+actual_results = {'error_code': None, 'msg': '登录成功', 'msg_code': 200, 'orgId': '6140913758128971280', ...}
+statuc_code = None
+
+    def equal_assert(self, expected_results, actual_results, statuc_code=None):
+        """
+        相等断言模式
+        :param expected_results: 预期结果，yaml文件validation值
+        :param actual_results: 接口实际响应结果
+        :return:
+        """
+        flag = 0
+        if isinstance(actual_results, dict) and isinstance(expected_results, dict):
+            # 找出实际结果与预期结果共同的key
+&gt;           common_keys = list(list(expected_results.keys()) &amp; list(actual_results.keys()))[0]
+E           TypeError: unsupported operand type(s) for &amp;: 'list' and 'list'
+
+common\assertions.py:65: TypeError
+
+During handling of the above exception, another exception occurred:
+
+    @pytest.fixture(scope='session', autouse=True)
+    @allure.story("登录")
+    def system_login():
+        try:
+            api_info = get_testcase_yaml('./data/loginName.yaml')
+            RequestBase().specification_yaml(api_info[0][0], api_info[0][1])
+        except Exception as e:
+            logs.error(f'登录接口出现异常，导致后续接口无法继续运行，请检查程序！，{e}')
+&gt;           exit()
+
+testcase\conftest.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = Use exit() or Ctrl-Z plus Return to exit, code = None
+
+    def __call__(self, code=None):
+        # Shells like IDLE catch the SystemExit, but listen when their
+        # stdin wrapper is closed.
+        try:
+            sys.stdin.close()
+        except:
+            pass
+&gt;       raise SystemExit(code)
+E       SystemExit: None
+
+C:\Users\86135\AppData\Local\Programs\Python\Python39\lib\_sitebuiltins.py:26: SystemExit</error></testcase><testcase classname="testcase.ProductManager.test_productList.TestLogin" name="test_get_product_list[base_info0-testcase0]" time="0.050"><error message="failed on setup with &quot;SystemExit: None&quot;">@pytest.fixture(scope='session', autouse=True)
+    @allure.story("登录")
+    def system_login():
+        try:
+            api_info = get_testcase_yaml('./data/loginName.yaml')
+&gt;           RequestBase().specification_yaml(api_info[0][0], api_info[0][1])
+
+testcase\conftest.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+base\apiutil.py:118: in specification_yaml
+    raise e
+base\apiutil.py:115: in specification_yaml
+    raise e
+base\apiutil.py:109: in specification_yaml
+    self.asserts.assert_result(validation, res_json, status_code)
+common\assertions.py:197: in assert_result
+    raise exceptions
+common\assertions.py:181: in assert_result
+    flag = self.equal_assert(value, response)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = &lt;pythonproject.common.assertions.Assertions object at 0x0000023CBC2194F0&gt;
+expected_results = {'msg': '登录成功'}
+actual_results = {'error_code': None, 'msg': '登录成功', 'msg_code': 200, 'orgId': '6140913758128971280', ...}
+statuc_code = None
+
+    def equal_assert(self, expected_results, actual_results, statuc_code=None):
+        """
+        相等断言模式
+        :param expected_results: 预期结果，yaml文件validation值
+        :param actual_results: 接口实际响应结果
+        :return:
+        """
+        flag = 0
+        if isinstance(actual_results, dict) and isinstance(expected_results, dict):
+            # 找出实际结果与预期结果共同的key
+&gt;           common_keys = list(list(expected_results.keys()) &amp; list(actual_results.keys()))[0]
+E           TypeError: unsupported operand type(s) for &amp;: 'list' and 'list'
+
+common\assertions.py:65: TypeError
+
+During handling of the above exception, another exception occurred:
+
+    @pytest.fixture(scope='session', autouse=True)
+    @allure.story("登录")
+    def system_login():
+        try:
+            api_info = get_testcase_yaml('./data/loginName.yaml')
+            RequestBase().specification_yaml(api_info[0][0], api_info[0][1])
+        except Exception as e:
+            logs.error(f'登录接口出现异常，导致后续接口无法继续运行，请检查程序！，{e}')
+&gt;           exit()
+
+testcase\conftest.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = Use exit() or Ctrl-Z plus Return to exit, code = None
+
+    def __call__(self, code=None):
+        # Shells like IDLE catch the SystemExit, but listen when their
+        # stdin wrapper is closed.
+        try:
+            sys.stdin.close()
+        except:
+            pass
+&gt;       raise SystemExit(code)
+E       SystemExit: None
+
+C:\Users\86135\AppData\Local\Programs\Python\Python39\lib\_sitebuiltins.py:26: SystemExit</error></testcase><testcase classname="testcase.ProductManager.test_productList.TestLogin" name="test_get_product_detail[base_info0-testcase0]" time="0.037"><error message="failed on setup with &quot;SystemExit: None&quot;">@pytest.fixture(scope='session', autouse=True)
+    @allure.story("登录")
+    def system_login():
+        try:
+            api_info = get_testcase_yaml('./data/loginName.yaml')
+&gt;           RequestBase().specification_yaml(api_info[0][0], api_info[0][1])
+
+testcase\conftest.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+base\apiutil.py:118: in specification_yaml
+    raise e
+base\apiutil.py:115: in specification_yaml
+    raise e
+base\apiutil.py:109: in specification_yaml
+    self.asserts.assert_result(validation, res_json, status_code)
+common\assertions.py:197: in assert_result
+    raise exceptions
+common\assertions.py:181: in assert_result
+    flag = self.equal_assert(value, response)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = &lt;pythonproject.common.assertions.Assertions object at 0x0000023CBC1F4880&gt;
+expected_results = {'msg': '登录成功'}
+actual_results = {'error_code': None, 'msg': '登录成功', 'msg_code': 200, 'orgId': '4140913758110176843', ...}
+statuc_code = None
+
+    def equal_assert(self, expected_results, actual_results, statuc_code=None):
+        """
+        相等断言模式
+        :param expected_results: 预期结果，yaml文件validation值
+        :param actual_results: 接口实际响应结果
+        :return:
+        """
+        flag = 0
+        if isinstance(actual_results, dict) and isinstance(expected_results, dict):
+            # 找出实际结果与预期结果共同的key
+&gt;           common_keys = list(list(expected_results.keys()) &amp; list(actual_results.keys()))[0]
+E           TypeError: unsupported operand type(s) for &amp;: 'list' and 'list'
+
+common\assertions.py:65: TypeError
+
+During handling of the above exception, another exception occurred:
+
+    @pytest.fixture(scope='session', autouse=True)
+    @allure.story("登录")
+    def system_login():
+        try:
+            api_info = get_testcase_yaml('./data/loginName.yaml')
+            RequestBase().specification_yaml(api_info[0][0], api_info[0][1])
+        except Exception as e:
+            logs.error(f'登录接口出现异常，导致后续接口无法继续运行，请检查程序！，{e}')
+&gt;           exit()
+
+testcase\conftest.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = Use exit() or Ctrl-Z plus Return to exit, code = None
+
+    def __call__(self, code=None):
+        # Shells like IDLE catch the SystemExit, but listen when their
+        # stdin wrapper is closed.
+        try:
+            sys.stdin.close()
+        except:
+            pass
+&gt;       raise SystemExit(code)
+E       SystemExit: None
+
+C:\Users\86135\AppData\Local\Programs\Python\Python39\lib\_sitebuiltins.py:26: SystemExit</error></testcase><testcase classname="testcase.ProductManager.test_productList.TestLogin" name="test_commit_order[base_info0-testcase0]" time="0.039"><error message="failed on setup with &quot;SystemExit: None&quot;">@pytest.fixture(scope='session', autouse=True)
+    @allure.story("登录")
+    def system_login():
+        try:
+            api_info = get_testcase_yaml('./data/loginName.yaml')
+&gt;           RequestBase().specification_yaml(api_info[0][0], api_info[0][1])
+
+testcase\conftest.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+base\apiutil.py:118: in specification_yaml
+    raise e
+base\apiutil.py:115: in specification_yaml
+    raise e
+base\apiutil.py:109: in specification_yaml
+    self.asserts.assert_result(validation, res_json, status_code)
+common\assertions.py:197: in assert_result
+    raise exceptions
+common\assertions.py:181: in assert_result
+    flag = self.equal_assert(value, response)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = &lt;pythonproject.common.assertions.Assertions object at 0x0000023CBC2677C0&gt;
+expected_results = {'msg': '登录成功'}
+actual_results = {'error_code': None, 'msg': '登录成功', 'msg_code': 200, 'orgId': '6140913758128971280', ...}
+statuc_code = None
+
+    def equal_assert(self, expected_results, actual_results, statuc_code=None):
+        """
+        相等断言模式
+        :param expected_results: 预期结果，yaml文件validation值
+        :param actual_results: 接口实际响应结果
+        :return:
+        """
+        flag = 0
+        if isinstance(actual_results, dict) and isinstance(expected_results, dict):
+            # 找出实际结果与预期结果共同的key
+&gt;           common_keys = list(list(expected_results.keys()) &amp; list(actual_results.keys()))[0]
+E           TypeError: unsupported operand type(s) for &amp;: 'list' and 'list'
+
+common\assertions.py:65: TypeError
+
+During handling of the above exception, another exception occurred:
+
+    @pytest.fixture(scope='session', autouse=True)
+    @allure.story("登录")
+    def system_login():
+        try:
+            api_info = get_testcase_yaml('./data/loginName.yaml')
+            RequestBase().specification_yaml(api_info[0][0], api_info[0][1])
+        except Exception as e:
+            logs.error(f'登录接口出现异常，导致后续接口无法继续运行，请检查程序！，{e}')
+&gt;           exit()
+
+testcase\conftest.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = Use exit() or Ctrl-Z plus Return to exit, code = None
+
+    def __call__(self, code=None):
+        # Shells like IDLE catch the SystemExit, but listen when their
+        # stdin wrapper is closed.
+        try:
+            sys.stdin.close()
+        except:
+            pass
+&gt;       raise SystemExit(code)
+E       SystemExit: None
+
+C:\Users\86135\AppData\Local\Programs\Python\Python39\lib\_sitebuiltins.py:26: SystemExit</error></testcase><testcase classname="testcase.ProductManager.test_productList.TestLogin" name="test_order_pay[base_info0-testcase0]" time="0.023"><error message="failed on setup with &quot;SystemExit: None&quot;">@pytest.fixture(scope='session', autouse=True)
+    @allure.story("登录")
+    def system_login():
+        try:
+            api_info = get_testcase_yaml('./data/loginName.yaml')
+&gt;           RequestBase().specification_yaml(api_info[0][0], api_info[0][1])
+
+testcase\conftest.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+base\apiutil.py:118: in specification_yaml
+    raise e
+base\apiutil.py:115: in specification_yaml
+    raise e
+base\apiutil.py:109: in specification_yaml
+    self.asserts.assert_result(validation, res_json, status_code)
+common\assertions.py:197: in assert_result
+    raise exceptions
+common\assertions.py:181: in assert_result
+    flag = self.equal_assert(value, response)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = &lt;pythonproject.common.assertions.Assertions object at 0x0000023CBC28DA30&gt;
+expected_results = {'msg': '登录成功'}
+actual_results = {'error_code': None, 'msg': '登录成功', 'msg_code': 200, 'orgId': '4140913758110176843', ...}
+statuc_code = None
+
+    def equal_assert(self, expected_results, actual_results, statuc_code=None):
+        """
+        相等断言模式
+        :param expected_results: 预期结果，yaml文件validation值
+        :param actual_results: 接口实际响应结果
+        :return:
+        """
+        flag = 0
+        if isinstance(actual_results, dict) and isinstance(expected_results, dict):
+            # 找出实际结果与预期结果共同的key
+&gt;           common_keys = list(list(expected_results.keys()) &amp; list(actual_results.keys()))[0]
+E           TypeError: unsupported operand type(s) for &amp;: 'list' and 'list'
+
+common\assertions.py:65: TypeError
+
+During handling of the above exception, another exception occurred:
+
+    @pytest.fixture(scope='session', autouse=True)
+    @allure.story("登录")
+    def system_login():
+        try:
+            api_info = get_testcase_yaml('./data/loginName.yaml')
+            RequestBase().specification_yaml(api_info[0][0], api_info[0][1])
+        except Exception as e:
+            logs.error(f'登录接口出现异常，导致后续接口无法继续运行，请检查程序！，{e}')
+&gt;           exit()
+
+testcase\conftest.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = Use exit() or Ctrl-Z plus Return to exit, code = None
+
+    def __call__(self, code=None):
+        # Shells like IDLE catch the SystemExit, but listen when their
+        # stdin wrapper is closed.
+        try:
+            sys.stdin.close()
+        except:
+            pass
+&gt;       raise SystemExit(code)
+E       SystemExit: None
+
+C:\Users\86135\AppData\Local\Programs\Python\Python39\lib\_sitebuiltins.py:26: SystemExit</error></testcase><testcase classname="testcase.Single interface.test_debug_api.TestUserManager" name="test_add_user[base_info0-testcase0]" time="0.047"><error message="failed on setup with &quot;SystemExit: None&quot;">@pytest.fixture(scope='session', autouse=True)
+    @allure.story("登录")
+    def system_login():
+        try:
+            api_info = get_testcase_yaml('./data/loginName.yaml')
+&gt;           RequestBase().specification_yaml(api_info[0][0], api_info[0][1])
+
+testcase\conftest.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+base\apiutil.py:118: in specification_yaml
+    raise e
+base\apiutil.py:115: in specification_yaml
+    raise e
+base\apiutil.py:109: in specification_yaml
+    self.asserts.assert_result(validation, res_json, status_code)
+common\assertions.py:197: in assert_result
+    raise exceptions
+common\assertions.py:181: in assert_result
+    flag = self.equal_assert(value, response)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = &lt;pythonproject.common.assertions.Assertions object at 0x0000023CBC224640&gt;
+expected_results = {'msg': '登录成功'}
+actual_results = {'error_code': None, 'msg': '登录成功', 'msg_code': 200, 'orgId': '6140913758128971280', ...}
+statuc_code = None
+
+    def equal_assert(self, expected_results, actual_results, statuc_code=None):
+        """
+        相等断言模式
+        :param expected_results: 预期结果，yaml文件validation值
+        :param actual_results: 接口实际响应结果
+        :return:
+        """
+        flag = 0
+        if isinstance(actual_results, dict) and isinstance(expected_results, dict):
+            # 找出实际结果与预期结果共同的key
+&gt;           common_keys = list(list(expected_results.keys()) &amp; list(actual_results.keys()))[0]
+E           TypeError: unsupported operand type(s) for &amp;: 'list' and 'list'
+
+common\assertions.py:65: TypeError
+
+During handling of the above exception, another exception occurred:
+
+    @pytest.fixture(scope='session', autouse=True)
+    @allure.story("登录")
+    def system_login():
+        try:
+            api_info = get_testcase_yaml('./data/loginName.yaml')
+            RequestBase().specification_yaml(api_info[0][0], api_info[0][1])
+        except Exception as e:
+            logs.error(f'登录接口出现异常，导致后续接口无法继续运行，请检查程序！，{e}')
+&gt;           exit()
+
+testcase\conftest.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = Use exit() or Ctrl-Z plus Return to exit, code = None
+
+    def __call__(self, code=None):
+        # Shells like IDLE catch the SystemExit, but listen when their
+        # stdin wrapper is closed.
+        try:
+            sys.stdin.close()
+        except:
+            pass
+&gt;       raise SystemExit(code)
+E       SystemExit: None
+
+C:\Users\86135\AppData\Local\Programs\Python\Python39\lib\_sitebuiltins.py:26: SystemExit</error></testcase><testcase classname="testcase.Single interface.test_debug_api.TestUserManager" name="test_add_user[base_info1-testcase1]" time="0.026"><error message="failed on setup with &quot;SystemExit: None&quot;">@pytest.fixture(scope='session', autouse=True)
+    @allure.story("登录")
+    def system_login():
+        try:
+            api_info = get_testcase_yaml('./data/loginName.yaml')
+&gt;           RequestBase().specification_yaml(api_info[0][0], api_info[0][1])
+
+testcase\conftest.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+base\apiutil.py:118: in specification_yaml
+    raise e
+base\apiutil.py:115: in specification_yaml
+    raise e
+base\apiutil.py:109: in specification_yaml
+    self.asserts.assert_result(validation, res_json, status_code)
+common\assertions.py:197: in assert_result
+    raise exceptions
+common\assertions.py:181: in assert_result
+    flag = self.equal_assert(value, response)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = &lt;pythonproject.common.assertions.Assertions object at 0x0000023CBC1E6B50&gt;
+expected_results = {'msg': '登录成功'}
+actual_results = {'error_code': None, 'msg': '登录成功', 'msg_code': 200, 'orgId': '4140913758110176843', ...}
+statuc_code = None
+
+    def equal_assert(self, expected_results, actual_results, statuc_code=None):
+        """
+        相等断言模式
+        :param expected_results: 预期结果，yaml文件validation值
+        :param actual_results: 接口实际响应结果
+        :return:
+        """
+        flag = 0
+        if isinstance(actual_results, dict) and isinstance(expected_results, dict):
+            # 找出实际结果与预期结果共同的key
+&gt;           common_keys = list(list(expected_results.keys()) &amp; list(actual_results.keys()))[0]
+E           TypeError: unsupported operand type(s) for &amp;: 'list' and 'list'
+
+common\assertions.py:65: TypeError
+
+During handling of the above exception, another exception occurred:
+
+    @pytest.fixture(scope='session', autouse=True)
+    @allure.story("登录")
+    def system_login():
+        try:
+            api_info = get_testcase_yaml('./data/loginName.yaml')
+            RequestBase().specification_yaml(api_info[0][0], api_info[0][1])
+        except Exception as e:
+            logs.error(f'登录接口出现异常，导致后续接口无法继续运行，请检查程序！，{e}')
+&gt;           exit()
+
+testcase\conftest.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = Use exit() or Ctrl-Z plus Return to exit, code = None
+
+    def __call__(self, code=None):
+        # Shells like IDLE catch the SystemExit, but listen when their
+        # stdin wrapper is closed.
+        try:
+            sys.stdin.close()
+        except:
+            pass
+&gt;       raise SystemExit(code)
+E       SystemExit: None
+
+C:\Users\86135\AppData\Local\Programs\Python\Python39\lib\_sitebuiltins.py:26: SystemExit</error></testcase><testcase classname="testcase.Single interface.test_debug_api.TestUserManager" name="test_add_user[base_info2-testcase2]" time="0.033"><error message="failed on setup with &quot;SystemExit: None&quot;">@pytest.fixture(scope='session', autouse=True)
+    @allure.story("登录")
+    def system_login():
+        try:
+            api_info = get_testcase_yaml('./data/loginName.yaml')
+&gt;           RequestBase().specification_yaml(api_info[0][0], api_info[0][1])
+
+testcase\conftest.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+base\apiutil.py:118: in specification_yaml
+    raise e
+base\apiutil.py:115: in specification_yaml
+    raise e
+base\apiutil.py:109: in specification_yaml
+    self.asserts.assert_result(validation, res_json, status_code)
+common\assertions.py:197: in assert_result
+    raise exceptions
+common\assertions.py:181: in assert_result
+    flag = self.equal_assert(value, response)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = &lt;pythonproject.common.assertions.Assertions object at 0x0000023CBC30FBE0&gt;
+expected_results = {'msg': '登录成功'}
+actual_results = {'error_code': None, 'msg': '登录成功', 'msg_code': 200, 'orgId': '4140913758110176843', ...}
+statuc_code = None
+
+    def equal_assert(self, expected_results, actual_results, statuc_code=None):
+        """
+        相等断言模式
+        :param expected_results: 预期结果，yaml文件validation值
+        :param actual_results: 接口实际响应结果
+        :return:
+        """
+        flag = 0
+        if isinstance(actual_results, dict) and isinstance(expected_results, dict):
+            # 找出实际结果与预期结果共同的key
+&gt;           common_keys = list(list(expected_results.keys()) &amp; list(actual_results.keys()))[0]
+E           TypeError: unsupported operand type(s) for &amp;: 'list' and 'list'
+
+common\assertions.py:65: TypeError
+
+During handling of the above exception, another exception occurred:
+
+    @pytest.fixture(scope='session', autouse=True)
+    @allure.story("登录")
+    def system_login():
+        try:
+            api_info = get_testcase_yaml('./data/loginName.yaml')
+            RequestBase().specification_yaml(api_info[0][0], api_info[0][1])
+        except Exception as e:
+            logs.error(f'登录接口出现异常，导致后续接口无法继续运行，请检查程序！，{e}')
+&gt;           exit()
+
+testcase\conftest.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = Use exit() or Ctrl-Z plus Return to exit, code = None
+
+    def __call__(self, code=None):
+        # Shells like IDLE catch the SystemExit, but listen when their
+        # stdin wrapper is closed.
+        try:
+            sys.stdin.close()
+        except:
+            pass
+&gt;       raise SystemExit(code)
+E       SystemExit: None
+
+C:\Users\86135\AppData\Local\Programs\Python\Python39\lib\_sitebuiltins.py:26: SystemExit</error></testcase><testcase classname="testcase.Single interface.test_debug_api.TestUserManager" name="test_add_user[base_info3-testcase3]" time="0.042"><error message="failed on setup with &quot;SystemExit: None&quot;">@pytest.fixture(scope='session', autouse=True)
+    @allure.story("登录")
+    def system_login():
+        try:
+            api_info = get_testcase_yaml('./data/loginName.yaml')
+&gt;           RequestBase().specification_yaml(api_info[0][0], api_info[0][1])
+
+testcase\conftest.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+base\apiutil.py:118: in specification_yaml
+    raise e
+base\apiutil.py:115: in specification_yaml
+    raise e
+base\apiutil.py:109: in specification_yaml
+    self.asserts.assert_result(validation, res_json, status_code)
+common\assertions.py:197: in assert_result
+    raise exceptions
+common\assertions.py:181: in assert_result
+    flag = self.equal_assert(value, response)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = &lt;pythonproject.common.assertions.Assertions object at 0x0000023CBC2E1160&gt;
+expected_results = {'msg': '登录成功'}
+actual_results = {'error_code': None, 'msg': '登录成功', 'msg_code': 200, 'orgId': '6140913758128971280', ...}
+statuc_code = None
+
+    def equal_assert(self, expected_results, actual_results, statuc_code=None):
+        """
+        相等断言模式
+        :param expected_results: 预期结果，yaml文件validation值
+        :param actual_results: 接口实际响应结果
+        :return:
+        """
+        flag = 0
+        if isinstance(actual_results, dict) and isinstance(expected_results, dict):
+            # 找出实际结果与预期结果共同的key
+&gt;           common_keys = list(list(expected_results.keys()) &amp; list(actual_results.keys()))[0]
+E           TypeError: unsupported operand type(s) for &amp;: 'list' and 'list'
+
+common\assertions.py:65: TypeError
+
+During handling of the above exception, another exception occurred:
+
+    @pytest.fixture(scope='session', autouse=True)
+    @allure.story("登录")
+    def system_login():
+        try:
+            api_info = get_testcase_yaml('./data/loginName.yaml')
+            RequestBase().specification_yaml(api_info[0][0], api_info[0][1])
+        except Exception as e:
+            logs.error(f'登录接口出现异常，导致后续接口无法继续运行，请检查程序！，{e}')
+&gt;           exit()
+
+testcase\conftest.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = Use exit() or Ctrl-Z plus Return to exit, code = None
+
+    def __call__(self, code=None):
+        # Shells like IDLE catch the SystemExit, but listen when their
+        # stdin wrapper is closed.
+        try:
+            sys.stdin.close()
+        except:
+            pass
+&gt;       raise SystemExit(code)
+E       SystemExit: None
+
+C:\Users\86135\AppData\Local\Programs\Python\Python39\lib\_sitebuiltins.py:26: SystemExit</error></testcase><testcase classname="testcase.Single interface.test_debug_api.TestUserManager" name="test_update_user[base_info0-testcase0]" time="0.037"><error message="failed on setup with &quot;SystemExit: None&quot;">@pytest.fixture(scope='session', autouse=True)
+    @allure.story("登录")
+    def system_login():
+        try:
+            api_info = get_testcase_yaml('./data/loginName.yaml')
+&gt;           RequestBase().specification_yaml(api_info[0][0], api_info[0][1])
+
+testcase\conftest.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+base\apiutil.py:118: in specification_yaml
+    raise e
+base\apiutil.py:115: in specification_yaml
+    raise e
+base\apiutil.py:109: in specification_yaml
+    self.asserts.assert_result(validation, res_json, status_code)
+common\assertions.py:197: in assert_result
+    raise exceptions
+common\assertions.py:181: in assert_result
+    flag = self.equal_assert(value, response)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = &lt;pythonproject.common.assertions.Assertions object at 0x0000023CBC368BB0&gt;
+expected_results = {'msg': '登录成功'}
+actual_results = {'error_code': None, 'msg': '登录成功', 'msg_code': 200, 'orgId': '6140913758128971280', ...}
+statuc_code = None
+
+    def equal_assert(self, expected_results, actual_results, statuc_code=None):
+        """
+        相等断言模式
+        :param expected_results: 预期结果，yaml文件validation值
+        :param actual_results: 接口实际响应结果
+        :return:
+        """
+        flag = 0
+        if isinstance(actual_results, dict) and isinstance(expected_results, dict):
+            # 找出实际结果与预期结果共同的key
+&gt;           common_keys = list(list(expected_results.keys()) &amp; list(actual_results.keys()))[0]
+E           TypeError: unsupported operand type(s) for &amp;: 'list' and 'list'
+
+common\assertions.py:65: TypeError
+
+During handling of the above exception, another exception occurred:
+
+    @pytest.fixture(scope='session', autouse=True)
+    @allure.story("登录")
+    def system_login():
+        try:
+            api_info = get_testcase_yaml('./data/loginName.yaml')
+            RequestBase().specification_yaml(api_info[0][0], api_info[0][1])
+        except Exception as e:
+            logs.error(f'登录接口出现异常，导致后续接口无法继续运行，请检查程序！，{e}')
+&gt;           exit()
+
+testcase\conftest.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = Use exit() or Ctrl-Z plus Return to exit, code = None
+
+    def __call__(self, code=None):
+        # Shells like IDLE catch the SystemExit, but listen when their
+        # stdin wrapper is closed.
+        try:
+            sys.stdin.close()
+        except:
+            pass
+&gt;       raise SystemExit(code)
+E       SystemExit: None
+
+C:\Users\86135\AppData\Local\Programs\Python\Python39\lib\_sitebuiltins.py:26: SystemExit</error></testcase><testcase classname="testcase.Single interface.test_debug_api.TestUserManager" name="test_delete_user[base_info0-testcase0]" time="0.032"><error message="failed on setup with &quot;SystemExit: None&quot;">@pytest.fixture(scope='session', autouse=True)
+    @allure.story("登录")
+    def system_login():
+        try:
+            api_info = get_testcase_yaml('./data/loginName.yaml')
+&gt;           RequestBase().specification_yaml(api_info[0][0], api_info[0][1])
+
+testcase\conftest.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+base\apiutil.py:118: in specification_yaml
+    raise e
+base\apiutil.py:115: in specification_yaml
+    raise e
+base\apiutil.py:109: in specification_yaml
+    self.asserts.assert_result(validation, res_json, status_code)
+common\assertions.py:197: in assert_result
+    raise exceptions
+common\assertions.py:181: in assert_result
+    flag = self.equal_assert(value, response)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = &lt;pythonproject.common.assertions.Assertions object at 0x0000023CBC2243A0&gt;
+expected_results = {'msg': '登录成功'}
+actual_results = {'error_code': None, 'msg': '登录成功', 'msg_code': 200, 'orgId': '6140913758128971280', ...}
+statuc_code = None
+
+    def equal_assert(self, expected_results, actual_results, statuc_code=None):
+        """
+        相等断言模式
+        :param expected_results: 预期结果，yaml文件validation值
+        :param actual_results: 接口实际响应结果
+        :return:
+        """
+        flag = 0
+        if isinstance(actual_results, dict) and isinstance(expected_results, dict):
+            # 找出实际结果与预期结果共同的key
+&gt;           common_keys = list(list(expected_results.keys()) &amp; list(actual_results.keys()))[0]
+E           TypeError: unsupported operand type(s) for &amp;: 'list' and 'list'
+
+common\assertions.py:65: TypeError
+
+During handling of the above exception, another exception occurred:
+
+    @pytest.fixture(scope='session', autouse=True)
+    @allure.story("登录")
+    def system_login():
+        try:
+            api_info = get_testcase_yaml('./data/loginName.yaml')
+            RequestBase().specification_yaml(api_info[0][0], api_info[0][1])
+        except Exception as e:
+            logs.error(f'登录接口出现异常，导致后续接口无法继续运行，请检查程序！，{e}')
+&gt;           exit()
+
+testcase\conftest.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = Use exit() or Ctrl-Z plus Return to exit, code = None
+
+    def __call__(self, code=None):
+        # Shells like IDLE catch the SystemExit, but listen when their
+        # stdin wrapper is closed.
+        try:
+            sys.stdin.close()
+        except:
+            pass
+&gt;       raise SystemExit(code)
+E       SystemExit: None
+
+C:\Users\86135\AppData\Local\Programs\Python\Python39\lib\_sitebuiltins.py:26: SystemExit</error></testcase><testcase classname="testcase.Single interface.test_debug_api.TestUserManager" name="test_delete_user[base_info1-testcase1]" time="0.034"><error message="failed on setup with &quot;SystemExit: None&quot;">@pytest.fixture(scope='session', autouse=True)
+    @allure.story("登录")
+    def system_login():
+        try:
+            api_info = get_testcase_yaml('./data/loginName.yaml')
+&gt;           RequestBase().specification_yaml(api_info[0][0], api_info[0][1])
+
+testcase\conftest.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+base\apiutil.py:118: in specification_yaml
+    raise e
+base\apiutil.py:115: in specification_yaml
+    raise e
+base\apiutil.py:109: in specification_yaml
+    self.asserts.assert_result(validation, res_json, status_code)
+common\assertions.py:197: in assert_result
+    raise exceptions
+common\assertions.py:181: in assert_result
+    flag = self.equal_assert(value, response)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = &lt;pythonproject.common.assertions.Assertions object at 0x0000023CBC21B2B0&gt;
+expected_results = {'msg': '登录成功'}
+actual_results = {'error_code': None, 'msg': '登录成功', 'msg_code': 200, 'orgId': '4140913758110176843', ...}
+statuc_code = None
+
+    def equal_assert(self, expected_results, actual_results, statuc_code=None):
+        """
+        相等断言模式
+        :param expected_results: 预期结果，yaml文件validation值
+        :param actual_results: 接口实际响应结果
+        :return:
+        """
+        flag = 0
+        if isinstance(actual_results, dict) and isinstance(expected_results, dict):
+            # 找出实际结果与预期结果共同的key
+&gt;           common_keys = list(list(expected_results.keys()) &amp; list(actual_results.keys()))[0]
+E           TypeError: unsupported operand type(s) for &amp;: 'list' and 'list'
+
+common\assertions.py:65: TypeError
+
+During handling of the above exception, another exception occurred:
+
+    @pytest.fixture(scope='session', autouse=True)
+    @allure.story("登录")
+    def system_login():
+        try:
+            api_info = get_testcase_yaml('./data/loginName.yaml')
+            RequestBase().specification_yaml(api_info[0][0], api_info[0][1])
+        except Exception as e:
+            logs.error(f'登录接口出现异常，导致后续接口无法继续运行，请检查程序！，{e}')
+&gt;           exit()
+
+testcase\conftest.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = Use exit() or Ctrl-Z plus Return to exit, code = None
+
+    def __call__(self, code=None):
+        # Shells like IDLE catch the SystemExit, but listen when their
+        # stdin wrapper is closed.
+        try:
+            sys.stdin.close()
+        except:
+            pass
+&gt;       raise SystemExit(code)
+E       SystemExit: None
+
+C:\Users\86135\AppData\Local\Programs\Python\Python39\lib\_sitebuiltins.py:26: SystemExit</error></testcase><testcase classname="testcase.Single interface.test_debug_api.TestUserManager" name="test_delete_user[base_info2-testcase2]" time="0.051"><error message="failed on setup with &quot;SystemExit: None&quot;">@pytest.fixture(scope='session', autouse=True)
+    @allure.story("登录")
+    def system_login():
+        try:
+            api_info = get_testcase_yaml('./data/loginName.yaml')
+&gt;           RequestBase().specification_yaml(api_info[0][0], api_info[0][1])
+
+testcase\conftest.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+base\apiutil.py:118: in specification_yaml
+    raise e
+base\apiutil.py:115: in specification_yaml
+    raise e
+base\apiutil.py:109: in specification_yaml
+    self.asserts.assert_result(validation, res_json, status_code)
+common\assertions.py:197: in assert_result
+    raise exceptions
+common\assertions.py:181: in assert_result
+    flag = self.equal_assert(value, response)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = &lt;pythonproject.common.assertions.Assertions object at 0x0000023CBC2BBAC0&gt;
+expected_results = {'msg': '登录成功'}
+actual_results = {'error_code': None, 'msg': '登录成功', 'msg_code': 200, 'orgId': '6140913758128971280', ...}
+statuc_code = None
+
+    def equal_assert(self, expected_results, actual_results, statuc_code=None):
+        """
+        相等断言模式
+        :param expected_results: 预期结果，yaml文件validation值
+        :param actual_results: 接口实际响应结果
+        :return:
+        """
+        flag = 0
+        if isinstance(actual_results, dict) and isinstance(expected_results, dict):
+            # 找出实际结果与预期结果共同的key
+&gt;           common_keys = list(list(expected_results.keys()) &amp; list(actual_results.keys()))[0]
+E           TypeError: unsupported operand type(s) for &amp;: 'list' and 'list'
+
+common\assertions.py:65: TypeError
+
+During handling of the above exception, another exception occurred:
+
+    @pytest.fixture(scope='session', autouse=True)
+    @allure.story("登录")
+    def system_login():
+        try:
+            api_info = get_testcase_yaml('./data/loginName.yaml')
+            RequestBase().specification_yaml(api_info[0][0], api_info[0][1])
+        except Exception as e:
+            logs.error(f'登录接口出现异常，导致后续接口无法继续运行，请检查程序！，{e}')
+&gt;           exit()
+
+testcase\conftest.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = Use exit() or Ctrl-Z plus Return to exit, code = None
+
+    def __call__(self, code=None):
+        # Shells like IDLE catch the SystemExit, but listen when their
+        # stdin wrapper is closed.
+        try:
+            sys.stdin.close()
+        except:
+            pass
+&gt;       raise SystemExit(code)
+E       SystemExit: None
+
+C:\Users\86135\AppData\Local\Programs\Python\Python39\lib\_sitebuiltins.py:26: SystemExit</error></testcase><testcase classname="testcase.Single interface.test_debug_api.TestUserManager" name="test_delete_user[base_info3-testcase3]" time="0.033"><error message="failed on setup with &quot;SystemExit: None&quot;">@pytest.fixture(scope='session', autouse=True)
+    @allure.story("登录")
+    def system_login():
+        try:
+            api_info = get_testcase_yaml('./data/loginName.yaml')
+&gt;           RequestBase().specification_yaml(api_info[0][0], api_info[0][1])
+
+testcase\conftest.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+base\apiutil.py:118: in specification_yaml
+    raise e
+base\apiutil.py:115: in specification_yaml
+    raise e
+base\apiutil.py:109: in specification_yaml
+    self.asserts.assert_result(validation, res_json, status_code)
+common\assertions.py:197: in assert_result
+    raise exceptions
+common\assertions.py:181: in assert_result
+    flag = self.equal_assert(value, response)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = &lt;pythonproject.common.assertions.Assertions object at 0x0000023CBC3AF610&gt;
+expected_results = {'msg': '登录成功'}
+actual_results = {'error_code': None, 'msg': '登录成功', 'msg_code': 200, 'orgId': '6140913758128971280', ...}
+statuc_code = None
+
+    def equal_assert(self, expected_results, actual_results, statuc_code=None):
+        """
+        相等断言模式
+        :param expected_results: 预期结果，yaml文件validation值
+        :param actual_results: 接口实际响应结果
+        :return:
+        """
+        flag = 0
+        if isinstance(actual_results, dict) and isinstance(expected_results, dict):
+            # 找出实际结果与预期结果共同的key
+&gt;           common_keys = list(list(expected_results.keys()) &amp; list(actual_results.keys()))[0]
+E           TypeError: unsupported operand type(s) for &amp;: 'list' and 'list'
+
+common\assertions.py:65: TypeError
+
+During handling of the above exception, another exception occurred:
+
+    @pytest.fixture(scope='session', autouse=True)
+    @allure.story("登录")
+    def system_login():
+        try:
+            api_info = get_testcase_yaml('./data/loginName.yaml')
+            RequestBase().specification_yaml(api_info[0][0], api_info[0][1])
+        except Exception as e:
+            logs.error(f'登录接口出现异常，导致后续接口无法继续运行，请检查程序！，{e}')
+&gt;           exit()
+
+testcase\conftest.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = Use exit() or Ctrl-Z plus Return to exit, code = None
+
+    def __call__(self, code=None):
+        # Shells like IDLE catch the SystemExit, but listen when their
+        # stdin wrapper is closed.
+        try:
+            sys.stdin.close()
+        except:
+            pass
+&gt;       raise SystemExit(code)
+E       SystemExit: None
+
+C:\Users\86135\AppData\Local\Programs\Python\Python39\lib\_sitebuiltins.py:26: SystemExit</error></testcase><testcase classname="testcase.Single interface.test_debug_api.TestUserManager" name="test_query_user[base_info0-testcase0]" time="0.039"><error message="failed on setup with &quot;SystemExit: None&quot;">@pytest.fixture(scope='session', autouse=True)
+    @allure.story("登录")
+    def system_login():
+        try:
+            api_info = get_testcase_yaml('./data/loginName.yaml')
+&gt;           RequestBase().specification_yaml(api_info[0][0], api_info[0][1])
+
+testcase\conftest.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+base\apiutil.py:118: in specification_yaml
+    raise e
+base\apiutil.py:115: in specification_yaml
+    raise e
+base\apiutil.py:109: in specification_yaml
+    self.asserts.assert_result(validation, res_json, status_code)
+common\assertions.py:197: in assert_result
+    raise exceptions
+common\assertions.py:181: in assert_result
+    flag = self.equal_assert(value, response)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = &lt;pythonproject.common.assertions.Assertions object at 0x0000023CBC2EA970&gt;
+expected_results = {'msg': '登录成功'}
+actual_results = {'error_code': None, 'msg': '登录成功', 'msg_code': 200, 'orgId': '6140913758128971280', ...}
+statuc_code = None
+
+    def equal_assert(self, expected_results, actual_results, statuc_code=None):
+        """
+        相等断言模式
+        :param expected_results: 预期结果，yaml文件validation值
+        :param actual_results: 接口实际响应结果
+        :return:
+        """
+        flag = 0
+        if isinstance(actual_results, dict) and isinstance(expected_results, dict):
+            # 找出实际结果与预期结果共同的key
+&gt;           common_keys = list(list(expected_results.keys()) &amp; list(actual_results.keys()))[0]
+E           TypeError: unsupported operand type(s) for &amp;: 'list' and 'list'
+
+common\assertions.py:65: TypeError
+
+During handling of the above exception, another exception occurred:
+
+    @pytest.fixture(scope='session', autouse=True)
+    @allure.story("登录")
+    def system_login():
+        try:
+            api_info = get_testcase_yaml('./data/loginName.yaml')
+            RequestBase().specification_yaml(api_info[0][0], api_info[0][1])
+        except Exception as e:
+            logs.error(f'登录接口出现异常，导致后续接口无法继续运行，请检查程序！，{e}')
+&gt;           exit()
+
+testcase\conftest.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = Use exit() or Ctrl-Z plus Return to exit, code = None
+
+    def __call__(self, code=None):
+        # Shells like IDLE catch the SystemExit, but listen when their
+        # stdin wrapper is closed.
+        try:
+            sys.stdin.close()
+        except:
+            pass
+&gt;       raise SystemExit(code)
+E       SystemExit: None
+
+C:\Users\86135\AppData\Local\Programs\Python\Python39\lib\_sitebuiltins.py:26: SystemExit</error></testcase></testsuite></testsuites>

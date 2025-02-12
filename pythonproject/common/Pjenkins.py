@@ -1,8 +1,10 @@
+from __future__ import print_function
+from builtins import object
 import json
 import re
 
 import jenkins
-from conf.operationConfig import OperationConfig
+from pythonproject.conf.operationConfig import OperationConfig
 
 
 class PJenkins(object):

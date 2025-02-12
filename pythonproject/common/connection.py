@@ -1,3 +1,7 @@
+from __future__ import print_function
+from builtins import str
+from builtins import zip
+from builtins import object
 import traceback
 
 import clickhouse_sqlalchemy
@@ -9,14 +13,14 @@ import paramiko
 import pandas as pd
 from clickhouse_sqlalchemy import make_session, exceptions
 from sqlalchemy import create_engine
-from conf.operationConfig import OperationConfig
-from common.recordlog import logs
+from pythonproject.conf.operationConfig import OperationConfig
+from pythonproject.common.recordlog import logs
 from common.two_dimension_data import print_table
 
 conf = OperationConfig()
 
 
-class ConnectMysql:
+class ConnectMysql(object):
 
     def __init__(self):
 
@@ -88,7 +92,7 @@ class ConnectMysql:
             self.close()
 
 
-class ConnectRedis:
+class ConnectRedis(object):
 
     def __init__(self, ip=conf.get_section_redis("host"), port=conf.get_section_redis("port"), username=None,
                  passwd=None, db=conf.get_section_redis("db")):
@@ -148,7 +152,7 @@ class ConnectRedis:
             logs.error(str(traceback.format_exc()))
 
 
-class ConnectClickHouse:
+class ConnectClickHouse(object):
     """
     clickhouse有两个端口，8123和9000,分别用于接收 http协议和tcp协议请求，管理后台登录用的8123(jdbc连接)，
     而程序连接clickhouse(driver连接)则需要使用9000端口。如果在程序中使用8123端口连接就会报错
@@ -185,7 +189,7 @@ class ConnectClickHouse:
         cursor = self.session.execute(sql)
         try:
             fields = cursor._metadata.keys
-            df = pd.DataFrame([dict(zip(fields, item)) for item in cursor.fetchall()])
+            df = pd.DataFrame([dict(list(zip(fields, item))) for item in cursor.fetchall()])
             return df
         except clickhouse_sqlalchemy.exceptions.DatabaseException:
             logs.error('SQL语法错误，请检查SQL语句')
@@ -357,6 +361,6 @@ class ConnectSSH(object):
         return content
 
 
-class ConnectOracle:
+class ConnectOracle(object):
     def __init__(self):
         pass

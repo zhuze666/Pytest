@@ -1,6 +1,7 @@
+from builtins import object
 import sys
 
-from conf import setting
+from pythonproject.conf import setting
 import logging
 import os
 import time
@@ -12,7 +13,7 @@ if not os.path.exists(log_path): os.mkdir(log_path)
 logfile_name = log_path + r"\test.{}.log".format(time.strftime("%Y%m%d"))
 
 
-class RecordLog:
+class RecordLog(object):
     """日志模块"""
 
     def __init__(self):

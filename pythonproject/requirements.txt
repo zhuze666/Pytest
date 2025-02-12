@@ -14,3 +14,7 @@ requests
 SQLAlchemy
 urllib3
 faker
+xlrd==2.0.1
+xlwt
+xlutils
+jenkins
