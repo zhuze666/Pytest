@@ -1,0 +1,851 @@
+INFO - 2025-02-28 08:57:52,382 - sendrequest.py:160 -[sendrequest:run_main] - 接口名称：用户登录
+INFO - 2025-02-28 08:57:52,383 - sendrequest.py:161 -[sendrequest:run_main] - 请求地址：http://127.0.0.1:8787/dar/user/login
+INFO - 2025-02-28 08:57:52,383 - sendrequest.py:162 -[sendrequest:run_main] - 请求方式：post
+INFO - 2025-02-28 08:57:52,383 - sendrequest.py:163 -[sendrequest:run_main] - 测试用例名称：用户名和密码正确登录验证
+INFO - 2025-02-28 08:57:52,384 - sendrequest.py:164 -[sendrequest:run_main] - 请求头：{'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
+INFO - 2025-02-28 08:57:52,385 - sendrequest.py:165 -[sendrequest:run_main] - Cookie：None
+INFO - 2025-02-28 08:57:52,386 - sendrequest.py:170 -[sendrequest:run_main] - 请求参数：{'data': {'user_name': 'test01', 'passwd': 'admin123'}}
+INFO - 2025-02-28 08:57:52,405 - sendrequest.py:128 -[sendrequest:send_request] - cookie：{'Cookie': {'access_token_cookie': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc0MDcwNDI3MiwianRpIjoiZWE4ZTNjOWQtNmUxNy00YzNlLTgyN2ItOGFmYTMzYzJiMDlmIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImV4YW1wbGVfdXNlciIsIm5iZiI6MTc0MDcwNDI3MiwiZXhwIjoxNzQwNzA1MTcyfQ.8yuOPyn4OK7EV_rM4dhw5ssYShcTZf-llppXYQUsJ8Y'}}
+INFO - 2025-02-28 08:57:52,405 - sendrequest.py:129 -[sendrequest:send_request] - 接口返回信息：{"error_code":null,"msg":"登录成功","msg_code":200,"orgId":"4140913758110176843","token":"a965AAf24e947D57a5cC0CFB98fE1","userId":"1516442349302372272"}
+
+INFO - 2025-02-28 08:57:52,407 - apiutil.py:166 -[apiutil:extract_data] - 提取接口的返回值：
+INFO - 2025-02-28 08:57:52,409 - assertions.py:197 -[assertions:assert_result] - yaml文件预期结果：[{'contains': {'error_code': 'none'}}, {'eq': {'msg': '登录成功'}}]
+INFO - 2025-02-28 08:57:52,410 - assertions.py:60 -[assertions:contains_assert] - 字符串包含断言成功：预期结果【None】,实际结果【[None]】
+ERROR - 2025-02-28 08:57:52,411 - assertions.py:227 -[assertions:assert_result] - 接口断言异常，请检查yaml预期结果值是否正确填写!
+INFO - 2025-02-28 08:57:52,411 - assertions.py:232 -[assertions:assert_result] - 测试成功
+INFO - 2025-02-28 08:57:52,412 - conftest.py:20 -[conftest:start_test_and_end] - -------------接口测试开始--------------
+INFO - 2025-02-28 08:57:52,426 - sendrequest.py:160 -[sendrequest:run_main] - 接口名称：新增用户
+INFO - 2025-02-28 08:57:52,426 - sendrequest.py:161 -[sendrequest:run_main] - 请求地址：http://127.0.0.1:8787/dar/user/addUser
+INFO - 2025-02-28 08:57:52,426 - sendrequest.py:162 -[sendrequest:run_main] - 请求方式：POST
+INFO - 2025-02-28 08:57:52,426 - sendrequest.py:163 -[sendrequest:run_main] - 测试用例名称：正常新增用户
+INFO - 2025-02-28 08:57:52,426 - sendrequest.py:164 -[sendrequest:run_main] - 请求头：{'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
+INFO - 2025-02-28 08:57:52,426 - sendrequest.py:165 -[sendrequest:run_main] - Cookie：None
+INFO - 2025-02-28 08:57:52,427 - sendrequest.py:170 -[sendrequest:run_main] - 请求参数：{'data': {'username': 'testadduser1', 'password': 'test6789890', 'role_id': 123451789, 'dates': '2023-12-31', 'phone': 13800100000, 'token': 'a965AAf24e947D57a5cC0CFB98fE1'}}
+INFO - 2025-02-28 08:57:52,432 - sendrequest.py:129 -[sendrequest:send_request] - 接口返回信息：{"error_code":null,"msg":"新增成功","msg_code":200}
+
+INFO - 2025-02-28 08:57:52,433 - assertions.py:197 -[assertions:assert_result] - yaml文件预期结果：[{'contains': {'status_code': 200}}, {'contains': {'msg': '新增成功'}}]
+INFO - 2025-02-28 08:57:52,434 - assertions.py:60 -[assertions:contains_assert] - 字符串包含断言成功：预期结果【新增成功】,实际结果【新增成功】
+INFO - 2025-02-28 08:57:52,434 - assertions.py:232 -[assertions:assert_result] - 测试成功
+INFO - 2025-02-28 08:57:53,406 - conftest.py:22 -[conftest:start_test_and_end] - -------------接口测试结束--------------
+INFO - 2025-02-28 08:57:53,411 - conftest.py:20 -[conftest:start_test_and_end] - -------------接口测试开始--------------
+INFO - 2025-02-28 08:57:53,422 - sendrequest.py:160 -[sendrequest:run_main] - 接口名称：新增用户
+INFO - 2025-02-28 08:57:53,423 - sendrequest.py:161 -[sendrequest:run_main] - 请求地址：http://127.0.0.1:8787/dar/user/addUser
+INFO - 2025-02-28 08:57:53,423 - sendrequest.py:162 -[sendrequest:run_main] - 请求方式：POST
+INFO - 2025-02-28 08:57:53,423 - sendrequest.py:163 -[sendrequest:run_main] - 测试用例名称：无效新增·缺少token
+INFO - 2025-02-28 08:57:53,423 - sendrequest.py:164 -[sendrequest:run_main] - 请求头：{'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
+INFO - 2025-02-28 08:57:53,423 - sendrequest.py:165 -[sendrequest:run_main] - Cookie：None
+INFO - 2025-02-28 08:57:53,424 - sendrequest.py:170 -[sendrequest:run_main] - 请求参数：{'data': {'username': 'testadduser03', 'password': 'tset6789892', 'role_id': 123456782, 'dates': '2023-12-31', 'phone': 13800000002, 'token': None}}
+INFO - 2025-02-28 08:57:53,439 - sendrequest.py:129 -[sendrequest:send_request] - 接口返回信息：{"msg":"新增失败，参数缺失或token失效","msg_code":9001}
+
+INFO - 2025-02-28 08:57:53,440 - assertions.py:197 -[assertions:assert_result] - yaml文件预期结果：[{'contains': {'status_code': 200}}, {'contains': {'msg': '新增失败'}}]
+INFO - 2025-02-28 08:57:53,441 - assertions.py:60 -[assertions:contains_assert] - 字符串包含断言成功：预期结果【新增失败】,实际结果【新增失败，参数缺失或token失效】
+INFO - 2025-02-28 08:57:53,441 - assertions.py:232 -[assertions:assert_result] - 测试成功
+INFO - 2025-02-28 08:57:53,454 - conftest.py:22 -[conftest:start_test_and_end] - -------------接口测试结束--------------
+INFO - 2025-02-28 08:57:53,458 - conftest.py:20 -[conftest:start_test_and_end] - -------------接口测试开始--------------
+INFO - 2025-02-28 08:57:53,468 - sendrequest.py:160 -[sendrequest:run_main] - 接口名称：新增用户
+INFO - 2025-02-28 08:57:53,468 - sendrequest.py:161 -[sendrequest:run_main] - 请求地址：http://127.0.0.1:8787/dar/user/addUser
+INFO - 2025-02-28 08:57:53,469 - sendrequest.py:162 -[sendrequest:run_main] - 请求方式：POST
+INFO - 2025-02-28 08:57:53,469 - sendrequest.py:163 -[sendrequest:run_main] - 测试用例名称：无效新增·缺少必填参数role_id
+INFO - 2025-02-28 08:57:53,469 - sendrequest.py:164 -[sendrequest:run_main] - 请求头：{'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
+INFO - 2025-02-28 08:57:53,469 - sendrequest.py:165 -[sendrequest:run_main] - Cookie：None
+INFO - 2025-02-28 08:57:53,470 - sendrequest.py:170 -[sendrequest:run_main] - 请求参数：{'data': {'username': 'testadduser4', 'password': 'tset6789894', 'dates': '2023-12-31', 'phone': 13800000004, 'token': 'a965AAf24e947D57a5cC0CFB98fE1'}}
+INFO - 2025-02-28 08:57:53,474 - sendrequest.py:129 -[sendrequest:send_request] - 接口返回信息：{"msg":"新增失败，参数缺失或token失效","msg_code":9001}
+
+INFO - 2025-02-28 08:57:53,475 - assertions.py:197 -[assertions:assert_result] - yaml文件预期结果：[{'contains': {'status_code': 200}}, {'contains': {'msg': '新增失败'}}]
+INFO - 2025-02-28 08:57:53,476 - assertions.py:60 -[assertions:contains_assert] - 字符串包含断言成功：预期结果【新增失败】,实际结果【新增失败，参数缺失或token失效】
+INFO - 2025-02-28 08:57:53,476 - assertions.py:232 -[assertions:assert_result] - 测试成功
+INFO - 2025-02-28 08:57:53,488 - conftest.py:22 -[conftest:start_test_and_end] - -------------接口测试结束--------------
+INFO - 2025-02-28 08:57:53,493 - conftest.py:20 -[conftest:start_test_and_end] - -------------接口测试开始--------------
+INFO - 2025-02-28 08:57:53,504 - sendrequest.py:160 -[sendrequest:run_main] - 接口名称：新增用户
+INFO - 2025-02-28 08:57:53,504 - sendrequest.py:161 -[sendrequest:run_main] - 请求地址：http://127.0.0.1:8787/dar/user/addUser
+INFO - 2025-02-28 08:57:53,504 - sendrequest.py:162 -[sendrequest:run_main] - 请求方式：POST
+INFO - 2025-02-28 08:57:53,504 - sendrequest.py:163 -[sendrequest:run_main] - 测试用例名称：无效新增·缺少必填参数username
+INFO - 2025-02-28 08:57:53,504 - sendrequest.py:164 -[sendrequest:run_main] - 请求头：{'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
+INFO - 2025-02-28 08:57:53,504 - sendrequest.py:165 -[sendrequest:run_main] - Cookie：None
+INFO - 2025-02-28 08:57:53,505 - sendrequest.py:170 -[sendrequest:run_main] - 请求参数：{'data': {'password': 'tset6789893', 'role_id': 123456783, 'dates': '2023-12-31', 'phone': 13800000003, 'token': 'a965AAf24e947D57a5cC0CFB98fE1'}}
+INFO - 2025-02-28 08:57:53,509 - sendrequest.py:129 -[sendrequest:send_request] - 接口返回信息：{"msg":"新增失败，参数缺失或token失效","msg_code":9001}
+
+INFO - 2025-02-28 08:57:53,511 - assertions.py:197 -[assertions:assert_result] - yaml文件预期结果：[{'contains': {'status_code': 200}}, {'contains': {'msg': '新增失败'}}]
+INFO - 2025-02-28 08:57:53,511 - assertions.py:60 -[assertions:contains_assert] - 字符串包含断言成功：预期结果【新增失败】,实际结果【新增失败，参数缺失或token失效】
+INFO - 2025-02-28 08:57:53,511 - assertions.py:232 -[assertions:assert_result] - 测试成功
+INFO - 2025-02-28 08:57:53,523 - conftest.py:22 -[conftest:start_test_and_end] - -------------接口测试结束--------------
+INFO - 2025-02-28 09:03:35,828 - sendrequest.py:160 -[sendrequest:run_main] - 接口名称：用户登录
+INFO - 2025-02-28 09:03:35,829 - sendrequest.py:161 -[sendrequest:run_main] - 请求地址：http://127.0.0.1:8787/dar/user/login
+INFO - 2025-02-28 09:03:35,829 - sendrequest.py:162 -[sendrequest:run_main] - 请求方式：post
+INFO - 2025-02-28 09:03:35,829 - sendrequest.py:163 -[sendrequest:run_main] - 测试用例名称：用户名和密码正确登录验证
+INFO - 2025-02-28 09:03:35,829 - sendrequest.py:164 -[sendrequest:run_main] - 请求头：{'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
+INFO - 2025-02-28 09:03:35,829 - sendrequest.py:165 -[sendrequest:run_main] - Cookie：None
+INFO - 2025-02-28 09:03:35,830 - sendrequest.py:170 -[sendrequest:run_main] - 请求参数：{'data': {'user_name': 'test01', 'passwd': 'admin123'}}
+INFO - 2025-02-28 09:03:35,839 - sendrequest.py:128 -[sendrequest:send_request] - cookie：{'Cookie': {'access_token_cookie': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc0MDcwNDYxNSwianRpIjoiYmU1ZjI5MmMtYzRhYi00ZjJlLTg2NjQtZmY4ZGUxMGIzZjdiIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImV4YW1wbGVfdXNlciIsIm5iZiI6MTc0MDcwNDYxNSwiZXhwIjoxNzQwNzA1NTE1fQ.436Lx4Za-RenbykmWKBbBARx8E94pLnnIv42tG_FI-E'}}
+INFO - 2025-02-28 09:03:35,839 - sendrequest.py:129 -[sendrequest:send_request] - 接口返回信息：{"error_code":null,"msg":"登录成功","msg_code":200,"orgId":"4140913758110176843","token":"dE945F9A30866f49A93A85Bb6Ef55","userId":"1516442349302372272"}
+
+INFO - 2025-02-28 09:03:35,841 - apiutil.py:166 -[apiutil:extract_data] - 提取接口的返回值：
+INFO - 2025-02-28 09:03:35,842 - assertions.py:197 -[assertions:assert_result] - yaml文件预期结果：[{'contains': {'error_code': 'none'}}, {'eq': {'msg': '登录成功'}}]
+INFO - 2025-02-28 09:03:35,842 - assertions.py:60 -[assertions:contains_assert] - 字符串包含断言成功：预期结果【None】,实际结果【[None]】
+ERROR - 2025-02-28 09:03:35,843 - assertions.py:227 -[assertions:assert_result] - 接口断言异常，请检查yaml预期结果值是否正确填写!
+INFO - 2025-02-28 09:03:35,843 - assertions.py:232 -[assertions:assert_result] - 测试成功
+INFO - 2025-02-28 09:03:35,843 - conftest.py:20 -[conftest:start_test_and_end] - -------------接口测试开始--------------
+INFO - 2025-02-28 09:03:35,855 - sendrequest.py:160 -[sendrequest:run_main] - 接口名称：新增用户
+INFO - 2025-02-28 09:03:35,855 - sendrequest.py:161 -[sendrequest:run_main] - 请求地址：http://127.0.0.1:8787/dar/user/addUser
+INFO - 2025-02-28 09:03:35,855 - sendrequest.py:162 -[sendrequest:run_main] - 请求方式：POST
+INFO - 2025-02-28 09:03:35,856 - sendrequest.py:163 -[sendrequest:run_main] - 测试用例名称：正常新增用户
+INFO - 2025-02-28 09:03:35,856 - sendrequest.py:164 -[sendrequest:run_main] - 请求头：{'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
+INFO - 2025-02-28 09:03:35,856 - sendrequest.py:165 -[sendrequest:run_main] - Cookie：None
+INFO - 2025-02-28 09:03:35,857 - sendrequest.py:170 -[sendrequest:run_main] - 请求参数：{'data': {'username': 'testadduser1', 'password': 'test6789890', 'role_id': 123451789, 'dates': '2023-12-31', 'phone': 13800100000, 'token': 'dE945F9A30866f49A93A85Bb6Ef55'}}
+INFO - 2025-02-28 09:03:35,871 - sendrequest.py:129 -[sendrequest:send_request] - 接口返回信息：{"error_code":null,"msg":"新增成功","msg_code":200}
+
+INFO - 2025-02-28 09:03:35,873 - assertions.py:197 -[assertions:assert_result] - yaml文件预期结果：[{'contains': {'status_code': 200}}, {'contains': {'msg': '新增成功'}}]
+INFO - 2025-02-28 09:03:35,873 - assertions.py:60 -[assertions:contains_assert] - 字符串包含断言成功：预期结果【新增成功】,实际结果【新增成功】
+INFO - 2025-02-28 09:03:35,873 - assertions.py:232 -[assertions:assert_result] - 测试成功
+INFO - 2025-02-28 09:03:35,883 - conftest.py:22 -[conftest:start_test_and_end] - -------------接口测试结束--------------
+INFO - 2025-02-28 09:03:35,888 - conftest.py:20 -[conftest:start_test_and_end] - -------------接口测试开始--------------
+INFO - 2025-02-28 09:03:35,895 - sendrequest.py:160 -[sendrequest:run_main] - 接口名称：新增用户
+INFO - 2025-02-28 09:03:35,895 - sendrequest.py:161 -[sendrequest:run_main] - 请求地址：http://127.0.0.1:8787/dar/user/addUser
+INFO - 2025-02-28 09:03:35,895 - sendrequest.py:162 -[sendrequest:run_main] - 请求方式：POST
+INFO - 2025-02-28 09:03:35,895 - sendrequest.py:163 -[sendrequest:run_main] - 测试用例名称：无效新增·缺少token
+INFO - 2025-02-28 09:03:35,895 - sendrequest.py:164 -[sendrequest:run_main] - 请求头：{'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
+INFO - 2025-02-28 09:03:35,895 - sendrequest.py:165 -[sendrequest:run_main] - Cookie：None
+INFO - 2025-02-28 09:03:35,896 - sendrequest.py:170 -[sendrequest:run_main] - 请求参数：{'data': {'username': 'testadduser03', 'password': 'tset6789892', 'role_id': 123456782, 'dates': '2023-12-31', 'phone': 13800000002, 'token': None}}
+INFO - 2025-02-28 09:03:35,920 - sendrequest.py:129 -[sendrequest:send_request] - 接口返回信息：{"msg":"新增失败，参数缺失或token失效","msg_code":9001}
+
+INFO - 2025-02-28 09:03:35,922 - assertions.py:197 -[assertions:assert_result] - yaml文件预期结果：[{'contains': {'status_code': 200}}, {'contains': {'msg': '新增失败'}}]
+INFO - 2025-02-28 09:03:35,922 - assertions.py:60 -[assertions:contains_assert] - 字符串包含断言成功：预期结果【新增失败】,实际结果【新增失败，参数缺失或token失效】
+INFO - 2025-02-28 09:03:35,922 - assertions.py:232 -[assertions:assert_result] - 测试成功
+INFO - 2025-02-28 09:03:35,925 - conftest.py:22 -[conftest:start_test_and_end] - -------------接口测试结束--------------
+INFO - 2025-02-28 09:03:35,929 - conftest.py:20 -[conftest:start_test_and_end] - -------------接口测试开始--------------
+INFO - 2025-02-28 09:03:35,938 - sendrequest.py:160 -[sendrequest:run_main] - 接口名称：新增用户
+INFO - 2025-02-28 09:03:35,939 - sendrequest.py:161 -[sendrequest:run_main] - 请求地址：http://127.0.0.1:8787/dar/user/addUser
+INFO - 2025-02-28 09:03:35,939 - sendrequest.py:162 -[sendrequest:run_main] - 请求方式：POST
+INFO - 2025-02-28 09:03:35,939 - sendrequest.py:163 -[sendrequest:run_main] - 测试用例名称：无效新增·缺少必填参数role_id
+INFO - 2025-02-28 09:03:35,939 - sendrequest.py:164 -[sendrequest:run_main] - 请求头：{'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
+INFO - 2025-02-28 09:03:35,939 - sendrequest.py:165 -[sendrequest:run_main] - Cookie：None
+INFO - 2025-02-28 09:03:35,940 - sendrequest.py:170 -[sendrequest:run_main] - 请求参数：{'data': {'username': 'testadduser4', 'password': 'tset6789894', 'dates': '2023-12-31', 'phone': 13800000004, 'token': 'dE945F9A30866f49A93A85Bb6Ef55'}}
+INFO - 2025-02-28 09:03:35,967 - sendrequest.py:129 -[sendrequest:send_request] - 接口返回信息：{"msg":"新增失败，参数缺失或token失效","msg_code":9001}
+
+INFO - 2025-02-28 09:03:35,968 - assertions.py:197 -[assertions:assert_result] - yaml文件预期结果：[{'contains': {'status_code': 200}}, {'contains': {'msg': '新增失败'}}]
+INFO - 2025-02-28 09:03:35,968 - assertions.py:60 -[assertions:contains_assert] - 字符串包含断言成功：预期结果【新增失败】,实际结果【新增失败，参数缺失或token失效】
+INFO - 2025-02-28 09:03:35,968 - assertions.py:232 -[assertions:assert_result] - 测试成功
+INFO - 2025-02-28 09:03:35,972 - conftest.py:22 -[conftest:start_test_and_end] - -------------接口测试结束--------------
+INFO - 2025-02-28 09:03:35,976 - conftest.py:20 -[conftest:start_test_and_end] - -------------接口测试开始--------------
+INFO - 2025-02-28 09:03:35,986 - sendrequest.py:160 -[sendrequest:run_main] - 接口名称：新增用户
+INFO - 2025-02-28 09:03:35,986 - sendrequest.py:161 -[sendrequest:run_main] - 请求地址：http://127.0.0.1:8787/dar/user/addUser
+INFO - 2025-02-28 09:03:35,986 - sendrequest.py:162 -[sendrequest:run_main] - 请求方式：POST
+INFO - 2025-02-28 09:03:35,986 - sendrequest.py:163 -[sendrequest:run_main] - 测试用例名称：无效新增·缺少必填参数username
+INFO - 2025-02-28 09:03:35,986 - sendrequest.py:164 -[sendrequest:run_main] - 请求头：{'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
+INFO - 2025-02-28 09:03:35,986 - sendrequest.py:165 -[sendrequest:run_main] - Cookie：None
+INFO - 2025-02-28 09:03:35,987 - sendrequest.py:170 -[sendrequest:run_main] - 请求参数：{'data': {'password': 'tset6789893', 'role_id': 123456783, 'dates': '2023-12-31', 'phone': 13800000003, 'token': 'dE945F9A30866f49A93A85Bb6Ef55'}}
+INFO - 2025-02-28 09:03:36,014 - sendrequest.py:129 -[sendrequest:send_request] - 接口返回信息：{"msg":"新增失败，参数缺失或token失效","msg_code":9001}
+
+INFO - 2025-02-28 09:03:36,015 - assertions.py:197 -[assertions:assert_result] - yaml文件预期结果：[{'contains': {'status_code': 200}}, {'contains': {'msg': '新增失败'}}]
+INFO - 2025-02-28 09:03:36,016 - assertions.py:60 -[assertions:contains_assert] - 字符串包含断言成功：预期结果【新增失败】,实际结果【新增失败，参数缺失或token失效】
+INFO - 2025-02-28 09:03:36,016 - assertions.py:232 -[assertions:assert_result] - 测试成功
+INFO - 2025-02-28 09:03:36,018 - conftest.py:22 -[conftest:start_test_and_end] - -------------接口测试结束--------------
+INFO - 2025-02-28 09:41:30,302 - sendrequest.py:160 -[sendrequest:run_main] - 接口名称：用户登录
+INFO - 2025-02-28 09:41:30,302 - sendrequest.py:161 -[sendrequest:run_main] - 请求地址：http://127.0.0.1:8787/dar/user/login
+INFO - 2025-02-28 09:41:30,302 - sendrequest.py:162 -[sendrequest:run_main] - 请求方式：post
+INFO - 2025-02-28 09:41:30,303 - sendrequest.py:163 -[sendrequest:run_main] - 测试用例名称：用户名和密码正确登录验证
+INFO - 2025-02-28 09:41:30,303 - sendrequest.py:164 -[sendrequest:run_main] - 请求头：{'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
+INFO - 2025-02-28 09:41:30,303 - sendrequest.py:165 -[sendrequest:run_main] - Cookie：None
+INFO - 2025-02-28 09:41:30,304 - sendrequest.py:170 -[sendrequest:run_main] - 请求参数：{'data': {'user_name': 'test01', 'passwd': 'admin123'}}
+INFO - 2025-02-28 09:41:30,314 - sendrequest.py:128 -[sendrequest:send_request] - cookie：{'Cookie': {'access_token_cookie': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc0MDcwNjg5MCwianRpIjoiZDYzNzAyMzctMWVmMi00NzRhLTkzOGMtODAzN2VhMDlkZTdhIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImV4YW1wbGVfdXNlciIsIm5iZiI6MTc0MDcwNjg5MCwiZXhwIjoxNzQwNzA3NzkwfQ.XfGXWZAaGc2yqI6b1zRdrd-fCG6P7K8SS5l2oTuDgEs'}}
+INFO - 2025-02-28 09:41:30,314 - sendrequest.py:129 -[sendrequest:send_request] - 接口返回信息：{"error_code":null,"msg":"登录成功","msg_code":200,"orgId":"6140913758128971280","token":"8Dc89D163DA943BCeE204c9FcAe3A","userId":"1516442349302372272"}
+
+INFO - 2025-02-28 09:41:30,316 - apiutil.py:166 -[apiutil:extract_data] - 提取接口的返回值：
+INFO - 2025-02-28 09:41:30,317 - assertions.py:197 -[assertions:assert_result] - yaml文件预期结果：[{'contains': {'error_code': 'none'}}, {'eq': {'msg': '登录成功'}}]
+INFO - 2025-02-28 09:41:30,318 - assertions.py:60 -[assertions:contains_assert] - 字符串包含断言成功：预期结果【None】,实际结果【[None]】
+ERROR - 2025-02-28 09:41:30,318 - assertions.py:227 -[assertions:assert_result] - 接口断言异常，请检查yaml预期结果值是否正确填写!
+INFO - 2025-02-28 09:41:30,318 - assertions.py:232 -[assertions:assert_result] - 测试成功
+INFO - 2025-02-28 09:41:30,319 - conftest.py:20 -[conftest:start_test_and_end] - -------------接口测试开始--------------
+INFO - 2025-02-28 09:41:31,277 - conftest.py:22 -[conftest:start_test_and_end] - -------------接口测试结束--------------
+INFO - 2025-02-28 09:41:31,282 - conftest.py:20 -[conftest:start_test_and_end] - -------------接口测试开始--------------
+INFO - 2025-02-28 09:41:31,295 - conftest.py:22 -[conftest:start_test_and_end] - -------------接口测试结束--------------
+INFO - 2025-02-28 09:41:31,299 - conftest.py:20 -[conftest:start_test_and_end] - -------------接口测试开始--------------
+INFO - 2025-02-28 09:41:31,315 - conftest.py:22 -[conftest:start_test_and_end] - -------------接口测试结束--------------
+INFO - 2025-02-28 09:41:31,319 - conftest.py:20 -[conftest:start_test_and_end] - -------------接口测试开始--------------
+INFO - 2025-02-28 09:41:31,333 - conftest.py:22 -[conftest:start_test_and_end] - -------------接口测试结束--------------
+INFO - 2025-02-28 10:01:13,996 - sendrequest.py:160 -[sendrequest:run_main] - 接口名称：用户登录
+INFO - 2025-02-28 10:01:13,996 - sendrequest.py:161 -[sendrequest:run_main] - 请求地址：http://127.0.0.1:8787/dar/user/login
+INFO - 2025-02-28 10:01:13,996 - sendrequest.py:162 -[sendrequest:run_main] - 请求方式：post
+INFO - 2025-02-28 10:01:13,996 - sendrequest.py:163 -[sendrequest:run_main] - 测试用例名称：用户名和密码正确登录验证
+INFO - 2025-02-28 10:01:13,996 - sendrequest.py:164 -[sendrequest:run_main] - 请求头：{'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
+INFO - 2025-02-28 10:01:13,997 - sendrequest.py:165 -[sendrequest:run_main] - Cookie：None
+INFO - 2025-02-28 10:01:13,997 - sendrequest.py:170 -[sendrequest:run_main] - 请求参数：{'data': {'user_name': 'test01', 'passwd': 'admin123'}}
+INFO - 2025-02-28 10:01:14,006 - sendrequest.py:128 -[sendrequest:send_request] - cookie：{'Cookie': {'access_token_cookie': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc0MDcwODA3NCwianRpIjoiZjBlOGY5YmEtZWU2Ny00NGYwLTlmNzctMmVkYzRjMTdiOGM4IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImV4YW1wbGVfdXNlciIsIm5iZiI6MTc0MDcwODA3NCwiZXhwIjoxNzQwNzA4OTc0fQ.WqT5tnVRQAJku2xL-iAWbEbJE6hpSACqboNvepgQG9c'}}
+INFO - 2025-02-28 10:01:14,007 - sendrequest.py:129 -[sendrequest:send_request] - 接口返回信息：{"error_code":null,"msg":"登录成功","msg_code":200,"orgId":"4140913758110176843","token":"B8B444d2AF3Bee771ED02C8bEf33f","userId":"1516442349302372272"}
+
+INFO - 2025-02-28 10:01:14,008 - apiutil.py:166 -[apiutil:extract_data] - 提取接口的返回值：
+INFO - 2025-02-28 10:01:14,010 - assertions.py:197 -[assertions:assert_result] - yaml文件预期结果：[{'contains': {'error_code': 'none'}}, {'eq': {'msg': '登录成功'}}]
+INFO - 2025-02-28 10:01:14,010 - assertions.py:60 -[assertions:contains_assert] - 字符串包含断言成功：预期结果【None】,实际结果【[None]】
+ERROR - 2025-02-28 10:01:14,010 - assertions.py:227 -[assertions:assert_result] - 接口断言异常，请检查yaml预期结果值是否正确填写!
+INFO - 2025-02-28 10:01:14,010 - assertions.py:232 -[assertions:assert_result] - 测试成功
+INFO - 2025-02-28 10:01:14,011 - conftest.py:20 -[conftest:start_test_and_end] - -------------接口测试开始--------------
+INFO - 2025-02-28 10:01:14,021 - sendrequest.py:160 -[sendrequest:run_main] - 接口名称：新增用户
+INFO - 2025-02-28 10:01:14,021 - sendrequest.py:161 -[sendrequest:run_main] - 请求地址：http://127.0.0.1:8787/dar/user/addUser
+INFO - 2025-02-28 10:01:14,021 - sendrequest.py:162 -[sendrequest:run_main] - 请求方式：POST
+INFO - 2025-02-28 10:01:14,022 - sendrequest.py:163 -[sendrequest:run_main] - 测试用例名称：正常新增用户
+INFO - 2025-02-28 10:01:14,022 - sendrequest.py:164 -[sendrequest:run_main] - 请求头：{'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
+INFO - 2025-02-28 10:01:14,022 - sendrequest.py:165 -[sendrequest:run_main] - Cookie：None
+INFO - 2025-02-28 10:01:14,023 - sendrequest.py:170 -[sendrequest:run_main] - 请求参数：{'data': {'username': 'testadduser1', 'password': 'test6789890', 'role_id': 123451789, 'dates': '2023-12-31', 'phone': 13800100000, 'token': 'B8B444d2AF3Bee771ED02C8bEf33f'}}
+INFO - 2025-02-28 10:01:14,041 - sendrequest.py:129 -[sendrequest:send_request] - 接口返回信息：{"error_code":null,"msg":"新增成功","msg_code":200}
+
+INFO - 2025-02-28 10:01:14,043 - assertions.py:197 -[assertions:assert_result] - yaml文件预期结果：[{'contains': {'status_code': 200}}, {'contains': {'msg': '新增成功'}}]
+INFO - 2025-02-28 10:01:14,043 - assertions.py:60 -[assertions:contains_assert] - 字符串包含断言成功：预期结果【新增成功】,实际结果【新增成功】
+INFO - 2025-02-28 10:01:14,043 - assertions.py:232 -[assertions:assert_result] - 测试成功
+INFO - 2025-02-28 10:01:14,053 - conftest.py:22 -[conftest:start_test_and_end] - -------------接口测试结束--------------
+INFO - 2025-02-28 10:01:14,058 - conftest.py:20 -[conftest:start_test_and_end] - -------------接口测试开始--------------
+INFO - 2025-02-28 10:01:14,063 - sendrequest.py:160 -[sendrequest:run_main] - 接口名称：新增用户
+INFO - 2025-02-28 10:01:14,063 - sendrequest.py:161 -[sendrequest:run_main] - 请求地址：http://127.0.0.1:8787/dar/user/addUser
+INFO - 2025-02-28 10:01:14,063 - sendrequest.py:162 -[sendrequest:run_main] - 请求方式：POST
+INFO - 2025-02-28 10:01:14,063 - sendrequest.py:163 -[sendrequest:run_main] - 测试用例名称：无效新增·缺少token
+INFO - 2025-02-28 10:01:14,063 - sendrequest.py:164 -[sendrequest:run_main] - 请求头：{'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
+INFO - 2025-02-28 10:01:14,064 - sendrequest.py:165 -[sendrequest:run_main] - Cookie：None
+INFO - 2025-02-28 10:01:14,065 - sendrequest.py:170 -[sendrequest:run_main] - 请求参数：{'data': {'username': 'testadduser03', 'password': 'tset6789892', 'role_id': 123456782, 'dates': '2023-12-31', 'phone': 13800000002, 'token': None}}
+INFO - 2025-02-28 10:01:14,086 - sendrequest.py:129 -[sendrequest:send_request] - 接口返回信息：{"msg":"新增失败，参数缺失或token失效","msg_code":9001}
+
+INFO - 2025-02-28 10:01:14,087 - assertions.py:197 -[assertions:assert_result] - yaml文件预期结果：[{'contains': {'status_code': 200}}, {'contains': {'msg': '新增失败'}}]
+INFO - 2025-02-28 10:01:14,088 - assertions.py:60 -[assertions:contains_assert] - 字符串包含断言成功：预期结果【新增失败】,实际结果【新增失败，参数缺失或token失效】
+INFO - 2025-02-28 10:01:14,088 - assertions.py:232 -[assertions:assert_result] - 测试成功
+INFO - 2025-02-28 10:01:14,091 - conftest.py:22 -[conftest:start_test_and_end] - -------------接口测试结束--------------
+INFO - 2025-02-28 10:01:14,095 - conftest.py:20 -[conftest:start_test_and_end] - -------------接口测试开始--------------
+INFO - 2025-02-28 10:01:14,105 - sendrequest.py:160 -[sendrequest:run_main] - 接口名称：新增用户
+INFO - 2025-02-28 10:01:14,105 - sendrequest.py:161 -[sendrequest:run_main] - 请求地址：http://127.0.0.1:8787/dar/user/addUser
+INFO - 2025-02-28 10:01:14,105 - sendrequest.py:162 -[sendrequest:run_main] - 请求方式：POST
+INFO - 2025-02-28 10:01:14,106 - sendrequest.py:163 -[sendrequest:run_main] - 测试用例名称：无效新增·缺少必填参数role_id
+INFO - 2025-02-28 10:01:14,106 - sendrequest.py:164 -[sendrequest:run_main] - 请求头：{'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
+INFO - 2025-02-28 10:01:14,106 - sendrequest.py:165 -[sendrequest:run_main] - Cookie：None
+INFO - 2025-02-28 10:01:14,107 - sendrequest.py:170 -[sendrequest:run_main] - 请求参数：{'data': {'username': 'testadduser4', 'password': 'tset6789894', 'dates': '2023-12-31', 'phone': 13800000004, 'token': 'B8B444d2AF3Bee771ED02C8bEf33f'}}
+INFO - 2025-02-28 10:01:14,134 - sendrequest.py:129 -[sendrequest:send_request] - 接口返回信息：{"msg":"新增失败，参数缺失或token失效","msg_code":9001}
+
+INFO - 2025-02-28 10:01:14,136 - assertions.py:197 -[assertions:assert_result] - yaml文件预期结果：[{'contains': {'status_code': 200}}, {'contains': {'msg': '新增失败'}}]
+INFO - 2025-02-28 10:01:14,136 - assertions.py:60 -[assertions:contains_assert] - 字符串包含断言成功：预期结果【新增失败】,实际结果【新增失败，参数缺失或token失效】
+INFO - 2025-02-28 10:01:14,136 - assertions.py:232 -[assertions:assert_result] - 测试成功
+INFO - 2025-02-28 10:01:14,139 - conftest.py:22 -[conftest:start_test_and_end] - -------------接口测试结束--------------
+INFO - 2025-02-28 10:01:14,143 - conftest.py:20 -[conftest:start_test_and_end] - -------------接口测试开始--------------
+INFO - 2025-02-28 10:01:14,153 - sendrequest.py:160 -[sendrequest:run_main] - 接口名称：新增用户
+INFO - 2025-02-28 10:01:14,153 - sendrequest.py:161 -[sendrequest:run_main] - 请求地址：http://127.0.0.1:8787/dar/user/addUser
+INFO - 2025-02-28 10:01:14,153 - sendrequest.py:162 -[sendrequest:run_main] - 请求方式：POST
+INFO - 2025-02-28 10:01:14,153 - sendrequest.py:163 -[sendrequest:run_main] - 测试用例名称：无效新增·缺少必填参数username
+INFO - 2025-02-28 10:01:14,154 - sendrequest.py:164 -[sendrequest:run_main] - 请求头：{'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
+INFO - 2025-02-28 10:01:14,154 - sendrequest.py:165 -[sendrequest:run_main] - Cookie：None
+INFO - 2025-02-28 10:01:14,154 - sendrequest.py:170 -[sendrequest:run_main] - 请求参数：{'data': {'password': 'tset6789893', 'role_id': 123456783, 'dates': '2023-12-31', 'phone': 13800000003, 'token': 'B8B444d2AF3Bee771ED02C8bEf33f'}}
+INFO - 2025-02-28 10:01:14,182 - sendrequest.py:129 -[sendrequest:send_request] - 接口返回信息：{"msg":"新增失败，参数缺失或token失效","msg_code":9001}
+
+INFO - 2025-02-28 10:01:14,183 - assertions.py:197 -[assertions:assert_result] - yaml文件预期结果：[{'contains': {'status_code': 200}}, {'contains': {'msg': '新增失败'}}]
+INFO - 2025-02-28 10:01:14,183 - assertions.py:60 -[assertions:contains_assert] - 字符串包含断言成功：预期结果【新增失败】,实际结果【新增失败，参数缺失或token失效】
+INFO - 2025-02-28 10:01:14,183 - assertions.py:232 -[assertions:assert_result] - 测试成功
+INFO - 2025-02-28 10:01:14,187 - conftest.py:22 -[conftest:start_test_and_end] - -------------接口测试结束--------------
+ERROR - 2025-02-28 13:36:31,843 - readyaml.py:28 -[readyaml:get_testcase_yaml] - [./testcase/Single interface/addUser.yaml]文件未找到，请检查路径是否正确
+ERROR - 2025-02-28 13:37:04,505 - readyaml.py:28 -[readyaml:get_testcase_yaml] - [./testcase/Single interface/addUser.yaml]文件未找到，请检查路径是否正确
+ERROR - 2025-02-28 13:38:00,797 - readyaml.py:28 -[readyaml:get_testcase_yaml] - [./testcase/Single interface/addUser.yaml]文件未找到，请检查路径是否正确
+INFO - 2025-02-28 13:43:59,768 - sendrequest.py:160 -[sendrequest:run_main] - 接口名称：用户登录
+INFO - 2025-02-28 13:43:59,768 - sendrequest.py:161 -[sendrequest:run_main] - 请求地址：http://127.0.0.1:8787/dar/user/login
+INFO - 2025-02-28 13:43:59,769 - sendrequest.py:162 -[sendrequest:run_main] - 请求方式：post
+INFO - 2025-02-28 13:43:59,769 - sendrequest.py:163 -[sendrequest:run_main] - 测试用例名称：用户名和密码正确登录验证
+INFO - 2025-02-28 13:43:59,769 - sendrequest.py:164 -[sendrequest:run_main] - 请求头：{'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
+INFO - 2025-02-28 13:43:59,769 - sendrequest.py:165 -[sendrequest:run_main] - Cookie：None
+INFO - 2025-02-28 13:43:59,770 - sendrequest.py:170 -[sendrequest:run_main] - 请求参数：{'data': {'user_name': 'test01', 'passwd': 'admin123'}}
+INFO - 2025-02-28 13:43:59,782 - sendrequest.py:128 -[sendrequest:send_request] - cookie：{'Cookie': {'access_token_cookie': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc0MDcyMTQzOSwianRpIjoiMWQ4YjMzYWEtMjk3MC00Zjg2LTgxYmUtMTI2NGZmNzZmNTAwIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImV4YW1wbGVfdXNlciIsIm5iZiI6MTc0MDcyMTQzOSwiZXhwIjoxNzQwNzIyMzM5fQ.rNBYeW4A8oXk9o0IXa182R3Z90Iv9myfwEfmB_s4-o4'}}
+INFO - 2025-02-28 13:43:59,782 - sendrequest.py:129 -[sendrequest:send_request] - 接口返回信息：{"error_code":null,"msg":"登录成功","msg_code":200,"orgId":"6140913758128971280","token":"Fb0eDBf74B1BfBbdd6C41Ea4a7FB1","userId":"1516442349302372272"}
+
+INFO - 2025-02-28 13:43:59,785 - apiutil.py:167 -[apiutil:extract_data] - 提取接口的返回值：
+INFO - 2025-02-28 13:43:59,787 - assertions.py:197 -[assertions:assert_result] - yaml文件预期结果：[{'contains': {'error_code': 'none'}}, {'eq': {'msg': '登录成功'}}]
+INFO - 2025-02-28 13:43:59,787 - assertions.py:60 -[assertions:contains_assert] - 字符串包含断言成功：预期结果【None】,实际结果【[None]】
+ERROR - 2025-02-28 13:43:59,787 - assertions.py:227 -[assertions:assert_result] - 接口断言异常，请检查yaml预期结果值是否正确填写!
+INFO - 2025-02-28 13:43:59,788 - assertions.py:232 -[assertions:assert_result] - 测试成功
+INFO - 2025-02-28 13:43:59,788 - conftest.py:20 -[conftest:start_test_and_end] - -------------接口测试开始--------------
+INFO - 2025-02-28 13:43:59,804 - sendrequest.py:160 -[sendrequest:run_main] - 接口名称：新增用户
+INFO - 2025-02-28 13:43:59,805 - sendrequest.py:161 -[sendrequest:run_main] - 请求地址：http://127.0.0.1:8787/dar/user/addUser
+INFO - 2025-02-28 13:43:59,805 - sendrequest.py:162 -[sendrequest:run_main] - 请求方式：POST
+INFO - 2025-02-28 13:43:59,805 - sendrequest.py:163 -[sendrequest:run_main] - 测试用例名称：正常新增用户
+INFO - 2025-02-28 13:43:59,805 - sendrequest.py:164 -[sendrequest:run_main] - 请求头：{'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
+INFO - 2025-02-28 13:43:59,805 - sendrequest.py:165 -[sendrequest:run_main] - Cookie：None
+INFO - 2025-02-28 13:43:59,807 - sendrequest.py:170 -[sendrequest:run_main] - 请求参数：{'data': {'username': 'testadduser1', 'password': 'test6789890', 'role_id': 123451789, 'dates': '2023-12-31', 'phone': 13800100000, 'token': 'Fb0eDBf74B1BfBbdd6C41Ea4a7FB1'}}
+INFO - 2025-02-28 13:43:59,812 - sendrequest.py:129 -[sendrequest:send_request] - 接口返回信息：{"error_code":null,"msg":"新增成功","msg_code":200}
+
+INFO - 2025-02-28 13:43:59,813 - assertions.py:197 -[assertions:assert_result] - yaml文件预期结果：[{'contains': {'status_code': 200}}, {'contains': {'msg': '新增成功'}}]
+INFO - 2025-02-28 13:43:59,814 - assertions.py:60 -[assertions:contains_assert] - 字符串包含断言成功：预期结果【新增成功】,实际结果【新增成功】
+INFO - 2025-02-28 13:43:59,814 - assertions.py:232 -[assertions:assert_result] - 测试成功
+INFO - 2025-02-28 13:43:59,827 - conftest.py:22 -[conftest:start_test_and_end] - -------------接口测试结束--------------
+INFO - 2025-02-28 13:43:59,832 - conftest.py:20 -[conftest:start_test_and_end] - -------------接口测试开始--------------
+INFO - 2025-02-28 13:43:59,842 - sendrequest.py:160 -[sendrequest:run_main] - 接口名称：新增用户
+INFO - 2025-02-28 13:43:59,842 - sendrequest.py:161 -[sendrequest:run_main] - 请求地址：http://127.0.0.1:8787/dar/user/addUser
+INFO - 2025-02-28 13:43:59,842 - sendrequest.py:162 -[sendrequest:run_main] - 请求方式：POST
+INFO - 2025-02-28 13:43:59,842 - sendrequest.py:163 -[sendrequest:run_main] - 测试用例名称：无效新增·缺少token
+INFO - 2025-02-28 13:43:59,842 - sendrequest.py:164 -[sendrequest:run_main] - 请求头：{'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
+INFO - 2025-02-28 13:43:59,843 - sendrequest.py:165 -[sendrequest:run_main] - Cookie：None
+INFO - 2025-02-28 13:43:59,844 - sendrequest.py:170 -[sendrequest:run_main] - 请求参数：{'data': {'username': 'testadduser03', 'password': 'tset6789892', 'role_id': 123456782, 'dates': '2023-12-31', 'phone': 13800000002, 'token': None}}
+INFO - 2025-02-28 13:43:59,850 - sendrequest.py:129 -[sendrequest:send_request] - 接口返回信息：{"msg":"新增失败，参数缺失或token失效","msg_code":9001}
+
+INFO - 2025-02-28 13:43:59,851 - assertions.py:197 -[assertions:assert_result] - yaml文件预期结果：[{'contains': {'status_code': 200}}, {'contains': {'msg': '新增失败'}}]
+INFO - 2025-02-28 13:43:59,851 - assertions.py:60 -[assertions:contains_assert] - 字符串包含断言成功：预期结果【新增失败】,实际结果【新增失败，参数缺失或token失效】
+INFO - 2025-02-28 13:43:59,851 - assertions.py:232 -[assertions:assert_result] - 测试成功
+INFO - 2025-02-28 13:43:59,855 - conftest.py:22 -[conftest:start_test_and_end] - -------------接口测试结束--------------
+INFO - 2025-02-28 13:43:59,861 - conftest.py:20 -[conftest:start_test_and_end] - -------------接口测试开始--------------
+INFO - 2025-02-28 13:43:59,872 - sendrequest.py:160 -[sendrequest:run_main] - 接口名称：新增用户
+INFO - 2025-02-28 13:43:59,872 - sendrequest.py:161 -[sendrequest:run_main] - 请求地址：http://127.0.0.1:8787/dar/user/addUser
+INFO - 2025-02-28 13:43:59,872 - sendrequest.py:162 -[sendrequest:run_main] - 请求方式：POST
+INFO - 2025-02-28 13:43:59,872 - sendrequest.py:163 -[sendrequest:run_main] - 测试用例名称：无效新增·缺少必填参数role_id
+INFO - 2025-02-28 13:43:59,873 - sendrequest.py:164 -[sendrequest:run_main] - 请求头：{'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
+INFO - 2025-02-28 13:43:59,873 - sendrequest.py:165 -[sendrequest:run_main] - Cookie：None
+INFO - 2025-02-28 13:43:59,874 - sendrequest.py:170 -[sendrequest:run_main] - 请求参数：{'data': {'username': 'testadduser4', 'password': 'tset6789894', 'dates': '2023-12-31', 'phone': 13800000004, 'token': 'Fb0eDBf74B1BfBbdd6C41Ea4a7FB1'}}
+INFO - 2025-02-28 13:43:59,878 - sendrequest.py:129 -[sendrequest:send_request] - 接口返回信息：{"msg":"新增失败，参数缺失或token失效","msg_code":9001}
+
+INFO - 2025-02-28 13:43:59,879 - assertions.py:197 -[assertions:assert_result] - yaml文件预期结果：[{'contains': {'status_code': 200}}, {'contains': {'msg': '新增失败'}}]
+INFO - 2025-02-28 13:43:59,879 - assertions.py:60 -[assertions:contains_assert] - 字符串包含断言成功：预期结果【新增失败】,实际结果【新增失败，参数缺失或token失效】
+INFO - 2025-02-28 13:43:59,880 - assertions.py:232 -[assertions:assert_result] - 测试成功
+INFO - 2025-02-28 13:43:59,882 - conftest.py:22 -[conftest:start_test_and_end] - -------------接口测试结束--------------
+INFO - 2025-02-28 13:43:59,887 - conftest.py:20 -[conftest:start_test_and_end] - -------------接口测试开始--------------
+INFO - 2025-02-28 13:43:59,906 - sendrequest.py:160 -[sendrequest:run_main] - 接口名称：新增用户
+INFO - 2025-02-28 13:43:59,907 - sendrequest.py:161 -[sendrequest:run_main] - 请求地址：http://127.0.0.1:8787/dar/user/addUser
+INFO - 2025-02-28 13:43:59,907 - sendrequest.py:162 -[sendrequest:run_main] - 请求方式：POST
+INFO - 2025-02-28 13:43:59,907 - sendrequest.py:163 -[sendrequest:run_main] - 测试用例名称：无效新增·缺少必填参数username
+INFO - 2025-02-28 13:43:59,907 - sendrequest.py:164 -[sendrequest:run_main] - 请求头：{'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
+INFO - 2025-02-28 13:43:59,907 - sendrequest.py:165 -[sendrequest:run_main] - Cookie：None
+INFO - 2025-02-28 13:43:59,911 - sendrequest.py:170 -[sendrequest:run_main] - 请求参数：{'data': {'password': 'tset6789893', 'role_id': 123456783, 'dates': '2023-12-31', 'phone': 13800000003, 'token': 'Fb0eDBf74B1BfBbdd6C41Ea4a7FB1'}}
+INFO - 2025-02-28 13:43:59,916 - sendrequest.py:129 -[sendrequest:send_request] - 接口返回信息：{"msg":"新增失败，参数缺失或token失效","msg_code":9001}
+
+INFO - 2025-02-28 13:43:59,917 - assertions.py:197 -[assertions:assert_result] - yaml文件预期结果：[{'contains': {'status_code': 200}}, {'contains': {'msg': '新增失败'}}]
+INFO - 2025-02-28 13:43:59,917 - assertions.py:60 -[assertions:contains_assert] - 字符串包含断言成功：预期结果【新增失败】,实际结果【新增失败，参数缺失或token失效】
+INFO - 2025-02-28 13:43:59,918 - assertions.py:232 -[assertions:assert_result] - 测试成功
+INFO - 2025-02-28 13:43:59,921 - conftest.py:22 -[conftest:start_test_and_end] - -------------接口测试结束--------------
+INFO - 2025-02-28 13:48:31,281 - sendrequest.py:160 -[sendrequest:run_main] - 接口名称：用户登录
+INFO - 2025-02-28 13:48:31,281 - sendrequest.py:161 -[sendrequest:run_main] - 请求地址：http://127.0.0.1:8787/dar/user/login
+INFO - 2025-02-28 13:48:31,281 - sendrequest.py:162 -[sendrequest:run_main] - 请求方式：post
+INFO - 2025-02-28 13:48:31,281 - sendrequest.py:163 -[sendrequest:run_main] - 测试用例名称：用户名和密码正确登录验证
+INFO - 2025-02-28 13:48:31,281 - sendrequest.py:164 -[sendrequest:run_main] - 请求头：{'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
+INFO - 2025-02-28 13:48:31,281 - sendrequest.py:165 -[sendrequest:run_main] - Cookie：None
+INFO - 2025-02-28 13:48:31,282 - sendrequest.py:170 -[sendrequest:run_main] - 请求参数：{'data': {'user_name': 'test01', 'passwd': 'admin123'}}
+INFO - 2025-02-28 13:48:31,291 - sendrequest.py:128 -[sendrequest:send_request] - cookie：{'Cookie': {'access_token_cookie': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc0MDcyMTcxMSwianRpIjoiNThjZjhkNTMtYzc4ZS00ZGFmLTliZWEtN2Y4YzkwNDE0NGI4IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImV4YW1wbGVfdXNlciIsIm5iZiI6MTc0MDcyMTcxMSwiZXhwIjoxNzQwNzIyNjExfQ.VTZuMdtFKuN-W3MxHa95Yn0mFqEAcpHr54g9-YlPvow'}}
+INFO - 2025-02-28 13:48:31,291 - sendrequest.py:129 -[sendrequest:send_request] - 接口返回信息：{"error_code":null,"msg":"登录成功","msg_code":200,"orgId":"6140913758128971280","token":"f8CCF827b7a94Cf9F541d3B97aa8B","userId":"1516442349302372272"}
+
+INFO - 2025-02-28 13:48:31,292 - apiutil.py:167 -[apiutil:extract_data] - 提取接口的返回值：
+INFO - 2025-02-28 13:48:31,294 - assertions.py:197 -[assertions:assert_result] - yaml文件预期结果：[{'contains': {'error_code': 'none'}}, {'eq': {'msg': '登录成功'}}]
+INFO - 2025-02-28 13:48:31,294 - assertions.py:60 -[assertions:contains_assert] - 字符串包含断言成功：预期结果【None】,实际结果【[None]】
+ERROR - 2025-02-28 13:48:31,294 - assertions.py:227 -[assertions:assert_result] - 接口断言异常，请检查yaml预期结果值是否正确填写!
+INFO - 2025-02-28 13:48:31,294 - assertions.py:232 -[assertions:assert_result] - 测试成功
+INFO - 2025-02-28 13:48:31,295 - conftest.py:20 -[conftest:start_test_and_end] - -------------接口测试开始--------------
+INFO - 2025-02-28 13:48:31,305 - sendrequest.py:160 -[sendrequest:run_main] - 接口名称：新增用户
+INFO - 2025-02-28 13:48:31,305 - sendrequest.py:161 -[sendrequest:run_main] - 请求地址：http://127.0.0.1:8787/dar/user/addUser
+INFO - 2025-02-28 13:48:31,305 - sendrequest.py:162 -[sendrequest:run_main] - 请求方式：POST
+INFO - 2025-02-28 13:48:31,305 - sendrequest.py:163 -[sendrequest:run_main] - 测试用例名称：正常新增用户
+INFO - 2025-02-28 13:48:31,306 - sendrequest.py:164 -[sendrequest:run_main] - 请求头：{'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
+INFO - 2025-02-28 13:48:31,306 - sendrequest.py:165 -[sendrequest:run_main] - Cookie：None
+INFO - 2025-02-28 13:48:31,307 - sendrequest.py:170 -[sendrequest:run_main] - 请求参数：{'data': {'username': 'testadduser1', 'password': 'test6789890', 'role_id': 123451789, 'dates': '2023-12-31', 'phone': 13800100000, 'token': 'f8CCF827b7a94Cf9F541d3B97aa8B'}}
+INFO - 2025-02-28 13:48:31,335 - sendrequest.py:129 -[sendrequest:send_request] - 接口返回信息：{"error_code":null,"msg":"新增成功","msg_code":200}
+
+INFO - 2025-02-28 13:48:31,337 - assertions.py:197 -[assertions:assert_result] - yaml文件预期结果：[{'contains': {'status_code': 200}}, {'contains': {'msg': '新增成功'}}]
+INFO - 2025-02-28 13:48:31,337 - assertions.py:60 -[assertions:contains_assert] - 字符串包含断言成功：预期结果【新增成功】,实际结果【新增成功】
+INFO - 2025-02-28 13:48:31,337 - assertions.py:232 -[assertions:assert_result] - 测试成功
+INFO - 2025-02-28 13:48:31,347 - conftest.py:22 -[conftest:start_test_and_end] - -------------接口测试结束--------------
+INFO - 2025-02-28 13:48:31,353 - conftest.py:20 -[conftest:start_test_and_end] - -------------接口测试开始--------------
+INFO - 2025-02-28 13:48:31,359 - sendrequest.py:160 -[sendrequest:run_main] - 接口名称：新增用户
+INFO - 2025-02-28 13:48:31,359 - sendrequest.py:161 -[sendrequest:run_main] - 请求地址：http://127.0.0.1:8787/dar/user/addUser
+INFO - 2025-02-28 13:48:31,360 - sendrequest.py:162 -[sendrequest:run_main] - 请求方式：POST
+INFO - 2025-02-28 13:48:31,360 - sendrequest.py:163 -[sendrequest:run_main] - 测试用例名称：无效新增·缺少token
+INFO - 2025-02-28 13:48:31,360 - sendrequest.py:164 -[sendrequest:run_main] - 请求头：{'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
+INFO - 2025-02-28 13:48:31,360 - sendrequest.py:165 -[sendrequest:run_main] - Cookie：None
+INFO - 2025-02-28 13:48:31,361 - sendrequest.py:170 -[sendrequest:run_main] - 请求参数：{'data': {'username': 'testadduser03', 'password': 'tset6789892', 'role_id': 123456782, 'dates': '2023-12-31', 'phone': 13800000002, 'token': None}}
+INFO - 2025-02-28 13:48:31,382 - sendrequest.py:129 -[sendrequest:send_request] - 接口返回信息：{"msg":"新增失败，参数缺失或token失效","msg_code":9001}
+
+INFO - 2025-02-28 13:48:31,383 - assertions.py:197 -[assertions:assert_result] - yaml文件预期结果：[{'contains': {'status_code': 200}}, {'contains': {'msg': '新增失败'}}]
+INFO - 2025-02-28 13:48:31,383 - assertions.py:60 -[assertions:contains_assert] - 字符串包含断言成功：预期结果【新增失败】,实际结果【新增失败，参数缺失或token失效】
+INFO - 2025-02-28 13:48:31,383 - assertions.py:232 -[assertions:assert_result] - 测试成功
+INFO - 2025-02-28 13:48:31,386 - conftest.py:22 -[conftest:start_test_and_end] - -------------接口测试结束--------------
+INFO - 2025-02-28 13:48:31,390 - conftest.py:20 -[conftest:start_test_and_end] - -------------接口测试开始--------------
+INFO - 2025-02-28 13:48:31,399 - sendrequest.py:160 -[sendrequest:run_main] - 接口名称：新增用户
+INFO - 2025-02-28 13:48:31,400 - sendrequest.py:161 -[sendrequest:run_main] - 请求地址：http://127.0.0.1:8787/dar/user/addUser
+INFO - 2025-02-28 13:48:31,400 - sendrequest.py:162 -[sendrequest:run_main] - 请求方式：POST
+INFO - 2025-02-28 13:48:31,400 - sendrequest.py:163 -[sendrequest:run_main] - 测试用例名称：无效新增·缺少必填参数role_id
+INFO - 2025-02-28 13:48:31,400 - sendrequest.py:164 -[sendrequest:run_main] - 请求头：{'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
+INFO - 2025-02-28 13:48:31,400 - sendrequest.py:165 -[sendrequest:run_main] - Cookie：None
+INFO - 2025-02-28 13:48:31,401 - sendrequest.py:170 -[sendrequest:run_main] - 请求参数：{'data': {'username': 'testadduser4', 'password': 'tset6789894', 'dates': '2023-12-31', 'phone': 13800000004, 'token': 'f8CCF827b7a94Cf9F541d3B97aa8B'}}
+INFO - 2025-02-28 13:48:31,430 - sendrequest.py:129 -[sendrequest:send_request] - 接口返回信息：{"msg":"新增失败，参数缺失或token失效","msg_code":9001}
+
+INFO - 2025-02-28 13:48:31,431 - assertions.py:197 -[assertions:assert_result] - yaml文件预期结果：[{'contains': {'status_code': 200}}, {'contains': {'msg': '新增失败'}}]
+INFO - 2025-02-28 13:48:31,431 - assertions.py:60 -[assertions:contains_assert] - 字符串包含断言成功：预期结果【新增失败】,实际结果【新增失败，参数缺失或token失效】
+INFO - 2025-02-28 13:48:31,431 - assertions.py:232 -[assertions:assert_result] - 测试成功
+INFO - 2025-02-28 13:48:31,434 - conftest.py:22 -[conftest:start_test_and_end] - -------------接口测试结束--------------
+INFO - 2025-02-28 13:48:31,438 - conftest.py:20 -[conftest:start_test_and_end] - -------------接口测试开始--------------
+INFO - 2025-02-28 13:48:31,447 - sendrequest.py:160 -[sendrequest:run_main] - 接口名称：新增用户
+INFO - 2025-02-28 13:48:31,448 - sendrequest.py:161 -[sendrequest:run_main] - 请求地址：http://127.0.0.1:8787/dar/user/addUser
+INFO - 2025-02-28 13:48:31,448 - sendrequest.py:162 -[sendrequest:run_main] - 请求方式：POST
+INFO - 2025-02-28 13:48:31,448 - sendrequest.py:163 -[sendrequest:run_main] - 测试用例名称：无效新增·缺少必填参数username
+INFO - 2025-02-28 13:48:31,448 - sendrequest.py:164 -[sendrequest:run_main] - 请求头：{'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
+INFO - 2025-02-28 13:48:31,448 - sendrequest.py:165 -[sendrequest:run_main] - Cookie：None
+INFO - 2025-02-28 13:48:31,449 - sendrequest.py:170 -[sendrequest:run_main] - 请求参数：{'data': {'password': 'tset6789893', 'role_id': 123456783, 'dates': '2023-12-31', 'phone': 13800000003, 'token': 'f8CCF827b7a94Cf9F541d3B97aa8B'}}
+INFO - 2025-02-28 13:48:31,476 - sendrequest.py:129 -[sendrequest:send_request] - 接口返回信息：{"msg":"新增失败，参数缺失或token失效","msg_code":9001}
+
+INFO - 2025-02-28 13:48:31,477 - assertions.py:197 -[assertions:assert_result] - yaml文件预期结果：[{'contains': {'status_code': 200}}, {'contains': {'msg': '新增失败'}}]
+INFO - 2025-02-28 13:48:31,477 - assertions.py:60 -[assertions:contains_assert] - 字符串包含断言成功：预期结果【新增失败】,实际结果【新增失败，参数缺失或token失效】
+INFO - 2025-02-28 13:48:31,477 - assertions.py:232 -[assertions:assert_result] - 测试成功
+INFO - 2025-02-28 13:48:31,480 - conftest.py:22 -[conftest:start_test_and_end] - -------------接口测试结束--------------
+INFO - 2025-02-28 13:56:16,010 - sendrequest.py:160 -[sendrequest:run_main] - 接口名称：用户登录
+INFO - 2025-02-28 13:56:16,010 - sendrequest.py:161 -[sendrequest:run_main] - 请求地址：http://127.0.0.1:8787/dar/user/login
+INFO - 2025-02-28 13:56:16,010 - sendrequest.py:162 -[sendrequest:run_main] - 请求方式：post
+INFO - 2025-02-28 13:56:16,010 - sendrequest.py:163 -[sendrequest:run_main] - 测试用例名称：用户名和密码正确登录验证
+INFO - 2025-02-28 13:56:16,010 - sendrequest.py:164 -[sendrequest:run_main] - 请求头：{'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
+INFO - 2025-02-28 13:56:16,011 - sendrequest.py:165 -[sendrequest:run_main] - Cookie：None
+INFO - 2025-02-28 13:56:16,011 - sendrequest.py:170 -[sendrequest:run_main] - 请求参数：{'data': {'user_name': 'test01', 'passwd': 'admin123'}}
+INFO - 2025-02-28 13:56:16,021 - sendrequest.py:128 -[sendrequest:send_request] - cookie：{'Cookie': {'access_token_cookie': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc0MDcyMjE3NiwianRpIjoiNjIyMTJiNDItMTgwNC00ZTVhLWI0OWUtNjFiMDU0YTFiN2Y2IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImV4YW1wbGVfdXNlciIsIm5iZiI6MTc0MDcyMjE3NiwiZXhwIjoxNzQwNzIzMDc2fQ.I5yNUkwkBBItsB4D335_BGNYsiHhnRqL7b1RoLwvmQk'}}
+INFO - 2025-02-28 13:56:16,021 - sendrequest.py:129 -[sendrequest:send_request] - 接口返回信息：{"error_code":null,"msg":"登录成功","msg_code":200,"orgId":"4140913758110176843","token":"76C253E91E3a66f936eF07AAe110B","userId":"1516442349302372272"}
+
+ERROR - 2025-02-28 13:56:16,023 - conftest.py:33 -[conftest:system_login] - 登录接口出现异常，导致后续接口无法继续运行，请检查程序！，a bytes-like object is required, not 'dict'
+INFO - 2025-02-28 13:56:16,996 - sendrequest.py:160 -[sendrequest:run_main] - 接口名称：用户登录
+INFO - 2025-02-28 13:56:16,996 - sendrequest.py:161 -[sendrequest:run_main] - 请求地址：http://127.0.0.1:8787/dar/user/login
+INFO - 2025-02-28 13:56:16,996 - sendrequest.py:162 -[sendrequest:run_main] - 请求方式：post
+INFO - 2025-02-28 13:56:16,996 - sendrequest.py:163 -[sendrequest:run_main] - 测试用例名称：用户名和密码正确登录验证
+INFO - 2025-02-28 13:56:16,996 - sendrequest.py:164 -[sendrequest:run_main] - 请求头：{'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
+INFO - 2025-02-28 13:56:16,996 - sendrequest.py:165 -[sendrequest:run_main] - Cookie：None
+INFO - 2025-02-28 13:56:16,997 - sendrequest.py:170 -[sendrequest:run_main] - 请求参数：{'data': {'user_name': 'test01', 'passwd': 'admin123'}}
+INFO - 2025-02-28 13:56:17,019 - sendrequest.py:128 -[sendrequest:send_request] - cookie：{'Cookie': {'access_token_cookie': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc0MDcyMjE3NywianRpIjoiYWE1Zjg2NjctY2Y0MS00ZTgwLTgxNmEtMjlhMmQ4OTdhNTZkIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImV4YW1wbGVfdXNlciIsIm5iZiI6MTc0MDcyMjE3NywiZXhwIjoxNzQwNzIzMDc3fQ.4n3HXoQOmCZW9aA6H8jTsTAgaHSqt93a8fRTdWSQwFM'}}
+INFO - 2025-02-28 13:56:17,020 - sendrequest.py:129 -[sendrequest:send_request] - 接口返回信息：{"error_code":null,"msg":"登录成功","msg_code":200,"orgId":"6140913758128971280","token":"fde791e21368C49D7D28f277dd2FB","userId":"1516442349302372272"}
+
+ERROR - 2025-02-28 13:56:17,022 - conftest.py:33 -[conftest:system_login] - 登录接口出现异常，导致后续接口无法继续运行，请检查程序！，a bytes-like object is required, not 'dict'
+INFO - 2025-02-28 13:56:17,101 - sendrequest.py:160 -[sendrequest:run_main] - 接口名称：用户登录
+INFO - 2025-02-28 13:56:17,102 - sendrequest.py:161 -[sendrequest:run_main] - 请求地址：http://127.0.0.1:8787/dar/user/login
+INFO - 2025-02-28 13:56:17,102 - sendrequest.py:162 -[sendrequest:run_main] - 请求方式：post
+INFO - 2025-02-28 13:56:17,102 - sendrequest.py:163 -[sendrequest:run_main] - 测试用例名称：用户名和密码正确登录验证
+INFO - 2025-02-28 13:56:17,102 - sendrequest.py:164 -[sendrequest:run_main] - 请求头：{'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
+INFO - 2025-02-28 13:56:17,102 - sendrequest.py:165 -[sendrequest:run_main] - Cookie：None
+INFO - 2025-02-28 13:56:17,103 - sendrequest.py:170 -[sendrequest:run_main] - 请求参数：{'data': {'user_name': 'test01', 'passwd': 'admin123'}}
+INFO - 2025-02-28 13:56:17,130 - sendrequest.py:128 -[sendrequest:send_request] - cookie：{'Cookie': {'access_token_cookie': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc0MDcyMjE3NywianRpIjoiNTk0M2RlYzItMjkxZS00YWNlLTlkOTEtMTE0Y2NkMzEzYTA0IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImV4YW1wbGVfdXNlciIsIm5iZiI6MTc0MDcyMjE3NywiZXhwIjoxNzQwNzIzMDc3fQ.LP1RO8sK4GiTPiWhiy502p2jhp_V6aZ07-MNcdBLNe0'}}
+INFO - 2025-02-28 13:56:17,130 - sendrequest.py:129 -[sendrequest:send_request] - 接口返回信息：{"error_code":null,"msg":"登录成功","msg_code":200,"orgId":"4140913758110176843","token":"c3832BcBcba4FB4511F1b1Bf9d3Bf","userId":"1516442349302372272"}
+
+ERROR - 2025-02-28 13:56:17,132 - conftest.py:33 -[conftest:system_login] - 登录接口出现异常，导致后续接口无法继续运行，请检查程序！，a bytes-like object is required, not 'dict'
+INFO - 2025-02-28 13:56:17,220 - sendrequest.py:160 -[sendrequest:run_main] - 接口名称：用户登录
+INFO - 2025-02-28 13:56:17,220 - sendrequest.py:161 -[sendrequest:run_main] - 请求地址：http://127.0.0.1:8787/dar/user/login
+INFO - 2025-02-28 13:56:17,220 - sendrequest.py:162 -[sendrequest:run_main] - 请求方式：post
+INFO - 2025-02-28 13:56:17,221 - sendrequest.py:163 -[sendrequest:run_main] - 测试用例名称：用户名和密码正确登录验证
+INFO - 2025-02-28 13:56:17,221 - sendrequest.py:164 -[sendrequest:run_main] - 请求头：{'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
+INFO - 2025-02-28 13:56:17,221 - sendrequest.py:165 -[sendrequest:run_main] - Cookie：None
+INFO - 2025-02-28 13:56:17,222 - sendrequest.py:170 -[sendrequest:run_main] - 请求参数：{'data': {'user_name': 'test01', 'passwd': 'admin123'}}
+INFO - 2025-02-28 13:56:17,229 - sendrequest.py:128 -[sendrequest:send_request] - cookie：{'Cookie': {'access_token_cookie': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc0MDcyMjE3NywianRpIjoiNTQ3NTQ3MjMtN2QyYy00YmE1LTkxNTUtNDA5MzZjN2E5ZTAwIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImV4YW1wbGVfdXNlciIsIm5iZiI6MTc0MDcyMjE3NywiZXhwIjoxNzQwNzIzMDc3fQ.fJgQdXQUDtWfv4l9Ml80JWjrdMyUwu_ODqAEPtxeieI'}}
+INFO - 2025-02-28 13:56:17,229 - sendrequest.py:129 -[sendrequest:send_request] - 接口返回信息：{"error_code":null,"msg":"登录成功","msg_code":200,"orgId":"6140913758128971280","token":"4B57879fbADaaeebEDF5A0f6B0110","userId":"1516442349302372272"}
+
+ERROR - 2025-02-28 13:56:17,232 - conftest.py:33 -[conftest:system_login] - 登录接口出现异常，导致后续接口无法继续运行，请检查程序！，a bytes-like object is required, not 'dict'
+INFO - 2025-02-28 14:04:02,148 - sendrequest.py:160 -[sendrequest:run_main] - 接口名称：用户登录
+INFO - 2025-02-28 14:04:02,148 - sendrequest.py:161 -[sendrequest:run_main] - 请求地址：http://127.0.0.1:8787/dar/user/login
+INFO - 2025-02-28 14:04:02,148 - sendrequest.py:162 -[sendrequest:run_main] - 请求方式：post
+INFO - 2025-02-28 14:04:02,148 - sendrequest.py:163 -[sendrequest:run_main] - 测试用例名称：用户名和密码正确登录验证
+INFO - 2025-02-28 14:04:02,148 - sendrequest.py:164 -[sendrequest:run_main] - 请求头：{'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
+INFO - 2025-02-28 14:04:02,148 - sendrequest.py:165 -[sendrequest:run_main] - Cookie：None
+INFO - 2025-02-28 14:04:02,149 - sendrequest.py:170 -[sendrequest:run_main] - 请求参数：{'data': {'user_name': 'test01', 'passwd': 'admin123'}}
+INFO - 2025-02-28 14:04:02,158 - sendrequest.py:128 -[sendrequest:send_request] - cookie：{'Cookie': {'access_token_cookie': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc0MDcyMjY0MiwianRpIjoiZDlmYWNiZWUtNDA0OC00MGNlLWFmM2EtODRiYWIxMzNjMDExIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImV4YW1wbGVfdXNlciIsIm5iZiI6MTc0MDcyMjY0MiwiZXhwIjoxNzQwNzIzNTQyfQ.AS9kswOCq6MG6iNU5t3ncFG4-UAWAt-oDTq9lUJx43s'}}
+INFO - 2025-02-28 14:04:02,158 - sendrequest.py:129 -[sendrequest:send_request] - 接口返回信息：{"error_code":null,"msg":"登录成功","msg_code":200,"orgId":"4140913758110176843","token":"dCfDF3A15cEF9df0a3cB34FcD7c28","userId":"1516442349302372272"}
+
+INFO - 2025-02-28 14:04:02,160 - apiutil.py:166 -[apiutil:extract_data] - 提取接口的返回值：
+INFO - 2025-02-28 14:04:02,161 - assertions.py:197 -[assertions:assert_result] - yaml文件预期结果：[{'contains': {'error_code': 'none'}}, {'eq': {'msg': '登录成功'}}]
+INFO - 2025-02-28 14:04:02,161 - assertions.py:60 -[assertions:contains_assert] - 字符串包含断言成功：预期结果【None】,实际结果【[None]】
+ERROR - 2025-02-28 14:04:02,162 - assertions.py:227 -[assertions:assert_result] - 接口断言异常，请检查yaml预期结果值是否正确填写!
+INFO - 2025-02-28 14:04:02,162 - assertions.py:232 -[assertions:assert_result] - 测试成功
+INFO - 2025-02-28 14:04:02,162 - conftest.py:20 -[conftest:start_test_and_end] - -------------接口测试开始--------------
+INFO - 2025-02-28 14:04:02,174 - sendrequest.py:160 -[sendrequest:run_main] - 接口名称：新增用户
+INFO - 2025-02-28 14:04:02,174 - sendrequest.py:161 -[sendrequest:run_main] - 请求地址：http://127.0.0.1:8787/dar/user/addUser
+INFO - 2025-02-28 14:04:02,174 - sendrequest.py:162 -[sendrequest:run_main] - 请求方式：POST
+INFO - 2025-02-28 14:04:02,175 - sendrequest.py:163 -[sendrequest:run_main] - 测试用例名称：正常新增用户
+INFO - 2025-02-28 14:04:02,175 - sendrequest.py:164 -[sendrequest:run_main] - 请求头：{'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
+INFO - 2025-02-28 14:04:02,175 - sendrequest.py:165 -[sendrequest:run_main] - Cookie：None
+INFO - 2025-02-28 14:04:02,176 - sendrequest.py:170 -[sendrequest:run_main] - 请求参数：{'data': {'username': 'testadduser1', 'password': 'test6789890', 'role_id': 123451789, 'dates': '2023-12-31', 'phone': 13800100000, 'token': 'dCfDF3A15cEF9df0a3cB34FcD7c28'}}
+INFO - 2025-02-28 14:04:02,204 - sendrequest.py:129 -[sendrequest:send_request] - 接口返回信息：{"error_code":null,"msg":"新增成功","msg_code":200}
+
+INFO - 2025-02-28 14:04:02,205 - assertions.py:197 -[assertions:assert_result] - yaml文件预期结果：[{'contains': {'status_code': 200}}, {'contains': {'msg': '新增成功'}}]
+INFO - 2025-02-28 14:04:02,205 - assertions.py:60 -[assertions:contains_assert] - 字符串包含断言成功：预期结果【新增成功】,实际结果【新增成功】
+INFO - 2025-02-28 14:04:02,205 - assertions.py:232 -[assertions:assert_result] - 测试成功
+INFO - 2025-02-28 14:04:02,215 - conftest.py:22 -[conftest:start_test_and_end] - -------------接口测试结束--------------
+INFO - 2025-02-28 14:04:02,221 - conftest.py:20 -[conftest:start_test_and_end] - -------------接口测试开始--------------
+INFO - 2025-02-28 14:04:02,227 - sendrequest.py:160 -[sendrequest:run_main] - 接口名称：新增用户
+INFO - 2025-02-28 14:04:02,228 - sendrequest.py:161 -[sendrequest:run_main] - 请求地址：http://127.0.0.1:8787/dar/user/addUser
+INFO - 2025-02-28 14:04:02,228 - sendrequest.py:162 -[sendrequest:run_main] - 请求方式：POST
+INFO - 2025-02-28 14:04:02,228 - sendrequest.py:163 -[sendrequest:run_main] - 测试用例名称：无效新增·缺少token
+INFO - 2025-02-28 14:04:02,228 - sendrequest.py:164 -[sendrequest:run_main] - 请求头：{'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
+INFO - 2025-02-28 14:04:02,228 - sendrequest.py:165 -[sendrequest:run_main] - Cookie：None
+INFO - 2025-02-28 14:04:02,229 - sendrequest.py:170 -[sendrequest:run_main] - 请求参数：{'data': {'username': 'testadduser03', 'password': 'tset6789892', 'role_id': 123456782, 'dates': '2023-12-31', 'phone': 13800000002, 'token': None}}
+INFO - 2025-02-28 14:04:02,251 - sendrequest.py:129 -[sendrequest:send_request] - 接口返回信息：{"msg":"新增失败，参数缺失或token失效","msg_code":9001}
+
+INFO - 2025-02-28 14:04:02,252 - assertions.py:197 -[assertions:assert_result] - yaml文件预期结果：[{'contains': {'status_code': 200}}, {'contains': {'msg': '新增失败'}}]
+INFO - 2025-02-28 14:04:02,253 - assertions.py:60 -[assertions:contains_assert] - 字符串包含断言成功：预期结果【新增失败】,实际结果【新增失败，参数缺失或token失效】
+INFO - 2025-02-28 14:04:02,253 - assertions.py:232 -[assertions:assert_result] - 测试成功
+INFO - 2025-02-28 14:04:02,256 - conftest.py:22 -[conftest:start_test_and_end] - -------------接口测试结束--------------
+INFO - 2025-02-28 14:04:02,260 - conftest.py:20 -[conftest:start_test_and_end] - -------------接口测试开始--------------
+INFO - 2025-02-28 14:04:02,270 - sendrequest.py:160 -[sendrequest:run_main] - 接口名称：新增用户
+INFO - 2025-02-28 14:04:02,270 - sendrequest.py:161 -[sendrequest:run_main] - 请求地址：http://127.0.0.1:8787/dar/user/addUser
+INFO - 2025-02-28 14:04:02,270 - sendrequest.py:162 -[sendrequest:run_main] - 请求方式：POST
+INFO - 2025-02-28 14:04:02,270 - sendrequest.py:163 -[sendrequest:run_main] - 测试用例名称：无效新增·缺少必填参数role_id
+INFO - 2025-02-28 14:04:02,270 - sendrequest.py:164 -[sendrequest:run_main] - 请求头：{'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
+INFO - 2025-02-28 14:04:02,270 - sendrequest.py:165 -[sendrequest:run_main] - Cookie：None
+INFO - 2025-02-28 14:04:02,271 - sendrequest.py:170 -[sendrequest:run_main] - 请求参数：{'data': {'username': 'testadduser4', 'password': 'tset6789894', 'dates': '2023-12-31', 'phone': 13800000004, 'token': 'dCfDF3A15cEF9df0a3cB34FcD7c28'}}
+INFO - 2025-02-28 14:04:02,298 - sendrequest.py:129 -[sendrequest:send_request] - 接口返回信息：{"msg":"新增失败，参数缺失或token失效","msg_code":9001}
+
+INFO - 2025-02-28 14:04:02,299 - assertions.py:197 -[assertions:assert_result] - yaml文件预期结果：[{'contains': {'status_code': 200}}, {'contains': {'msg': '新增失败'}}]
+INFO - 2025-02-28 14:04:02,299 - assertions.py:60 -[assertions:contains_assert] - 字符串包含断言成功：预期结果【新增失败】,实际结果【新增失败，参数缺失或token失效】
+INFO - 2025-02-28 14:04:02,300 - assertions.py:232 -[assertions:assert_result] - 测试成功
+INFO - 2025-02-28 14:04:02,302 - conftest.py:22 -[conftest:start_test_and_end] - -------------接口测试结束--------------
+INFO - 2025-02-28 14:04:02,307 - conftest.py:20 -[conftest:start_test_and_end] - -------------接口测试开始--------------
+INFO - 2025-02-28 14:04:02,317 - sendrequest.py:160 -[sendrequest:run_main] - 接口名称：新增用户
+INFO - 2025-02-28 14:04:02,317 - sendrequest.py:161 -[sendrequest:run_main] - 请求地址：http://127.0.0.1:8787/dar/user/addUser
+INFO - 2025-02-28 14:04:02,318 - sendrequest.py:162 -[sendrequest:run_main] - 请求方式：POST
+INFO - 2025-02-28 14:04:02,318 - sendrequest.py:163 -[sendrequest:run_main] - 测试用例名称：无效新增·缺少必填参数username
+INFO - 2025-02-28 14:04:02,318 - sendrequest.py:164 -[sendrequest:run_main] - 请求头：{'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
+INFO - 2025-02-28 14:04:02,318 - sendrequest.py:165 -[sendrequest:run_main] - Cookie：None
+INFO - 2025-02-28 14:04:02,319 - sendrequest.py:170 -[sendrequest:run_main] - 请求参数：{'data': {'password': 'tset6789893', 'role_id': 123456783, 'dates': '2023-12-31', 'phone': 13800000003, 'token': 'dCfDF3A15cEF9df0a3cB34FcD7c28'}}
+INFO - 2025-02-28 14:04:02,323 - sendrequest.py:129 -[sendrequest:send_request] - 接口返回信息：{"msg":"新增失败，参数缺失或token失效","msg_code":9001}
+
+INFO - 2025-02-28 14:04:02,325 - assertions.py:197 -[assertions:assert_result] - yaml文件预期结果：[{'contains': {'status_code': 200}}, {'contains': {'msg': '新增失败'}}]
+INFO - 2025-02-28 14:04:02,325 - assertions.py:60 -[assertions:contains_assert] - 字符串包含断言成功：预期结果【新增失败】,实际结果【新增失败，参数缺失或token失效】
+INFO - 2025-02-28 14:04:02,325 - assertions.py:232 -[assertions:assert_result] - 测试成功
+INFO - 2025-02-28 14:04:02,329 - conftest.py:22 -[conftest:start_test_and_end] - -------------接口测试结束--------------
+INFO - 2025-02-28 14:04:39,081 - sendrequest.py:160 -[sendrequest:run_main] - 接口名称：用户登录
+INFO - 2025-02-28 14:04:39,081 - sendrequest.py:161 -[sendrequest:run_main] - 请求地址：http://127.0.0.1:8787/dar/user/login
+INFO - 2025-02-28 14:04:39,081 - sendrequest.py:162 -[sendrequest:run_main] - 请求方式：post
+INFO - 2025-02-28 14:04:39,081 - sendrequest.py:163 -[sendrequest:run_main] - 测试用例名称：用户名和密码正确登录验证
+INFO - 2025-02-28 14:04:39,082 - sendrequest.py:164 -[sendrequest:run_main] - 请求头：{'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
+INFO - 2025-02-28 14:04:39,082 - sendrequest.py:165 -[sendrequest:run_main] - Cookie：None
+INFO - 2025-02-28 14:04:39,083 - sendrequest.py:170 -[sendrequest:run_main] - 请求参数：{'data': {'user_name': 'test01', 'passwd': 'admin123'}}
+INFO - 2025-02-28 14:04:39,092 - sendrequest.py:128 -[sendrequest:send_request] - cookie：{'Cookie': {'access_token_cookie': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc0MDcyMjY3OSwianRpIjoiNGE5MmE4MGQtZTI5OS00MTk3LTg0NDUtMGM1ZmI3MWQxNmM4IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImV4YW1wbGVfdXNlciIsIm5iZiI6MTc0MDcyMjY3OSwiZXhwIjoxNzQwNzIzNTc5fQ.9V8egDFxtiRHqmgaNxv5s5JzaYd6SyVGB-Iddvujqb8'}}
+INFO - 2025-02-28 14:04:39,092 - sendrequest.py:129 -[sendrequest:send_request] - 接口返回信息：{"error_code":null,"msg":"登录成功","msg_code":200,"orgId":"6140913758128971280","token":"e6241Afb6Bd27deaF256D9eF5aa31","userId":"1516442349302372272"}
+
+INFO - 2025-02-28 14:04:39,094 - apiutil.py:166 -[apiutil:extract_data] - 提取接口的返回值：
+INFO - 2025-02-28 14:04:39,095 - assertions.py:197 -[assertions:assert_result] - yaml文件预期结果：[{'contains': {'error_code': 'none'}}, {'eq': {'msg': '登录成功'}}]
+INFO - 2025-02-28 14:04:39,096 - assertions.py:60 -[assertions:contains_assert] - 字符串包含断言成功：预期结果【None】,实际结果【[None]】
+ERROR - 2025-02-28 14:04:39,096 - assertions.py:227 -[assertions:assert_result] - 接口断言异常，请检查yaml预期结果值是否正确填写!
+INFO - 2025-02-28 14:04:39,096 - assertions.py:232 -[assertions:assert_result] - 测试成功
+INFO - 2025-02-28 14:04:39,097 - conftest.py:20 -[conftest:start_test_and_end] - -------------接口测试开始--------------
+INFO - 2025-02-28 14:04:39,110 - sendrequest.py:160 -[sendrequest:run_main] - 接口名称：新增用户
+INFO - 2025-02-28 14:04:39,110 - sendrequest.py:161 -[sendrequest:run_main] - 请求地址：http://127.0.0.1:8787/dar/user/addUser
+INFO - 2025-02-28 14:04:39,110 - sendrequest.py:162 -[sendrequest:run_main] - 请求方式：POST
+INFO - 2025-02-28 14:04:39,110 - sendrequest.py:163 -[sendrequest:run_main] - 测试用例名称：正常新增用户
+INFO - 2025-02-28 14:04:39,110 - sendrequest.py:164 -[sendrequest:run_main] - 请求头：{'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
+INFO - 2025-02-28 14:04:39,111 - sendrequest.py:165 -[sendrequest:run_main] - Cookie：None
+INFO - 2025-02-28 14:04:39,111 - sendrequest.py:170 -[sendrequest:run_main] - 请求参数：{'data': {'username': 'testadduser1', 'password': 'test6789890', 'role_id': 123451789, 'dates': '2023-12-31', 'phone': 13800100000, 'token': 'e6241Afb6Bd27deaF256D9eF5aa31'}}
+INFO - 2025-02-28 14:04:39,116 - sendrequest.py:129 -[sendrequest:send_request] - 接口返回信息：{"error_code":null,"msg":"新增成功","msg_code":200}
+
+INFO - 2025-02-28 14:04:39,117 - assertions.py:197 -[assertions:assert_result] - yaml文件预期结果：[{'contains': {'status_code': 200}}, {'contains': {'msg': '新增成功'}}]
+INFO - 2025-02-28 14:04:39,117 - assertions.py:60 -[assertions:contains_assert] - 字符串包含断言成功：预期结果【新增成功】,实际结果【新增成功】
+INFO - 2025-02-28 14:04:39,117 - assertions.py:232 -[assertions:assert_result] - 测试成功
+INFO - 2025-02-28 14:04:39,128 - conftest.py:22 -[conftest:start_test_and_end] - -------------接口测试结束--------------
+INFO - 2025-02-28 14:04:39,133 - conftest.py:20 -[conftest:start_test_and_end] - -------------接口测试开始--------------
+INFO - 2025-02-28 14:04:39,139 - sendrequest.py:160 -[sendrequest:run_main] - 接口名称：新增用户
+INFO - 2025-02-28 14:04:39,140 - sendrequest.py:161 -[sendrequest:run_main] - 请求地址：http://127.0.0.1:8787/dar/user/addUser
+INFO - 2025-02-28 14:04:39,140 - sendrequest.py:162 -[sendrequest:run_main] - 请求方式：POST
+INFO - 2025-02-28 14:04:39,140 - sendrequest.py:163 -[sendrequest:run_main] - 测试用例名称：无效新增·缺少token
+INFO - 2025-02-28 14:04:39,140 - sendrequest.py:164 -[sendrequest:run_main] - 请求头：{'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
+INFO - 2025-02-28 14:04:39,140 - sendrequest.py:165 -[sendrequest:run_main] - Cookie：None
+INFO - 2025-02-28 14:04:39,141 - sendrequest.py:170 -[sendrequest:run_main] - 请求参数：{'data': {'username': 'testadduser03', 'password': 'tset6789892', 'role_id': 123456782, 'dates': '2023-12-31', 'phone': 13800000002, 'token': None}}
+INFO - 2025-02-28 14:04:39,145 - sendrequest.py:129 -[sendrequest:send_request] - 接口返回信息：{"msg":"新增失败，参数缺失或token失效","msg_code":9001}
+
+INFO - 2025-02-28 14:04:39,176 - assertions.py:197 -[assertions:assert_result] - yaml文件预期结果：[{'contains': {'status_code': 200}}, {'contains': {'msg': '新增失败'}}]
+INFO - 2025-02-28 14:04:39,177 - assertions.py:60 -[assertions:contains_assert] - 字符串包含断言成功：预期结果【新增失败】,实际结果【新增失败，参数缺失或token失效】
+INFO - 2025-02-28 14:04:39,177 - assertions.py:232 -[assertions:assert_result] - 测试成功
+INFO - 2025-02-28 14:04:39,179 - conftest.py:22 -[conftest:start_test_and_end] - -------------接口测试结束--------------
+INFO - 2025-02-28 14:04:39,184 - conftest.py:20 -[conftest:start_test_and_end] - -------------接口测试开始--------------
+INFO - 2025-02-28 14:04:39,193 - sendrequest.py:160 -[sendrequest:run_main] - 接口名称：新增用户
+INFO - 2025-02-28 14:04:39,194 - sendrequest.py:161 -[sendrequest:run_main] - 请求地址：http://127.0.0.1:8787/dar/user/addUser
+INFO - 2025-02-28 14:04:39,194 - sendrequest.py:162 -[sendrequest:run_main] - 请求方式：POST
+INFO - 2025-02-28 14:04:39,194 - sendrequest.py:163 -[sendrequest:run_main] - 测试用例名称：无效新增·缺少必填参数role_id
+INFO - 2025-02-28 14:04:39,194 - sendrequest.py:164 -[sendrequest:run_main] - 请求头：{'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
+INFO - 2025-02-28 14:04:39,194 - sendrequest.py:165 -[sendrequest:run_main] - Cookie：None
+INFO - 2025-02-28 14:04:39,195 - sendrequest.py:170 -[sendrequest:run_main] - 请求参数：{'data': {'username': 'testadduser4', 'password': 'tset6789894', 'dates': '2023-12-31', 'phone': 13800000004, 'token': 'e6241Afb6Bd27deaF256D9eF5aa31'}}
+INFO - 2025-02-28 14:04:39,218 - sendrequest.py:129 -[sendrequest:send_request] - 接口返回信息：{"msg":"新增失败，参数缺失或token失效","msg_code":9001}
+
+INFO - 2025-02-28 14:04:39,220 - assertions.py:197 -[assertions:assert_result] - yaml文件预期结果：[{'contains': {'status_code': 200}}, {'contains': {'msg': '新增失败'}}]
+INFO - 2025-02-28 14:04:39,220 - assertions.py:60 -[assertions:contains_assert] - 字符串包含断言成功：预期结果【新增失败】,实际结果【新增失败，参数缺失或token失效】
+INFO - 2025-02-28 14:04:39,220 - assertions.py:232 -[assertions:assert_result] - 测试成功
+INFO - 2025-02-28 14:04:39,223 - conftest.py:22 -[conftest:start_test_and_end] - -------------接口测试结束--------------
+INFO - 2025-02-28 14:04:39,229 - conftest.py:20 -[conftest:start_test_and_end] - -------------接口测试开始--------------
+INFO - 2025-02-28 14:04:39,239 - sendrequest.py:160 -[sendrequest:run_main] - 接口名称：新增用户
+INFO - 2025-02-28 14:04:39,239 - sendrequest.py:161 -[sendrequest:run_main] - 请求地址：http://127.0.0.1:8787/dar/user/addUser
+INFO - 2025-02-28 14:04:39,239 - sendrequest.py:162 -[sendrequest:run_main] - 请求方式：POST
+INFO - 2025-02-28 14:04:39,239 - sendrequest.py:163 -[sendrequest:run_main] - 测试用例名称：无效新增·缺少必填参数username
+INFO - 2025-02-28 14:04:39,239 - sendrequest.py:164 -[sendrequest:run_main] - 请求头：{'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
+INFO - 2025-02-28 14:04:39,239 - sendrequest.py:165 -[sendrequest:run_main] - Cookie：None
+INFO - 2025-02-28 14:04:39,240 - sendrequest.py:170 -[sendrequest:run_main] - 请求参数：{'data': {'password': 'tset6789893', 'role_id': 123456783, 'dates': '2023-12-31', 'phone': 13800000003, 'token': 'e6241Afb6Bd27deaF256D9eF5aa31'}}
+INFO - 2025-02-28 14:04:39,266 - sendrequest.py:129 -[sendrequest:send_request] - 接口返回信息：{"msg":"新增失败，参数缺失或token失效","msg_code":9001}
+
+INFO - 2025-02-28 14:04:39,267 - assertions.py:197 -[assertions:assert_result] - yaml文件预期结果：[{'contains': {'status_code': 200}}, {'contains': {'msg': '新增失败'}}]
+INFO - 2025-02-28 14:04:39,267 - assertions.py:60 -[assertions:contains_assert] - 字符串包含断言成功：预期结果【新增失败】,实际结果【新增失败，参数缺失或token失效】
+INFO - 2025-02-28 14:04:39,268 - assertions.py:232 -[assertions:assert_result] - 测试成功
+INFO - 2025-02-28 14:04:39,270 - conftest.py:22 -[conftest:start_test_and_end] - -------------接口测试结束--------------
+INFO - 2025-02-28 14:17:19,964 - sendrequest.py:160 -[sendrequest:run_main] - 接口名称：用户登录
+INFO - 2025-02-28 14:17:19,964 - sendrequest.py:161 -[sendrequest:run_main] - 请求地址：http://127.0.0.1:8787/dar/user/login
+INFO - 2025-02-28 14:17:19,964 - sendrequest.py:162 -[sendrequest:run_main] - 请求方式：post
+INFO - 2025-02-28 14:17:19,964 - sendrequest.py:163 -[sendrequest:run_main] - 测试用例名称：用户名和密码正确登录验证
+INFO - 2025-02-28 14:17:19,964 - sendrequest.py:164 -[sendrequest:run_main] - 请求头：{'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
+INFO - 2025-02-28 14:17:19,964 - sendrequest.py:165 -[sendrequest:run_main] - Cookie：None
+INFO - 2025-02-28 14:17:19,965 - sendrequest.py:170 -[sendrequest:run_main] - 请求参数：{'data': {'user_name': 'test01', 'passwd': 'admin123'}}
+INFO - 2025-02-28 14:17:19,975 - sendrequest.py:128 -[sendrequest:send_request] - cookie：{'Cookie': {'access_token_cookie': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc0MDcyMzQzOSwianRpIjoiMzdkZDY5ZmYtNmE1ZC00MzQxLThiNTEtYTQ2ZmY2ZDRlODZmIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImV4YW1wbGVfdXNlciIsIm5iZiI6MTc0MDcyMzQzOSwiZXhwIjoxNzQwNzI0MzM5fQ.3uM9z8kpyYSnMmr998YIeL5c72jBsRaLK5K8qfY94zs'}}
+INFO - 2025-02-28 14:17:19,975 - sendrequest.py:129 -[sendrequest:send_request] - 接口返回信息：{"error_code":null,"msg":"登录成功","msg_code":200,"orgId":"4140913758110176843","token":"7eDFf448dfF9FC274C2CCbe2Bc27B","userId":"1516442349302372272"}
+
+INFO - 2025-02-28 14:17:19,977 - apiutil.py:165 -[apiutil:extract_data] - 提取接口的返回值：
+INFO - 2025-02-28 14:17:19,979 - assertions.py:197 -[assertions:assert_result] - yaml文件预期结果：[{'contains': {'error_code': 'none'}}, {'eq': {'msg': '登录成功'}}]
+INFO - 2025-02-28 14:17:19,979 - assertions.py:60 -[assertions:contains_assert] - 字符串包含断言成功：预期结果【None】,实际结果【[None]】
+ERROR - 2025-02-28 14:17:19,980 - assertions.py:227 -[assertions:assert_result] - 接口断言异常，请检查yaml预期结果值是否正确填写!
+INFO - 2025-02-28 14:17:19,980 - assertions.py:232 -[assertions:assert_result] - 测试成功
+INFO - 2025-02-28 14:17:19,980 - conftest.py:20 -[conftest:start_test_and_end] - -------------接口测试开始--------------
+INFO - 2025-02-28 14:17:19,991 - sendrequest.py:160 -[sendrequest:run_main] - 接口名称：新增用户
+INFO - 2025-02-28 14:17:19,991 - sendrequest.py:161 -[sendrequest:run_main] - 请求地址：http://127.0.0.1:8787/dar/user/addUser
+INFO - 2025-02-28 14:17:19,991 - sendrequest.py:162 -[sendrequest:run_main] - 请求方式：POST
+INFO - 2025-02-28 14:17:19,992 - sendrequest.py:163 -[sendrequest:run_main] - 测试用例名称：正常新增用户
+INFO - 2025-02-28 14:17:19,992 - sendrequest.py:164 -[sendrequest:run_main] - 请求头：{'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
+INFO - 2025-02-28 14:17:19,992 - sendrequest.py:165 -[sendrequest:run_main] - Cookie：None
+INFO - 2025-02-28 14:17:19,993 - sendrequest.py:170 -[sendrequest:run_main] - 请求参数：{'data': {'username': 'testadduser1', 'password': 'test6789890', 'role_id': 123451789, 'dates': '2023-12-31', 'phone': 13800100000, 'token': '7eDFf448dfF9FC274C2CCbe2Bc27B'}}
+INFO - 2025-02-28 14:17:19,998 - sendrequest.py:129 -[sendrequest:send_request] - 接口返回信息：{"error_code":null,"msg":"新增成功","msg_code":200}
+
+INFO - 2025-02-28 14:17:19,999 - assertions.py:197 -[assertions:assert_result] - yaml文件预期结果：[{'contains': {'status_code': 200}}, {'contains': {'msg': '新增成功'}}]
+INFO - 2025-02-28 14:17:19,999 - assertions.py:60 -[assertions:contains_assert] - 字符串包含断言成功：预期结果【新增成功】,实际结果【新增成功】
+INFO - 2025-02-28 14:17:19,999 - assertions.py:232 -[assertions:assert_result] - 测试成功
+INFO - 2025-02-28 14:17:20,010 - conftest.py:22 -[conftest:start_test_and_end] - -------------接口测试结束--------------
+INFO - 2025-02-28 14:17:20,016 - conftest.py:20 -[conftest:start_test_and_end] - -------------接口测试开始--------------
+INFO - 2025-02-28 14:17:20,024 - sendrequest.py:160 -[sendrequest:run_main] - 接口名称：新增用户
+INFO - 2025-02-28 14:17:20,024 - sendrequest.py:161 -[sendrequest:run_main] - 请求地址：http://127.0.0.1:8787/dar/user/addUser
+INFO - 2025-02-28 14:17:20,025 - sendrequest.py:162 -[sendrequest:run_main] - 请求方式：POST
+INFO - 2025-02-28 14:17:20,025 - sendrequest.py:163 -[sendrequest:run_main] - 测试用例名称：无效新增·缺少token
+INFO - 2025-02-28 14:17:20,025 - sendrequest.py:164 -[sendrequest:run_main] - 请求头：{'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
+INFO - 2025-02-28 14:17:20,025 - sendrequest.py:165 -[sendrequest:run_main] - Cookie：None
+INFO - 2025-02-28 14:17:20,026 - sendrequest.py:170 -[sendrequest:run_main] - 请求参数：{'data': {'username': 'testadduser03', 'password': 'tset6789892', 'role_id': 123456782, 'dates': '2023-12-31', 'phone': 13800000002, 'token': None}}
+INFO - 2025-02-28 14:17:20,030 - sendrequest.py:129 -[sendrequest:send_request] - 接口返回信息：{"msg":"新增失败，参数缺失或token失效","msg_code":9001}
+
+INFO - 2025-02-28 14:17:20,032 - assertions.py:197 -[assertions:assert_result] - yaml文件预期结果：[{'contains': {'status_code': 200}}, {'contains': {'msg': '新增失败'}}]
+INFO - 2025-02-28 14:17:20,032 - assertions.py:60 -[assertions:contains_assert] - 字符串包含断言成功：预期结果【新增失败】,实际结果【新增失败，参数缺失或token失效】
+INFO - 2025-02-28 14:17:20,032 - assertions.py:232 -[assertions:assert_result] - 测试成功
+INFO - 2025-02-28 14:17:20,035 - conftest.py:22 -[conftest:start_test_and_end] - -------------接口测试结束--------------
+INFO - 2025-02-28 14:17:20,039 - conftest.py:20 -[conftest:start_test_and_end] - -------------接口测试开始--------------
+INFO - 2025-02-28 14:17:20,051 - sendrequest.py:160 -[sendrequest:run_main] - 接口名称：新增用户
+INFO - 2025-02-28 14:17:20,051 - sendrequest.py:161 -[sendrequest:run_main] - 请求地址：http://127.0.0.1:8787/dar/user/addUser
+INFO - 2025-02-28 14:17:20,051 - sendrequest.py:162 -[sendrequest:run_main] - 请求方式：POST
+INFO - 2025-02-28 14:17:20,051 - sendrequest.py:163 -[sendrequest:run_main] - 测试用例名称：无效新增·缺少必填参数role_id
+INFO - 2025-02-28 14:17:20,051 - sendrequest.py:164 -[sendrequest:run_main] - 请求头：{'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
+INFO - 2025-02-28 14:17:20,051 - sendrequest.py:165 -[sendrequest:run_main] - Cookie：None
+INFO - 2025-02-28 14:17:20,052 - sendrequest.py:170 -[sendrequest:run_main] - 请求参数：{'data': {'username': 'testadduser4', 'password': 'tset6789894', 'dates': '2023-12-31', 'phone': 13800000004, 'token': '7eDFf448dfF9FC274C2CCbe2Bc27B'}}
+INFO - 2025-02-28 14:17:20,076 - sendrequest.py:129 -[sendrequest:send_request] - 接口返回信息：{"msg":"新增失败，参数缺失或token失效","msg_code":9001}
+
+INFO - 2025-02-28 14:17:20,077 - assertions.py:197 -[assertions:assert_result] - yaml文件预期结果：[{'contains': {'status_code': 200}}, {'contains': {'msg': '新增失败'}}]
+INFO - 2025-02-28 14:17:20,078 - assertions.py:60 -[assertions:contains_assert] - 字符串包含断言成功：预期结果【新增失败】,实际结果【新增失败，参数缺失或token失效】
+INFO - 2025-02-28 14:17:20,078 - assertions.py:232 -[assertions:assert_result] - 测试成功
+INFO - 2025-02-28 14:17:20,080 - conftest.py:22 -[conftest:start_test_and_end] - -------------接口测试结束--------------
+INFO - 2025-02-28 14:17:20,085 - conftest.py:20 -[conftest:start_test_and_end] - -------------接口测试开始--------------
+INFO - 2025-02-28 14:17:20,094 - sendrequest.py:160 -[sendrequest:run_main] - 接口名称：新增用户
+INFO - 2025-02-28 14:17:20,095 - sendrequest.py:161 -[sendrequest:run_main] - 请求地址：http://127.0.0.1:8787/dar/user/addUser
+INFO - 2025-02-28 14:17:20,095 - sendrequest.py:162 -[sendrequest:run_main] - 请求方式：POST
+INFO - 2025-02-28 14:17:20,095 - sendrequest.py:163 -[sendrequest:run_main] - 测试用例名称：无效新增·缺少必填参数username
+INFO - 2025-02-28 14:17:20,095 - sendrequest.py:164 -[sendrequest:run_main] - 请求头：{'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
+INFO - 2025-02-28 14:17:20,095 - sendrequest.py:165 -[sendrequest:run_main] - Cookie：None
+INFO - 2025-02-28 14:17:20,096 - sendrequest.py:170 -[sendrequest:run_main] - 请求参数：{'data': {'password': 'tset6789893', 'role_id': 123456783, 'dates': '2023-12-31', 'phone': 13800000003, 'token': '7eDFf448dfF9FC274C2CCbe2Bc27B'}}
+INFO - 2025-02-28 14:17:20,101 - sendrequest.py:129 -[sendrequest:send_request] - 接口返回信息：{"msg":"新增失败，参数缺失或token失效","msg_code":9001}
+
+INFO - 2025-02-28 14:17:20,102 - assertions.py:197 -[assertions:assert_result] - yaml文件预期结果：[{'contains': {'status_code': 200}}, {'contains': {'msg': '新增失败'}}]
+INFO - 2025-02-28 14:17:20,102 - assertions.py:60 -[assertions:contains_assert] - 字符串包含断言成功：预期结果【新增失败】,实际结果【新增失败，参数缺失或token失效】
+INFO - 2025-02-28 14:17:20,103 - assertions.py:232 -[assertions:assert_result] - 测试成功
+INFO - 2025-02-28 14:17:20,106 - conftest.py:22 -[conftest:start_test_and_end] - -------------接口测试结束--------------
+INFO - 2025-02-28 14:20:00,820 - sendrequest.py:160 -[sendrequest:run_main] - 接口名称：用户登录
+INFO - 2025-02-28 14:20:00,821 - sendrequest.py:161 -[sendrequest:run_main] - 请求地址：http://127.0.0.1:8787/dar/user/login
+INFO - 2025-02-28 14:20:00,821 - sendrequest.py:162 -[sendrequest:run_main] - 请求方式：post
+INFO - 2025-02-28 14:20:00,821 - sendrequest.py:163 -[sendrequest:run_main] - 测试用例名称：用户名和密码正确登录验证
+INFO - 2025-02-28 14:20:00,822 - sendrequest.py:164 -[sendrequest:run_main] - 请求头：{'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
+INFO - 2025-02-28 14:20:00,822 - sendrequest.py:165 -[sendrequest:run_main] - Cookie：None
+INFO - 2025-02-28 14:20:00,823 - sendrequest.py:170 -[sendrequest:run_main] - 请求参数：{'data': {'user_name': 'test01', 'passwd': 'admin123'}}
+INFO - 2025-02-28 14:20:00,838 - sendrequest.py:128 -[sendrequest:send_request] - cookie：{'Cookie': {'access_token_cookie': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc0MDcyMzYwMCwianRpIjoiYTIzYWRmNDQtNjIzOC00ODU5LWFmNjAtMGJiZGE0YzI1MTk5IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImV4YW1wbGVfdXNlciIsIm5iZiI6MTc0MDcyMzYwMCwiZXhwIjoxNzQwNzI0NTAwfQ.KLg3igzLylMe-st_WX1WYiLEtbDTDCkkieNsr0nPfqg'}}
+INFO - 2025-02-28 14:20:00,838 - sendrequest.py:129 -[sendrequest:send_request] - 接口返回信息：{"error_code":null,"msg":"登录成功","msg_code":200,"orgId":"4140913758110176843","token":"9f34FFC709A3d900f8AdEF7e23D35","userId":"1516442349302372272"}
+
+INFO - 2025-02-28 14:20:00,841 - apiutil.py:165 -[apiutil:extract_data] - 提取接口的返回值：
+INFO - 2025-02-28 14:20:00,842 - assertions.py:197 -[assertions:assert_result] - yaml文件预期结果：[{'contains': {'error_code': 'none'}}, {'eq': {'msg': '登录成功'}}]
+INFO - 2025-02-28 14:20:00,843 - assertions.py:60 -[assertions:contains_assert] - 字符串包含断言成功：预期结果【None】,实际结果【[None]】
+ERROR - 2025-02-28 14:20:00,844 - assertions.py:227 -[assertions:assert_result] - 接口断言异常，请检查yaml预期结果值是否正确填写!
+INFO - 2025-02-28 14:20:00,844 - assertions.py:232 -[assertions:assert_result] - 测试成功
+INFO - 2025-02-28 14:20:00,845 - conftest.py:20 -[conftest:start_test_and_end] - -------------接口测试开始--------------
+INFO - 2025-02-28 14:20:00,861 - sendrequest.py:160 -[sendrequest:run_main] - 接口名称：新增用户
+INFO - 2025-02-28 14:20:00,862 - sendrequest.py:161 -[sendrequest:run_main] - 请求地址：http://127.0.0.1:8787/dar/user/addUser
+INFO - 2025-02-28 14:20:00,862 - sendrequest.py:162 -[sendrequest:run_main] - 请求方式：POST
+INFO - 2025-02-28 14:20:00,862 - sendrequest.py:163 -[sendrequest:run_main] - 测试用例名称：正常新增用户
+INFO - 2025-02-28 14:20:00,862 - sendrequest.py:164 -[sendrequest:run_main] - 请求头：{'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
+INFO - 2025-02-28 14:20:00,862 - sendrequest.py:165 -[sendrequest:run_main] - Cookie：None
+INFO - 2025-02-28 14:20:00,864 - sendrequest.py:170 -[sendrequest:run_main] - 请求参数：{'data': {'username': 'testadduser1', 'password': 'test6789890', 'role_id': 123451789, 'dates': '2023-12-31', 'phone': 13800100000, 'token': '9f34FFC709A3d900f8AdEF7e23D35'}}
+INFO - 2025-02-28 14:20:00,875 - sendrequest.py:129 -[sendrequest:send_request] - 接口返回信息：{"error_code":null,"msg":"新增成功","msg_code":200}
+
+INFO - 2025-02-28 14:20:00,877 - assertions.py:197 -[assertions:assert_result] - yaml文件预期结果：[{'contains': {'status_code': 200}}, {'contains': {'msg': '新增成功'}}]
+INFO - 2025-02-28 14:20:00,877 - assertions.py:60 -[assertions:contains_assert] - 字符串包含断言成功：预期结果【新增成功】,实际结果【新增成功】
+INFO - 2025-02-28 14:20:00,878 - assertions.py:232 -[assertions:assert_result] - 测试成功
+INFO - 2025-02-28 14:20:00,896 - conftest.py:22 -[conftest:start_test_and_end] - -------------接口测试结束--------------
+INFO - 2025-02-28 14:20:00,952 - conftest.py:20 -[conftest:start_test_and_end] - -------------接口测试开始--------------
+INFO - 2025-02-28 14:20:01,000 - sendrequest.py:160 -[sendrequest:run_main] - 接口名称：新增用户
+INFO - 2025-02-28 14:20:01,001 - sendrequest.py:161 -[sendrequest:run_main] - 请求地址：http://127.0.0.1:8787/dar/user/addUser
+INFO - 2025-02-28 14:20:01,001 - sendrequest.py:162 -[sendrequest:run_main] - 请求方式：POST
+INFO - 2025-02-28 14:20:01,001 - sendrequest.py:163 -[sendrequest:run_main] - 测试用例名称：无效新增·缺少token
+INFO - 2025-02-28 14:20:01,001 - sendrequest.py:164 -[sendrequest:run_main] - 请求头：{'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
+INFO - 2025-02-28 14:20:01,002 - sendrequest.py:165 -[sendrequest:run_main] - Cookie：None
+INFO - 2025-02-28 14:20:01,003 - sendrequest.py:170 -[sendrequest:run_main] - 请求参数：{'data': {'username': 'testadduser03', 'password': 'tset6789892', 'role_id': 123456782, 'dates': '2023-12-31', 'phone': 13800000002, 'token': None}}
+INFO - 2025-02-28 14:20:01,027 - sendrequest.py:129 -[sendrequest:send_request] - 接口返回信息：{"msg":"新增失败，参数缺失或token失效","msg_code":9001}
+
+INFO - 2025-02-28 14:20:01,029 - assertions.py:197 -[assertions:assert_result] - yaml文件预期结果：[{'contains': {'status_code': 200}}, {'contains': {'msg': '新增失败'}}]
+INFO - 2025-02-28 14:20:01,030 - assertions.py:60 -[assertions:contains_assert] - 字符串包含断言成功：预期结果【新增失败】,实际结果【新增失败，参数缺失或token失效】
+INFO - 2025-02-28 14:20:01,030 - assertions.py:232 -[assertions:assert_result] - 测试成功
+INFO - 2025-02-28 14:20:01,034 - conftest.py:22 -[conftest:start_test_and_end] - -------------接口测试结束--------------
+INFO - 2025-02-28 14:20:01,042 - conftest.py:20 -[conftest:start_test_and_end] - -------------接口测试开始--------------
+INFO - 2025-02-28 14:20:01,060 - sendrequest.py:160 -[sendrequest:run_main] - 接口名称：新增用户
+INFO - 2025-02-28 14:20:01,060 - sendrequest.py:161 -[sendrequest:run_main] - 请求地址：http://127.0.0.1:8787/dar/user/addUser
+INFO - 2025-02-28 14:20:01,061 - sendrequest.py:162 -[sendrequest:run_main] - 请求方式：POST
+INFO - 2025-02-28 14:20:01,061 - sendrequest.py:163 -[sendrequest:run_main] - 测试用例名称：无效新增·缺少必填参数role_id
+INFO - 2025-02-28 14:20:01,061 - sendrequest.py:164 -[sendrequest:run_main] - 请求头：{'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
+INFO - 2025-02-28 14:20:01,061 - sendrequest.py:165 -[sendrequest:run_main] - Cookie：None
+INFO - 2025-02-28 14:20:01,063 - sendrequest.py:170 -[sendrequest:run_main] - 请求参数：{'data': {'username': 'testadduser4', 'password': 'tset6789894', 'dates': '2023-12-31', 'phone': 13800000004, 'token': '9f34FFC709A3d900f8AdEF7e23D35'}}
+INFO - 2025-02-28 14:20:01,076 - sendrequest.py:129 -[sendrequest:send_request] - 接口返回信息：{"msg":"新增失败，参数缺失或token失效","msg_code":9001}
+
+INFO - 2025-02-28 14:20:01,078 - assertions.py:197 -[assertions:assert_result] - yaml文件预期结果：[{'contains': {'status_code': 200}}, {'contains': {'msg': '新增失败'}}]
+INFO - 2025-02-28 14:20:01,078 - assertions.py:60 -[assertions:contains_assert] - 字符串包含断言成功：预期结果【新增失败】,实际结果【新增失败，参数缺失或token失效】
+INFO - 2025-02-28 14:20:01,079 - assertions.py:232 -[assertions:assert_result] - 测试成功
+INFO - 2025-02-28 14:20:01,083 - conftest.py:22 -[conftest:start_test_and_end] - -------------接口测试结束--------------
+INFO - 2025-02-28 14:20:01,089 - conftest.py:20 -[conftest:start_test_and_end] - -------------接口测试开始--------------
+INFO - 2025-02-28 14:20:01,104 - sendrequest.py:160 -[sendrequest:run_main] - 接口名称：新增用户
+INFO - 2025-02-28 14:20:01,105 - sendrequest.py:161 -[sendrequest:run_main] - 请求地址：http://127.0.0.1:8787/dar/user/addUser
+INFO - 2025-02-28 14:20:01,106 - sendrequest.py:162 -[sendrequest:run_main] - 请求方式：POST
+INFO - 2025-02-28 14:20:01,106 - sendrequest.py:163 -[sendrequest:run_main] - 测试用例名称：无效新增·缺少必填参数username
+INFO - 2025-02-28 14:20:01,106 - sendrequest.py:164 -[sendrequest:run_main] - 请求头：{'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
+INFO - 2025-02-28 14:20:01,106 - sendrequest.py:165 -[sendrequest:run_main] - Cookie：None
+INFO - 2025-02-28 14:20:01,108 - sendrequest.py:170 -[sendrequest:run_main] - 请求参数：{'data': {'password': 'tset6789893', 'role_id': 123456783, 'dates': '2023-12-31', 'phone': 13800000003, 'token': '9f34FFC709A3d900f8AdEF7e23D35'}}
+INFO - 2025-02-28 14:20:01,114 - sendrequest.py:129 -[sendrequest:send_request] - 接口返回信息：{"msg":"新增失败，参数缺失或token失效","msg_code":9001}
+
+INFO - 2025-02-28 14:20:01,116 - assertions.py:197 -[assertions:assert_result] - yaml文件预期结果：[{'contains': {'status_code': 200}}, {'contains': {'msg': '新增失败'}}]
+INFO - 2025-02-28 14:20:01,116 - assertions.py:60 -[assertions:contains_assert] - 字符串包含断言成功：预期结果【新增失败】,实际结果【新增失败，参数缺失或token失效】
+INFO - 2025-02-28 14:20:01,116 - assertions.py:232 -[assertions:assert_result] - 测试成功
+INFO - 2025-02-28 14:20:01,120 - conftest.py:22 -[conftest:start_test_and_end] - -------------接口测试结束--------------
+INFO - 2025-02-28 14:28:39,892 - sendrequest.py:160 -[sendrequest:run_main] - 接口名称：用户登录
+INFO - 2025-02-28 14:28:39,892 - sendrequest.py:161 -[sendrequest:run_main] - 请求地址：http://127.0.0.1:8787/dar/user/login
+INFO - 2025-02-28 14:28:39,892 - sendrequest.py:162 -[sendrequest:run_main] - 请求方式：post
+INFO - 2025-02-28 14:28:39,892 - sendrequest.py:163 -[sendrequest:run_main] - 测试用例名称：用户名和密码正确登录验证
+INFO - 2025-02-28 14:28:39,892 - sendrequest.py:164 -[sendrequest:run_main] - 请求头：{'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
+INFO - 2025-02-28 14:28:39,892 - sendrequest.py:165 -[sendrequest:run_main] - Cookie：None
+INFO - 2025-02-28 14:28:39,894 - sendrequest.py:170 -[sendrequest:run_main] - 请求参数：{'data': {'user_name': 'test01', 'passwd': 'admin123'}}
+INFO - 2025-02-28 14:28:39,902 - sendrequest.py:128 -[sendrequest:send_request] - cookie：{'Cookie': {'access_token_cookie': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc0MDcyNDExOSwianRpIjoiYjFlZDZkZTYtZGU0OC00ODZhLTllOWItMjYzNDVkNTJmYzE1IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImV4YW1wbGVfdXNlciIsIm5iZiI6MTc0MDcyNDExOSwiZXhwIjoxNzQwNzI1MDE5fQ.vB012dZA2PPIKVZuFQsZkGIhrTwaPsSG2_Y5H_9Je8M'}}
+INFO - 2025-02-28 14:28:39,902 - sendrequest.py:129 -[sendrequest:send_request] - 接口返回信息：{"error_code":null,"msg":"登录成功","msg_code":200,"orgId":"6140913758128971280","token":"A3f8E851079f3b96b15736E881FCC","userId":"1516442349302372272"}
+
+INFO - 2025-02-28 14:28:39,904 - apiutil.py:165 -[apiutil:extract_data] - 提取接口的返回值：
+INFO - 2025-02-28 14:28:39,905 - assertions.py:197 -[assertions:assert_result] - yaml文件预期结果：[{'contains': {'error_code': 'none'}}, {'eq': {'msg': '登录成功'}}]
+INFO - 2025-02-28 14:28:39,906 - assertions.py:60 -[assertions:contains_assert] - 字符串包含断言成功：预期结果【None】,实际结果【[None]】
+ERROR - 2025-02-28 14:28:39,906 - assertions.py:227 -[assertions:assert_result] - 接口断言异常，请检查yaml预期结果值是否正确填写!
+INFO - 2025-02-28 14:28:39,906 - assertions.py:232 -[assertions:assert_result] - 测试成功
+INFO - 2025-02-28 14:28:39,907 - conftest.py:20 -[conftest:start_test_and_end] - -------------接口测试开始--------------
+INFO - 2025-02-28 14:28:39,917 - sendrequest.py:160 -[sendrequest:run_main] - 接口名称：新增用户
+INFO - 2025-02-28 14:28:39,917 - sendrequest.py:161 -[sendrequest:run_main] - 请求地址：http://127.0.0.1:8787/dar/user/addUser
+INFO - 2025-02-28 14:28:39,917 - sendrequest.py:162 -[sendrequest:run_main] - 请求方式：POST
+INFO - 2025-02-28 14:28:39,917 - sendrequest.py:163 -[sendrequest:run_main] - 测试用例名称：正常新增用户
+INFO - 2025-02-28 14:28:39,918 - sendrequest.py:164 -[sendrequest:run_main] - 请求头：{'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
+INFO - 2025-02-28 14:28:39,918 - sendrequest.py:165 -[sendrequest:run_main] - Cookie：None
+INFO - 2025-02-28 14:28:39,919 - sendrequest.py:170 -[sendrequest:run_main] - 请求参数：{'data': {'username': 'testadduser1', 'password': 'test6789890', 'role_id': 123451789, 'dates': '2023-12-31', 'phone': 13800100000, 'token': 'A3f8E851079f3b96b15736E881FCC'}}
+INFO - 2025-02-28 14:28:39,937 - sendrequest.py:129 -[sendrequest:send_request] - 接口返回信息：{"error_code":null,"msg":"新增成功","msg_code":200}
+
+INFO - 2025-02-28 14:28:39,938 - assertions.py:197 -[assertions:assert_result] - yaml文件预期结果：[{'contains': {'status_code': 200}}, {'contains': {'msg': '新增成功'}}]
+INFO - 2025-02-28 14:28:39,939 - assertions.py:60 -[assertions:contains_assert] - 字符串包含断言成功：预期结果【新增成功】,实际结果【新增成功】
+INFO - 2025-02-28 14:28:39,939 - assertions.py:232 -[assertions:assert_result] - 测试成功
+INFO - 2025-02-28 14:28:39,949 - conftest.py:22 -[conftest:start_test_and_end] - -------------接口测试结束--------------
+INFO - 2025-02-28 14:28:39,955 - conftest.py:20 -[conftest:start_test_and_end] - -------------接口测试开始--------------
+INFO - 2025-02-28 14:28:39,962 - sendrequest.py:160 -[sendrequest:run_main] - 接口名称：新增用户
+INFO - 2025-02-28 14:28:39,963 - sendrequest.py:161 -[sendrequest:run_main] - 请求地址：http://127.0.0.1:8787/dar/user/addUser
+INFO - 2025-02-28 14:28:39,963 - sendrequest.py:162 -[sendrequest:run_main] - 请求方式：POST
+INFO - 2025-02-28 14:28:39,963 - sendrequest.py:163 -[sendrequest:run_main] - 测试用例名称：无效新增·缺少token
+INFO - 2025-02-28 14:28:39,963 - sendrequest.py:164 -[sendrequest:run_main] - 请求头：{'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
+INFO - 2025-02-28 14:28:39,963 - sendrequest.py:165 -[sendrequest:run_main] - Cookie：None
+INFO - 2025-02-28 14:28:39,964 - sendrequest.py:170 -[sendrequest:run_main] - 请求参数：{'data': {'username': 'testadduser03', 'password': 'tset6789892', 'role_id': 123456782, 'dates': '2023-12-31', 'phone': 13800000002, 'token': None}}
+INFO - 2025-02-28 14:28:39,985 - sendrequest.py:129 -[sendrequest:send_request] - 接口返回信息：{"msg":"新增失败，参数缺失或token失效","msg_code":9001}
+
+INFO - 2025-02-28 14:28:39,986 - assertions.py:197 -[assertions:assert_result] - yaml文件预期结果：[{'contains': {'status_code': 200}}, {'contains': {'msg': '新增失败'}}]
+INFO - 2025-02-28 14:28:39,986 - assertions.py:60 -[assertions:contains_assert] - 字符串包含断言成功：预期结果【新增失败】,实际结果【新增失败，参数缺失或token失效】
+INFO - 2025-02-28 14:28:39,986 - assertions.py:232 -[assertions:assert_result] - 测试成功
+INFO - 2025-02-28 14:28:39,989 - conftest.py:22 -[conftest:start_test_and_end] - -------------接口测试结束--------------
+INFO - 2025-02-28 14:28:39,993 - conftest.py:20 -[conftest:start_test_and_end] - -------------接口测试开始--------------
+INFO - 2025-02-28 14:28:40,002 - sendrequest.py:160 -[sendrequest:run_main] - 接口名称：新增用户
+INFO - 2025-02-28 14:28:40,003 - sendrequest.py:161 -[sendrequest:run_main] - 请求地址：http://127.0.0.1:8787/dar/user/addUser
+INFO - 2025-02-28 14:28:40,003 - sendrequest.py:162 -[sendrequest:run_main] - 请求方式：POST
+INFO - 2025-02-28 14:28:40,003 - sendrequest.py:163 -[sendrequest:run_main] - 测试用例名称：无效新增·缺少必填参数role_id
+INFO - 2025-02-28 14:28:40,003 - sendrequest.py:164 -[sendrequest:run_main] - 请求头：{'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
+INFO - 2025-02-28 14:28:40,003 - sendrequest.py:165 -[sendrequest:run_main] - Cookie：None
+INFO - 2025-02-28 14:28:40,004 - sendrequest.py:170 -[sendrequest:run_main] - 请求参数：{'data': {'username': 'testadduser4', 'password': 'tset6789894', 'dates': '2023-12-31', 'phone': 13800000004, 'token': 'A3f8E851079f3b96b15736E881FCC'}}
+INFO - 2025-02-28 14:28:40,032 - sendrequest.py:129 -[sendrequest:send_request] - 接口返回信息：{"msg":"新增失败，参数缺失或token失效","msg_code":9001}
+
+INFO - 2025-02-28 14:28:40,033 - assertions.py:197 -[assertions:assert_result] - yaml文件预期结果：[{'contains': {'status_code': 200}}, {'contains': {'msg': '新增失败'}}]
+INFO - 2025-02-28 14:28:40,034 - assertions.py:60 -[assertions:contains_assert] - 字符串包含断言成功：预期结果【新增失败】,实际结果【新增失败，参数缺失或token失效】
+INFO - 2025-02-28 14:28:40,034 - assertions.py:232 -[assertions:assert_result] - 测试成功
+INFO - 2025-02-28 14:28:40,037 - conftest.py:22 -[conftest:start_test_and_end] - -------------接口测试结束--------------
+INFO - 2025-02-28 14:28:40,041 - conftest.py:20 -[conftest:start_test_and_end] - -------------接口测试开始--------------
+INFO - 2025-02-28 14:28:40,050 - sendrequest.py:160 -[sendrequest:run_main] - 接口名称：新增用户
+INFO - 2025-02-28 14:28:40,051 - sendrequest.py:161 -[sendrequest:run_main] - 请求地址：http://127.0.0.1:8787/dar/user/addUser
+INFO - 2025-02-28 14:28:40,051 - sendrequest.py:162 -[sendrequest:run_main] - 请求方式：POST
+INFO - 2025-02-28 14:28:40,051 - sendrequest.py:163 -[sendrequest:run_main] - 测试用例名称：无效新增·缺少必填参数username
+INFO - 2025-02-28 14:28:40,051 - sendrequest.py:164 -[sendrequest:run_main] - 请求头：{'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
+INFO - 2025-02-28 14:28:40,051 - sendrequest.py:165 -[sendrequest:run_main] - Cookie：None
+INFO - 2025-02-28 14:28:40,052 - sendrequest.py:170 -[sendrequest:run_main] - 请求参数：{'data': {'password': 'tset6789893', 'role_id': 123456783, 'dates': '2023-12-31', 'phone': 13800000003, 'token': 'A3f8E851079f3b96b15736E881FCC'}}
+INFO - 2025-02-28 14:28:40,056 - sendrequest.py:129 -[sendrequest:send_request] - 接口返回信息：{"msg":"新增失败，参数缺失或token失效","msg_code":9001}
+
+INFO - 2025-02-28 14:28:40,058 - assertions.py:197 -[assertions:assert_result] - yaml文件预期结果：[{'contains': {'status_code': 200}}, {'contains': {'msg': '新增失败'}}]
+INFO - 2025-02-28 14:28:40,058 - assertions.py:60 -[assertions:contains_assert] - 字符串包含断言成功：预期结果【新增失败】,实际结果【新增失败，参数缺失或token失效】
+INFO - 2025-02-28 14:28:40,058 - assertions.py:232 -[assertions:assert_result] - 测试成功
+INFO - 2025-02-28 14:28:40,061 - conftest.py:22 -[conftest:start_test_and_end] - -------------接口测试结束--------------
+INFO - 2025-02-28 14:34:56,340 - sendrequest.py:160 -[sendrequest:run_main] - 接口名称：用户登录
+INFO - 2025-02-28 14:34:56,340 - sendrequest.py:161 -[sendrequest:run_main] - 请求地址：http://127.0.0.1:8787/dar/user/login
+INFO - 2025-02-28 14:34:56,340 - sendrequest.py:162 -[sendrequest:run_main] - 请求方式：post
+INFO - 2025-02-28 14:34:56,340 - sendrequest.py:163 -[sendrequest:run_main] - 测试用例名称：用户名和密码正确登录验证
+INFO - 2025-02-28 14:34:56,340 - sendrequest.py:164 -[sendrequest:run_main] - 请求头：{'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
+INFO - 2025-02-28 14:34:56,340 - sendrequest.py:165 -[sendrequest:run_main] - Cookie：None
+INFO - 2025-02-28 14:34:56,341 - sendrequest.py:170 -[sendrequest:run_main] - 请求参数：{'data': {'user_name': 'test01', 'passwd': 'admin123'}}
+INFO - 2025-02-28 14:34:56,349 - sendrequest.py:128 -[sendrequest:send_request] - cookie：{'Cookie': {'access_token_cookie': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc0MDcyNDQ5NiwianRpIjoiNzU5ZWM4NjUtODQ4Ny00NmIwLThkNzQtM2I2YTc1MmU3NjM0IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImV4YW1wbGVfdXNlciIsIm5iZiI6MTc0MDcyNDQ5NiwiZXhwIjoxNzQwNzI1Mzk2fQ.agIzOj4mStK4cgID32kAr_DBiqy2oaOtoLgrk4GAIr4'}}
+INFO - 2025-02-28 14:34:56,350 - sendrequest.py:129 -[sendrequest:send_request] - 接口返回信息：{"error_code":null,"msg":"登录成功","msg_code":200,"orgId":"4140913758110176843","token":"C43eaC2d2CE214dF1C96cf410EDa7","userId":"1516442349302372272"}
+
+INFO - 2025-02-28 14:34:56,351 - apiutil.py:165 -[apiutil:extract_data] - 提取接口的返回值：
+INFO - 2025-02-28 14:34:56,352 - assertions.py:197 -[assertions:assert_result] - yaml文件预期结果：[{'contains': {'error_code': 'none'}}, {'eq': {'msg': '登录成功'}}]
+INFO - 2025-02-28 14:34:56,353 - assertions.py:60 -[assertions:contains_assert] - 字符串包含断言成功：预期结果【None】,实际结果【[None]】
+ERROR - 2025-02-28 14:34:56,354 - assertions.py:227 -[assertions:assert_result] - 接口断言异常，请检查yaml预期结果值是否正确填写!
+INFO - 2025-02-28 14:34:56,354 - assertions.py:232 -[assertions:assert_result] - 测试成功
+INFO - 2025-02-28 14:34:56,354 - conftest.py:20 -[conftest:start_test_and_end] - -------------接口测试开始--------------
+INFO - 2025-02-28 14:34:56,365 - sendrequest.py:160 -[sendrequest:run_main] - 接口名称：新增用户
+INFO - 2025-02-28 14:34:56,365 - sendrequest.py:161 -[sendrequest:run_main] - 请求地址：http://127.0.0.1:8787/dar/user/addUser
+INFO - 2025-02-28 14:34:56,365 - sendrequest.py:162 -[sendrequest:run_main] - 请求方式：POST
+INFO - 2025-02-28 14:34:56,365 - sendrequest.py:163 -[sendrequest:run_main] - 测试用例名称：正常新增用户
+INFO - 2025-02-28 14:34:56,365 - sendrequest.py:164 -[sendrequest:run_main] - 请求头：{'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
+INFO - 2025-02-28 14:34:56,366 - sendrequest.py:165 -[sendrequest:run_main] - Cookie：None
+INFO - 2025-02-28 14:34:56,367 - sendrequest.py:170 -[sendrequest:run_main] - 请求参数：{'data': {'username': 'testadduser1', 'password': 'test6789890', 'role_id': 123451789, 'dates': '2023-12-31', 'phone': 13800100000, 'token': 'C43eaC2d2CE214dF1C96cf410EDa7'}}
+INFO - 2025-02-28 14:34:56,371 - sendrequest.py:129 -[sendrequest:send_request] - 接口返回信息：{"error_code":null,"msg":"新增成功","msg_code":200}
+
+INFO - 2025-02-28 14:34:56,372 - assertions.py:197 -[assertions:assert_result] - yaml文件预期结果：[{'contains': {'status_code': 200}}, {'contains': {'msg': '新增成功'}}]
+INFO - 2025-02-28 14:34:56,373 - assertions.py:60 -[assertions:contains_assert] - 字符串包含断言成功：预期结果【新增成功】,实际结果【新增成功】
+INFO - 2025-02-28 14:34:56,373 - assertions.py:232 -[assertions:assert_result] - 测试成功
+INFO - 2025-02-28 14:34:56,383 - conftest.py:22 -[conftest:start_test_and_end] - -------------接口测试结束--------------
+INFO - 2025-02-28 14:34:56,387 - conftest.py:20 -[conftest:start_test_and_end] - -------------接口测试开始--------------
+INFO - 2025-02-28 14:34:56,394 - sendrequest.py:160 -[sendrequest:run_main] - 接口名称：新增用户
+INFO - 2025-02-28 14:34:56,394 - sendrequest.py:161 -[sendrequest:run_main] - 请求地址：http://127.0.0.1:8787/dar/user/addUser
+INFO - 2025-02-28 14:34:56,394 - sendrequest.py:162 -[sendrequest:run_main] - 请求方式：POST
+INFO - 2025-02-28 14:34:56,394 - sendrequest.py:163 -[sendrequest:run_main] - 测试用例名称：无效新增·缺少token
+INFO - 2025-02-28 14:34:56,394 - sendrequest.py:164 -[sendrequest:run_main] - 请求头：{'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
+INFO - 2025-02-28 14:34:56,394 - sendrequest.py:165 -[sendrequest:run_main] - Cookie：None
+INFO - 2025-02-28 14:34:56,395 - sendrequest.py:170 -[sendrequest:run_main] - 请求参数：{'data': {'username': 'testadduser03', 'password': 'tset6789892', 'role_id': 123456782, 'dates': '2023-12-31', 'phone': 13800000002, 'token': None}}
+INFO - 2025-02-28 14:34:56,400 - sendrequest.py:129 -[sendrequest:send_request] - 接口返回信息：{"msg":"新增失败，参数缺失或token失效","msg_code":9001}
+
+INFO - 2025-02-28 14:34:56,401 - assertions.py:197 -[assertions:assert_result] - yaml文件预期结果：[{'contains': {'status_code': 200}}, {'contains': {'msg': '新增失败'}}]
+INFO - 2025-02-28 14:34:56,401 - assertions.py:60 -[assertions:contains_assert] - 字符串包含断言成功：预期结果【新增失败】,实际结果【新增失败，参数缺失或token失效】
+INFO - 2025-02-28 14:34:56,402 - assertions.py:232 -[assertions:assert_result] - 测试成功
+INFO - 2025-02-28 14:34:56,404 - conftest.py:22 -[conftest:start_test_and_end] - -------------接口测试结束--------------
+INFO - 2025-02-28 14:34:56,408 - conftest.py:20 -[conftest:start_test_and_end] - -------------接口测试开始--------------
+INFO - 2025-02-28 14:34:56,417 - sendrequest.py:160 -[sendrequest:run_main] - 接口名称：新增用户
+INFO - 2025-02-28 14:34:56,418 - sendrequest.py:161 -[sendrequest:run_main] - 请求地址：http://127.0.0.1:8787/dar/user/addUser
+INFO - 2025-02-28 14:34:56,418 - sendrequest.py:162 -[sendrequest:run_main] - 请求方式：POST
+INFO - 2025-02-28 14:34:56,418 - sendrequest.py:163 -[sendrequest:run_main] - 测试用例名称：无效新增·缺少必填参数role_id
+INFO - 2025-02-28 14:34:56,418 - sendrequest.py:164 -[sendrequest:run_main] - 请求头：{'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
+INFO - 2025-02-28 14:34:56,418 - sendrequest.py:165 -[sendrequest:run_main] - Cookie：None
+INFO - 2025-02-28 14:34:56,419 - sendrequest.py:170 -[sendrequest:run_main] - 请求参数：{'data': {'username': 'testadduser4', 'password': 'tset6789894', 'dates': '2023-12-31', 'phone': 13800000004, 'token': 'C43eaC2d2CE214dF1C96cf410EDa7'}}
+INFO - 2025-02-28 14:34:56,424 - sendrequest.py:129 -[sendrequest:send_request] - 接口返回信息：{"msg":"新增失败，参数缺失或token失效","msg_code":9001}
+
+INFO - 2025-02-28 14:34:56,425 - assertions.py:197 -[assertions:assert_result] - yaml文件预期结果：[{'contains': {'status_code': 200}}, {'contains': {'msg': '新增失败'}}]
+INFO - 2025-02-28 14:34:56,425 - assertions.py:60 -[assertions:contains_assert] - 字符串包含断言成功：预期结果【新增失败】,实际结果【新增失败，参数缺失或token失效】
+INFO - 2025-02-28 14:34:56,425 - assertions.py:232 -[assertions:assert_result] - 测试成功
+INFO - 2025-02-28 14:34:56,428 - conftest.py:22 -[conftest:start_test_and_end] - -------------接口测试结束--------------
+INFO - 2025-02-28 14:34:56,433 - conftest.py:20 -[conftest:start_test_and_end] - -------------接口测试开始--------------
+INFO - 2025-02-28 14:34:56,442 - sendrequest.py:160 -[sendrequest:run_main] - 接口名称：新增用户
+INFO - 2025-02-28 14:34:56,442 - sendrequest.py:161 -[sendrequest:run_main] - 请求地址：http://127.0.0.1:8787/dar/user/addUser
+INFO - 2025-02-28 14:34:56,442 - sendrequest.py:162 -[sendrequest:run_main] - 请求方式：POST
+INFO - 2025-02-28 14:34:56,442 - sendrequest.py:163 -[sendrequest:run_main] - 测试用例名称：无效新增·缺少必填参数username
+INFO - 2025-02-28 14:34:56,442 - sendrequest.py:164 -[sendrequest:run_main] - 请求头：{'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
+INFO - 2025-02-28 14:34:56,443 - sendrequest.py:165 -[sendrequest:run_main] - Cookie：None
+INFO - 2025-02-28 14:34:56,444 - sendrequest.py:170 -[sendrequest:run_main] - 请求参数：{'data': {'password': 'tset6789893', 'role_id': 123456783, 'dates': '2023-12-31', 'phone': 13800000003, 'token': 'C43eaC2d2CE214dF1C96cf410EDa7'}}
+INFO - 2025-02-28 14:34:56,463 - sendrequest.py:129 -[sendrequest:send_request] - 接口返回信息：{"msg":"新增失败，参数缺失或token失效","msg_code":9001}
+
+INFO - 2025-02-28 14:34:56,465 - assertions.py:197 -[assertions:assert_result] - yaml文件预期结果：[{'contains': {'status_code': 200}}, {'contains': {'msg': '新增失败'}}]
+INFO - 2025-02-28 14:34:56,465 - assertions.py:60 -[assertions:contains_assert] - 字符串包含断言成功：预期结果【新增失败】,实际结果【新增失败，参数缺失或token失效】
+INFO - 2025-02-28 14:34:56,465 - assertions.py:232 -[assertions:assert_result] - 测试成功
+INFO - 2025-02-28 14:34:56,467 - conftest.py:22 -[conftest:start_test_and_end] - -------------接口测试结束--------------

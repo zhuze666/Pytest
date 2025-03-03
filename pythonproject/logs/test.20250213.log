@@ -1,0 +1,304 @@
+INFO - 2025-02-13 09:20:02,313 - sendrequest.py:138 -[sendrequest:run_main] - 接口名称：用户登录
+INFO - 2025-02-13 09:20:02,313 - sendrequest.py:139 -[sendrequest:run_main] - 请求地址：http://127.0.0.1:8787/dar/user/login
+INFO - 2025-02-13 09:20:02,313 - sendrequest.py:140 -[sendrequest:run_main] - 请求方式：post
+INFO - 2025-02-13 09:20:02,314 - sendrequest.py:141 -[sendrequest:run_main] - 测试用例名称：用户名和密码正确登录验证
+INFO - 2025-02-13 09:20:02,314 - sendrequest.py:142 -[sendrequest:run_main] - 请求头：{'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
+INFO - 2025-02-13 09:20:02,314 - sendrequest.py:143 -[sendrequest:run_main] - Cookie：None
+INFO - 2025-02-13 09:20:02,315 - sendrequest.py:147 -[sendrequest:run_main] - 请求参数：{'data': {'user_name': 'test01', 'passwd': 'admin123'}}
+INFO - 2025-02-13 09:20:02,326 - sendrequest.py:110 -[sendrequest:send_request] - cookie：{'Cookie': {'access_token_cookie': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTczOTQwOTYwMiwianRpIjoiNmI3MzI0NDMtODdlNy00N2IzLTgxMTAtNDg4ZTJkNTU3YTkxIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImV4YW1wbGVfdXNlciIsIm5iZiI6MTczOTQwOTYwMiwiZXhwIjoxNzM5NDEwNTAyfQ.ySA3PHG9ue8F-fAPx1DqAuv_oFaQHO-uX9Fk56wbRLw'}}
+INFO - 2025-02-13 09:20:02,327 - sendrequest.py:111 -[sendrequest:send_request] - 接口返回信息：{"error_code":null,"msg":"登录成功","msg_code":200,"orgId":"4140913758110176843","token":"1f1AE17d01bc5fBf1CddEAF4caAa5","userId":"6003463028919123340"}
+
+INFO - 2025-02-13 09:20:02,328 - apiutil.py:153 -[apiutil:extract_data] - 提取接口的返回值：
+INFO - 2025-02-13 09:20:02,329 - assertions.py:172 -[assertions:assert_result] - yaml文件预期结果：[{'contains': {'error_code': 'none'}}, {'eq': {'msg': '登录成功'}}]
+INFO - 2025-02-13 09:20:02,330 - assertions.py:47 -[assertions:contains_assert] - 字符串包含断言成功：预期结果【None】,实际结果【[None]】
+ERROR - 2025-02-13 09:20:02,330 - assertions.py:196 -[assertions:assert_result] - 接口断言异常，请检查yaml预期结果值是否正确填写!
+ERROR - 2025-02-13 09:20:02,330 - apiutil.py:114 -[apiutil:specification_yaml] - unsupported operand type(s) for &: 'list' and 'list'
+ERROR - 2025-02-13 09:20:02,330 - conftest.py:32 -[conftest:system_login] - 登录接口出现异常，导致后续接口无法继续运行，请检查程序！，unsupported operand type(s) for &: 'list' and 'list'
+INFO - 2025-02-13 09:20:03,479 - sendrequest.py:138 -[sendrequest:run_main] - 接口名称：用户登录
+INFO - 2025-02-13 09:20:03,480 - sendrequest.py:139 -[sendrequest:run_main] - 请求地址：http://127.0.0.1:8787/dar/user/login
+INFO - 2025-02-13 09:20:03,480 - sendrequest.py:140 -[sendrequest:run_main] - 请求方式：post
+INFO - 2025-02-13 09:20:03,480 - sendrequest.py:141 -[sendrequest:run_main] - 测试用例名称：用户名和密码正确登录验证
+INFO - 2025-02-13 09:20:03,480 - sendrequest.py:142 -[sendrequest:run_main] - 请求头：{'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
+INFO - 2025-02-13 09:20:03,480 - sendrequest.py:143 -[sendrequest:run_main] - Cookie：None
+INFO - 2025-02-13 09:20:03,481 - sendrequest.py:147 -[sendrequest:run_main] - 请求参数：{'data': {'user_name': 'test01', 'passwd': 'admin123'}}
+INFO - 2025-02-13 09:20:03,499 - sendrequest.py:110 -[sendrequest:send_request] - cookie：{'Cookie': {'access_token_cookie': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTczOTQwOTYwMywianRpIjoiYWQ5N2U5NjMtZTFkYy00Y2VhLTg2M2ItN2JjY2RiM2ZmNTM5IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImV4YW1wbGVfdXNlciIsIm5iZiI6MTczOTQwOTYwMywiZXhwIjoxNzM5NDEwNTAzfQ.9PzXVISa85PJmmAPl74VLJHKbZJ62yUqnBu_1MP7Nac'}}
+INFO - 2025-02-13 09:20:03,499 - sendrequest.py:111 -[sendrequest:send_request] - 接口返回信息：{"error_code":null,"msg":"登录成功","msg_code":200,"orgId":"6140913758128971280","token":"29FFeDfD276Edd5c9b63deD36ECdd","userId":"6003463028919123340"}
+
+INFO - 2025-02-13 09:20:03,501 - apiutil.py:153 -[apiutil:extract_data] - 提取接口的返回值：
+INFO - 2025-02-13 09:20:03,502 - assertions.py:172 -[assertions:assert_result] - yaml文件预期结果：[{'contains': {'error_code': 'none'}}, {'eq': {'msg': '登录成功'}}]
+INFO - 2025-02-13 09:20:03,502 - assertions.py:47 -[assertions:contains_assert] - 字符串包含断言成功：预期结果【None】,实际结果【[None]】
+ERROR - 2025-02-13 09:20:03,502 - assertions.py:196 -[assertions:assert_result] - 接口断言异常，请检查yaml预期结果值是否正确填写!
+ERROR - 2025-02-13 09:20:03,502 - apiutil.py:114 -[apiutil:specification_yaml] - unsupported operand type(s) for &: 'list' and 'list'
+ERROR - 2025-02-13 09:20:03,502 - conftest.py:32 -[conftest:system_login] - 登录接口出现异常，导致后续接口无法继续运行，请检查程序！，unsupported operand type(s) for &: 'list' and 'list'
+INFO - 2025-02-13 09:20:03,573 - sendrequest.py:138 -[sendrequest:run_main] - 接口名称：用户登录
+INFO - 2025-02-13 09:20:03,573 - sendrequest.py:139 -[sendrequest:run_main] - 请求地址：http://127.0.0.1:8787/dar/user/login
+INFO - 2025-02-13 09:20:03,573 - sendrequest.py:140 -[sendrequest:run_main] - 请求方式：post
+INFO - 2025-02-13 09:20:03,574 - sendrequest.py:141 -[sendrequest:run_main] - 测试用例名称：用户名和密码正确登录验证
+INFO - 2025-02-13 09:20:03,574 - sendrequest.py:142 -[sendrequest:run_main] - 请求头：{'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
+INFO - 2025-02-13 09:20:03,574 - sendrequest.py:143 -[sendrequest:run_main] - Cookie：None
+INFO - 2025-02-13 09:20:03,575 - sendrequest.py:147 -[sendrequest:run_main] - 请求参数：{'data': {'user_name': 'test01', 'passwd': 'admin123'}}
+INFO - 2025-02-13 09:20:03,591 - sendrequest.py:110 -[sendrequest:send_request] - cookie：{'Cookie': {'access_token_cookie': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTczOTQwOTYwMywianRpIjoiMjUzM2QxMjItYjkxNy00ZGY4LWI2ZGMtNzM4OGIyNzUyN2Q4IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImV4YW1wbGVfdXNlciIsIm5iZiI6MTczOTQwOTYwMywiZXhwIjoxNzM5NDEwNTAzfQ.R0W7aA2iGiQgFmIcavMQ1iUctaimaBm6kYj3uzkQsIk'}}
+INFO - 2025-02-13 09:20:03,591 - sendrequest.py:111 -[sendrequest:send_request] - 接口返回信息：{"error_code":null,"msg":"登录成功","msg_code":200,"orgId":"4140913758110176843","token":"b7bACe1Fddd7cBDC6D0A581F313C4","userId":"6003463028919123340"}
+
+INFO - 2025-02-13 09:20:03,594 - apiutil.py:153 -[apiutil:extract_data] - 提取接口的返回值：
+INFO - 2025-02-13 09:20:03,594 - assertions.py:172 -[assertions:assert_result] - yaml文件预期结果：[{'contains': {'error_code': 'none'}}, {'eq': {'msg': '登录成功'}}]
+INFO - 2025-02-13 09:20:03,594 - assertions.py:47 -[assertions:contains_assert] - 字符串包含断言成功：预期结果【None】,实际结果【[None]】
+ERROR - 2025-02-13 09:20:03,594 - assertions.py:196 -[assertions:assert_result] - 接口断言异常，请检查yaml预期结果值是否正确填写!
+ERROR - 2025-02-13 09:20:03,594 - apiutil.py:114 -[apiutil:specification_yaml] - unsupported operand type(s) for &: 'list' and 'list'
+ERROR - 2025-02-13 09:20:03,594 - conftest.py:32 -[conftest:system_login] - 登录接口出现异常，导致后续接口无法继续运行，请检查程序！，unsupported operand type(s) for &: 'list' and 'list'
+INFO - 2025-02-13 09:20:03,671 - sendrequest.py:138 -[sendrequest:run_main] - 接口名称：用户登录
+INFO - 2025-02-13 09:20:03,672 - sendrequest.py:139 -[sendrequest:run_main] - 请求地址：http://127.0.0.1:8787/dar/user/login
+INFO - 2025-02-13 09:20:03,672 - sendrequest.py:140 -[sendrequest:run_main] - 请求方式：post
+INFO - 2025-02-13 09:20:03,672 - sendrequest.py:141 -[sendrequest:run_main] - 测试用例名称：用户名和密码正确登录验证
+INFO - 2025-02-13 09:20:03,672 - sendrequest.py:142 -[sendrequest:run_main] - 请求头：{'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
+INFO - 2025-02-13 09:20:03,672 - sendrequest.py:143 -[sendrequest:run_main] - Cookie：None
+INFO - 2025-02-13 09:20:03,673 - sendrequest.py:147 -[sendrequest:run_main] - 请求参数：{'data': {'user_name': 'test01', 'passwd': 'admin123'}}
+INFO - 2025-02-13 09:20:03,681 - sendrequest.py:110 -[sendrequest:send_request] - cookie：{'Cookie': {'access_token_cookie': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTczOTQwOTYwMywianRpIjoiNWNkYzRiNDItNjY3Zi00NThhLTlhYWQtYzNiOTEzMTk4ZmJhIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImV4YW1wbGVfdXNlciIsIm5iZiI6MTczOTQwOTYwMywiZXhwIjoxNzM5NDEwNTAzfQ.ymrVX_2HWR_xEFzd4rBLApAXylSHRUum2JE1_nzkygc'}}
+INFO - 2025-02-13 09:20:03,681 - sendrequest.py:111 -[sendrequest:send_request] - 接口返回信息：{"error_code":null,"msg":"登录成功","msg_code":200,"orgId":"6140913758128971280","token":"2DbBDDfAe998bCe7C5a6eda9c6611","userId":"6003463028919123340"}
+
+INFO - 2025-02-13 09:20:03,683 - apiutil.py:153 -[apiutil:extract_data] - 提取接口的返回值：
+INFO - 2025-02-13 09:20:03,684 - assertions.py:172 -[assertions:assert_result] - yaml文件预期结果：[{'contains': {'error_code': 'none'}}, {'eq': {'msg': '登录成功'}}]
+INFO - 2025-02-13 09:20:03,685 - assertions.py:47 -[assertions:contains_assert] - 字符串包含断言成功：预期结果【None】,实际结果【[None]】
+ERROR - 2025-02-13 09:20:03,685 - assertions.py:196 -[assertions:assert_result] - 接口断言异常，请检查yaml预期结果值是否正确填写!
+ERROR - 2025-02-13 09:20:03,685 - apiutil.py:114 -[apiutil:specification_yaml] - unsupported operand type(s) for &: 'list' and 'list'
+ERROR - 2025-02-13 09:20:03,685 - conftest.py:32 -[conftest:system_login] - 登录接口出现异常，导致后续接口无法继续运行，请检查程序！，unsupported operand type(s) for &: 'list' and 'list'
+INFO - 2025-02-13 09:20:03,779 - sendrequest.py:138 -[sendrequest:run_main] - 接口名称：用户登录
+INFO - 2025-02-13 09:20:03,779 - sendrequest.py:139 -[sendrequest:run_main] - 请求地址：http://127.0.0.1:8787/dar/user/login
+INFO - 2025-02-13 09:20:03,780 - sendrequest.py:140 -[sendrequest:run_main] - 请求方式：post
+INFO - 2025-02-13 09:20:03,780 - sendrequest.py:141 -[sendrequest:run_main] - 测试用例名称：用户名和密码正确登录验证
+INFO - 2025-02-13 09:20:03,780 - sendrequest.py:142 -[sendrequest:run_main] - 请求头：{'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
+INFO - 2025-02-13 09:20:03,780 - sendrequest.py:143 -[sendrequest:run_main] - Cookie：None
+INFO - 2025-02-13 09:20:03,781 - sendrequest.py:147 -[sendrequest:run_main] - 请求参数：{'data': {'user_name': 'test01', 'passwd': 'admin123'}}
+INFO - 2025-02-13 09:20:03,797 - sendrequest.py:110 -[sendrequest:send_request] - cookie：{'Cookie': {'access_token_cookie': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTczOTQwOTYwMywianRpIjoiMzFlMmFhYzktYzkwMS00NDRiLTk3ODYtYmYxZmE4ZjgwNGNjIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImV4YW1wbGVfdXNlciIsIm5iZiI6MTczOTQwOTYwMywiZXhwIjoxNzM5NDEwNTAzfQ.V1bjJ1r1WBpWIsMLc7surV2MRKAoRU5zqsr2VYJGpnA'}}
+INFO - 2025-02-13 09:20:03,797 - sendrequest.py:111 -[sendrequest:send_request] - 接口返回信息：{"error_code":null,"msg":"登录成功","msg_code":200,"orgId":"6140913758128971280","token":"74cBd102d0dc66FFaa50814F5aB0C","userId":"6003463028919123340"}
+
+INFO - 2025-02-13 09:20:03,799 - apiutil.py:153 -[apiutil:extract_data] - 提取接口的返回值：
+INFO - 2025-02-13 09:20:03,800 - assertions.py:172 -[assertions:assert_result] - yaml文件预期结果：[{'contains': {'error_code': 'none'}}, {'eq': {'msg': '登录成功'}}]
+INFO - 2025-02-13 09:20:03,800 - assertions.py:47 -[assertions:contains_assert] - 字符串包含断言成功：预期结果【None】,实际结果【[None]】
+ERROR - 2025-02-13 09:20:03,800 - assertions.py:196 -[assertions:assert_result] - 接口断言异常，请检查yaml预期结果值是否正确填写!
+ERROR - 2025-02-13 09:20:03,800 - apiutil.py:114 -[apiutil:specification_yaml] - unsupported operand type(s) for &: 'list' and 'list'
+ERROR - 2025-02-13 09:20:03,800 - conftest.py:32 -[conftest:system_login] - 登录接口出现异常，导致后续接口无法继续运行，请检查程序！，unsupported operand type(s) for &: 'list' and 'list'
+INFO - 2025-02-13 09:20:03,882 - sendrequest.py:138 -[sendrequest:run_main] - 接口名称：用户登录
+INFO - 2025-02-13 09:20:03,882 - sendrequest.py:139 -[sendrequest:run_main] - 请求地址：http://127.0.0.1:8787/dar/user/login
+INFO - 2025-02-13 09:20:03,882 - sendrequest.py:140 -[sendrequest:run_main] - 请求方式：post
+INFO - 2025-02-13 09:20:03,882 - sendrequest.py:141 -[sendrequest:run_main] - 测试用例名称：用户名和密码正确登录验证
+INFO - 2025-02-13 09:20:03,883 - sendrequest.py:142 -[sendrequest:run_main] - 请求头：{'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
+INFO - 2025-02-13 09:20:03,883 - sendrequest.py:143 -[sendrequest:run_main] - Cookie：None
+INFO - 2025-02-13 09:20:03,884 - sendrequest.py:147 -[sendrequest:run_main] - 请求参数：{'data': {'user_name': 'test01', 'passwd': 'admin123'}}
+INFO - 2025-02-13 09:20:03,910 - sendrequest.py:110 -[sendrequest:send_request] - cookie：{'Cookie': {'access_token_cookie': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTczOTQwOTYwMywianRpIjoiYTEyNzYwYzItNDliNy00NGQzLWI0YjktYjZhMzljNzU3OTYzIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImV4YW1wbGVfdXNlciIsIm5iZiI6MTczOTQwOTYwMywiZXhwIjoxNzM5NDEwNTAzfQ.AxGM_Dp4NEER5a_D4Z9PEf_CumSjfsLkHFfftkSw24Q'}}
+INFO - 2025-02-13 09:20:03,910 - sendrequest.py:111 -[sendrequest:send_request] - 接口返回信息：{"error_code":null,"msg":"登录成功","msg_code":200,"orgId":"6140913758128971280","token":"E741F9e5Bca08B1fFaD981A4C21EB","userId":"6003463028919123340"}
+
+INFO - 2025-02-13 09:20:03,911 - apiutil.py:153 -[apiutil:extract_data] - 提取接口的返回值：
+INFO - 2025-02-13 09:20:03,913 - assertions.py:172 -[assertions:assert_result] - yaml文件预期结果：[{'contains': {'error_code': 'none'}}, {'eq': {'msg': '登录成功'}}]
+INFO - 2025-02-13 09:20:03,913 - assertions.py:47 -[assertions:contains_assert] - 字符串包含断言成功：预期结果【None】,实际结果【[None]】
+ERROR - 2025-02-13 09:20:03,913 - assertions.py:196 -[assertions:assert_result] - 接口断言异常，请检查yaml预期结果值是否正确填写!
+ERROR - 2025-02-13 09:20:03,913 - apiutil.py:114 -[apiutil:specification_yaml] - unsupported operand type(s) for &: 'list' and 'list'
+ERROR - 2025-02-13 09:20:03,914 - conftest.py:32 -[conftest:system_login] - 登录接口出现异常，导致后续接口无法继续运行，请检查程序！，unsupported operand type(s) for &: 'list' and 'list'
+INFO - 2025-02-13 09:20:04,030 - sendrequest.py:138 -[sendrequest:run_main] - 接口名称：用户登录
+INFO - 2025-02-13 09:20:04,030 - sendrequest.py:139 -[sendrequest:run_main] - 请求地址：http://127.0.0.1:8787/dar/user/login
+INFO - 2025-02-13 09:20:04,031 - sendrequest.py:140 -[sendrequest:run_main] - 请求方式：post
+INFO - 2025-02-13 09:20:04,031 - sendrequest.py:141 -[sendrequest:run_main] - 测试用例名称：用户名和密码正确登录验证
+INFO - 2025-02-13 09:20:04,032 - sendrequest.py:142 -[sendrequest:run_main] - 请求头：{'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
+INFO - 2025-02-13 09:20:04,032 - sendrequest.py:143 -[sendrequest:run_main] - Cookie：None
+INFO - 2025-02-13 09:20:04,035 - sendrequest.py:147 -[sendrequest:run_main] - 请求参数：{'data': {'user_name': 'test01', 'passwd': 'admin123'}}
+INFO - 2025-02-13 09:20:04,043 - sendrequest.py:110 -[sendrequest:send_request] - cookie：{'Cookie': {'access_token_cookie': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTczOTQwOTYwNCwianRpIjoiNTc0ZGI1NjktMzYxYS00NWUxLThjZTktN2M0YmUyZjUwMzMyIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImV4YW1wbGVfdXNlciIsIm5iZiI6MTczOTQwOTYwNCwiZXhwIjoxNzM5NDEwNTA0fQ.qyBLX7fWSCUXsZoXsXpT-KOue-kxiiICemtaJHafB_g'}}
+INFO - 2025-02-13 09:20:04,043 - sendrequest.py:111 -[sendrequest:send_request] - 接口返回信息：{"error_code":null,"msg":"登录成功","msg_code":200,"orgId":"6140913758128971280","token":"a3f2AEa1eAAC28aB0DA4cE1d3BE3e","userId":"6003463028919123340"}
+
+INFO - 2025-02-13 09:20:04,044 - apiutil.py:153 -[apiutil:extract_data] - 提取接口的返回值：
+INFO - 2025-02-13 09:20:04,046 - assertions.py:172 -[assertions:assert_result] - yaml文件预期结果：[{'contains': {'error_code': 'none'}}, {'eq': {'msg': '登录成功'}}]
+INFO - 2025-02-13 09:20:04,046 - assertions.py:47 -[assertions:contains_assert] - 字符串包含断言成功：预期结果【None】,实际结果【[None]】
+ERROR - 2025-02-13 09:20:04,046 - assertions.py:196 -[assertions:assert_result] - 接口断言异常，请检查yaml预期结果值是否正确填写!
+ERROR - 2025-02-13 09:20:04,047 - apiutil.py:114 -[apiutil:specification_yaml] - unsupported operand type(s) for &: 'list' and 'list'
+ERROR - 2025-02-13 09:20:04,047 - conftest.py:32 -[conftest:system_login] - 登录接口出现异常，导致后续接口无法继续运行，请检查程序！，unsupported operand type(s) for &: 'list' and 'list'
+INFO - 2025-02-13 09:20:04,134 - sendrequest.py:138 -[sendrequest:run_main] - 接口名称：用户登录
+INFO - 2025-02-13 09:20:04,134 - sendrequest.py:139 -[sendrequest:run_main] - 请求地址：http://127.0.0.1:8787/dar/user/login
+INFO - 2025-02-13 09:20:04,135 - sendrequest.py:140 -[sendrequest:run_main] - 请求方式：post
+INFO - 2025-02-13 09:20:04,135 - sendrequest.py:141 -[sendrequest:run_main] - 测试用例名称：用户名和密码正确登录验证
+INFO - 2025-02-13 09:20:04,135 - sendrequest.py:142 -[sendrequest:run_main] - 请求头：{'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
+INFO - 2025-02-13 09:20:04,135 - sendrequest.py:143 -[sendrequest:run_main] - Cookie：None
+INFO - 2025-02-13 09:20:04,136 - sendrequest.py:147 -[sendrequest:run_main] - 请求参数：{'data': {'user_name': 'test01', 'passwd': 'admin123'}}
+INFO - 2025-02-13 09:20:04,146 - sendrequest.py:110 -[sendrequest:send_request] - cookie：{'Cookie': {'access_token_cookie': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTczOTQwOTYwNCwianRpIjoiOWFjMmJiOGMtMzYyMC00ZGQ2LTkyYjUtYWRjYzMzYmVjNDA4IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImV4YW1wbGVfdXNlciIsIm5iZiI6MTczOTQwOTYwNCwiZXhwIjoxNzM5NDEwNTA0fQ.YVX6qQkFVGN7-R6jYiLmnK9DPurZ-IifinqpgIlbCGY'}}
+INFO - 2025-02-13 09:20:04,146 - sendrequest.py:111 -[sendrequest:send_request] - 接口返回信息：{"error_code":null,"msg":"登录成功","msg_code":200,"orgId":"6140913758128971280","token":"76229Fd01C1F4b12c10da3ddEEFC9","userId":"6003463028919123340"}
+
+INFO - 2025-02-13 09:20:04,147 - apiutil.py:153 -[apiutil:extract_data] - 提取接口的返回值：
+INFO - 2025-02-13 09:20:04,149 - assertions.py:172 -[assertions:assert_result] - yaml文件预期结果：[{'contains': {'error_code': 'none'}}, {'eq': {'msg': '登录成功'}}]
+INFO - 2025-02-13 09:20:04,149 - assertions.py:47 -[assertions:contains_assert] - 字符串包含断言成功：预期结果【None】,实际结果【[None]】
+ERROR - 2025-02-13 09:20:04,149 - assertions.py:196 -[assertions:assert_result] - 接口断言异常，请检查yaml预期结果值是否正确填写!
+ERROR - 2025-02-13 09:20:04,149 - apiutil.py:114 -[apiutil:specification_yaml] - unsupported operand type(s) for &: 'list' and 'list'
+ERROR - 2025-02-13 09:20:04,150 - conftest.py:32 -[conftest:system_login] - 登录接口出现异常，导致后续接口无法继续运行，请检查程序！，unsupported operand type(s) for &: 'list' and 'list'
+INFO - 2025-02-13 09:20:04,227 - sendrequest.py:138 -[sendrequest:run_main] - 接口名称：用户登录
+INFO - 2025-02-13 09:20:04,227 - sendrequest.py:139 -[sendrequest:run_main] - 请求地址：http://127.0.0.1:8787/dar/user/login
+INFO - 2025-02-13 09:20:04,227 - sendrequest.py:140 -[sendrequest:run_main] - 请求方式：post
+INFO - 2025-02-13 09:20:04,227 - sendrequest.py:141 -[sendrequest:run_main] - 测试用例名称：用户名和密码正确登录验证
+INFO - 2025-02-13 09:20:04,227 - sendrequest.py:142 -[sendrequest:run_main] - 请求头：{'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
+INFO - 2025-02-13 09:20:04,227 - sendrequest.py:143 -[sendrequest:run_main] - Cookie：None
+INFO - 2025-02-13 09:20:04,228 - sendrequest.py:147 -[sendrequest:run_main] - 请求参数：{'data': {'user_name': 'test01', 'passwd': 'admin123'}}
+INFO - 2025-02-13 09:20:04,235 - sendrequest.py:110 -[sendrequest:send_request] - cookie：{'Cookie': {'access_token_cookie': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTczOTQwOTYwNCwianRpIjoiNmZmMDY0NDgtZTAyMC00MGUyLWFmOTUtMTIxZTMxMGNlNjViIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImV4YW1wbGVfdXNlciIsIm5iZiI6MTczOTQwOTYwNCwiZXhwIjoxNzM5NDEwNTA0fQ.URIN28qtdyHUT0d2445mBo5U7rBfPaga94-WlBXVo0g'}}
+INFO - 2025-02-13 09:20:04,235 - sendrequest.py:111 -[sendrequest:send_request] - 接口返回信息：{"error_code":null,"msg":"登录成功","msg_code":200,"orgId":"4140913758110176843","token":"8B52BD4A4d5571a9165Bc94f74fE9","userId":"6003463028919123340"}
+
+INFO - 2025-02-13 09:20:04,236 - apiutil.py:153 -[apiutil:extract_data] - 提取接口的返回值：
+INFO - 2025-02-13 09:20:04,237 - assertions.py:172 -[assertions:assert_result] - yaml文件预期结果：[{'contains': {'error_code': 'none'}}, {'eq': {'msg': '登录成功'}}]
+INFO - 2025-02-13 09:20:04,237 - assertions.py:47 -[assertions:contains_assert] - 字符串包含断言成功：预期结果【None】,实际结果【[None]】
+ERROR - 2025-02-13 09:20:04,238 - assertions.py:196 -[assertions:assert_result] - 接口断言异常，请检查yaml预期结果值是否正确填写!
+ERROR - 2025-02-13 09:20:04,238 - apiutil.py:114 -[apiutil:specification_yaml] - unsupported operand type(s) for &: 'list' and 'list'
+ERROR - 2025-02-13 09:20:04,238 - conftest.py:32 -[conftest:system_login] - 登录接口出现异常，导致后续接口无法继续运行，请检查程序！，unsupported operand type(s) for &: 'list' and 'list'
+INFO - 2025-02-13 09:20:04,309 - sendrequest.py:138 -[sendrequest:run_main] - 接口名称：用户登录
+INFO - 2025-02-13 09:20:04,310 - sendrequest.py:139 -[sendrequest:run_main] - 请求地址：http://127.0.0.1:8787/dar/user/login
+INFO - 2025-02-13 09:20:04,310 - sendrequest.py:140 -[sendrequest:run_main] - 请求方式：post
+INFO - 2025-02-13 09:20:04,310 - sendrequest.py:141 -[sendrequest:run_main] - 测试用例名称：用户名和密码正确登录验证
+INFO - 2025-02-13 09:20:04,310 - sendrequest.py:142 -[sendrequest:run_main] - 请求头：{'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
+INFO - 2025-02-13 09:20:04,310 - sendrequest.py:143 -[sendrequest:run_main] - Cookie：None
+INFO - 2025-02-13 09:20:04,311 - sendrequest.py:147 -[sendrequest:run_main] - 请求参数：{'data': {'user_name': 'test01', 'passwd': 'admin123'}}
+INFO - 2025-02-13 09:20:04,339 - sendrequest.py:110 -[sendrequest:send_request] - cookie：{'Cookie': {'access_token_cookie': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTczOTQwOTYwNCwianRpIjoiY2Y2MGQ4ZjMtODI1NC00NDNjLWExNmMtZjQzZmNjMzNiODE3IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImV4YW1wbGVfdXNlciIsIm5iZiI6MTczOTQwOTYwNCwiZXhwIjoxNzM5NDEwNTA0fQ.akUYnv8gGn8SDCA3ADmGuN5MFGFtjgBGkJ7LcrBPnwg'}}
+INFO - 2025-02-13 09:20:04,339 - sendrequest.py:111 -[sendrequest:send_request] - 接口返回信息：{"error_code":null,"msg":"登录成功","msg_code":200,"orgId":"4140913758110176843","token":"E44A774dC0Ff7BE0dDCcBa7CD6d5E","userId":"6003463028919123340"}
+
+INFO - 2025-02-13 09:20:04,341 - apiutil.py:153 -[apiutil:extract_data] - 提取接口的返回值：
+INFO - 2025-02-13 09:20:04,343 - assertions.py:172 -[assertions:assert_result] - yaml文件预期结果：[{'contains': {'error_code': 'none'}}, {'eq': {'msg': '登录成功'}}]
+INFO - 2025-02-13 09:20:04,343 - assertions.py:47 -[assertions:contains_assert] - 字符串包含断言成功：预期结果【None】,实际结果【[None]】
+ERROR - 2025-02-13 09:20:04,343 - assertions.py:196 -[assertions:assert_result] - 接口断言异常，请检查yaml预期结果值是否正确填写!
+ERROR - 2025-02-13 09:20:04,344 - apiutil.py:114 -[apiutil:specification_yaml] - unsupported operand type(s) for &: 'list' and 'list'
+ERROR - 2025-02-13 09:20:04,344 - conftest.py:32 -[conftest:system_login] - 登录接口出现异常，导致后续接口无法继续运行，请检查程序！，unsupported operand type(s) for &: 'list' and 'list'
+INFO - 2025-02-13 09:20:04,443 - sendrequest.py:138 -[sendrequest:run_main] - 接口名称：用户登录
+INFO - 2025-02-13 09:20:04,443 - sendrequest.py:139 -[sendrequest:run_main] - 请求地址：http://127.0.0.1:8787/dar/user/login
+INFO - 2025-02-13 09:20:04,443 - sendrequest.py:140 -[sendrequest:run_main] - 请求方式：post
+INFO - 2025-02-13 09:20:04,444 - sendrequest.py:141 -[sendrequest:run_main] - 测试用例名称：用户名和密码正确登录验证
+INFO - 2025-02-13 09:20:04,444 - sendrequest.py:142 -[sendrequest:run_main] - 请求头：{'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
+INFO - 2025-02-13 09:20:04,444 - sendrequest.py:143 -[sendrequest:run_main] - Cookie：None
+INFO - 2025-02-13 09:20:04,446 - sendrequest.py:147 -[sendrequest:run_main] - 请求参数：{'data': {'user_name': 'test01', 'passwd': 'admin123'}}
+INFO - 2025-02-13 09:20:04,465 - sendrequest.py:110 -[sendrequest:send_request] - cookie：{'Cookie': {'access_token_cookie': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTczOTQwOTYwNCwianRpIjoiYjNjYWE1NzItNjk0NS00NDFmLTgyMTktMTAxZThmMjQ1Y2EyIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImV4YW1wbGVfdXNlciIsIm5iZiI6MTczOTQwOTYwNCwiZXhwIjoxNzM5NDEwNTA0fQ.iCX7yENgvLLudPmuTb9dYOUc1M9xcbV6UJcvhhp2Of4'}}
+INFO - 2025-02-13 09:20:04,466 - sendrequest.py:111 -[sendrequest:send_request] - 接口返回信息：{"error_code":null,"msg":"登录成功","msg_code":200,"orgId":"4140913758110176843","token":"98296dfCfAdC2F395b507CEBCE454","userId":"6003463028919123340"}
+
+INFO - 2025-02-13 09:20:04,467 - apiutil.py:153 -[apiutil:extract_data] - 提取接口的返回值：
+INFO - 2025-02-13 09:20:04,468 - assertions.py:172 -[assertions:assert_result] - yaml文件预期结果：[{'contains': {'error_code': 'none'}}, {'eq': {'msg': '登录成功'}}]
+INFO - 2025-02-13 09:20:04,469 - assertions.py:47 -[assertions:contains_assert] - 字符串包含断言成功：预期结果【None】,实际结果【[None]】
+ERROR - 2025-02-13 09:20:04,469 - assertions.py:196 -[assertions:assert_result] - 接口断言异常，请检查yaml预期结果值是否正确填写!
+ERROR - 2025-02-13 09:20:04,469 - apiutil.py:114 -[apiutil:specification_yaml] - unsupported operand type(s) for &: 'list' and 'list'
+ERROR - 2025-02-13 09:20:04,469 - conftest.py:32 -[conftest:system_login] - 登录接口出现异常，导致后续接口无法继续运行，请检查程序！，unsupported operand type(s) for &: 'list' and 'list'
+INFO - 2025-02-13 09:20:04,544 - sendrequest.py:138 -[sendrequest:run_main] - 接口名称：用户登录
+INFO - 2025-02-13 09:20:04,545 - sendrequest.py:139 -[sendrequest:run_main] - 请求地址：http://127.0.0.1:8787/dar/user/login
+INFO - 2025-02-13 09:20:04,545 - sendrequest.py:140 -[sendrequest:run_main] - 请求方式：post
+INFO - 2025-02-13 09:20:04,545 - sendrequest.py:141 -[sendrequest:run_main] - 测试用例名称：用户名和密码正确登录验证
+INFO - 2025-02-13 09:20:04,545 - sendrequest.py:142 -[sendrequest:run_main] - 请求头：{'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
+INFO - 2025-02-13 09:20:04,545 - sendrequest.py:143 -[sendrequest:run_main] - Cookie：None
+INFO - 2025-02-13 09:20:04,546 - sendrequest.py:147 -[sendrequest:run_main] - 请求参数：{'data': {'user_name': 'test01', 'passwd': 'admin123'}}
+INFO - 2025-02-13 09:20:04,576 - sendrequest.py:110 -[sendrequest:send_request] - cookie：{'Cookie': {'access_token_cookie': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTczOTQwOTYwNCwianRpIjoiODUxMTc2NWQtOTAwMC00YjliLThhNmMtNmU4ODk1M2Y0N2UyIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImV4YW1wbGVfdXNlciIsIm5iZiI6MTczOTQwOTYwNCwiZXhwIjoxNzM5NDEwNTA0fQ.n6l2znANYZMlD0Z5GnrlAcXAPV8rBx9TTYH5ofo_lDE'}}
+INFO - 2025-02-13 09:20:04,576 - sendrequest.py:111 -[sendrequest:send_request] - 接口返回信息：{"error_code":null,"msg":"登录成功","msg_code":200,"orgId":"4140913758110176843","token":"f8bE2b7BeDCd7C242Bbbf6B5Ac8A0","userId":"6003463028919123340"}
+
+INFO - 2025-02-13 09:20:04,578 - apiutil.py:153 -[apiutil:extract_data] - 提取接口的返回值：
+INFO - 2025-02-13 09:20:04,579 - assertions.py:172 -[assertions:assert_result] - yaml文件预期结果：[{'contains': {'error_code': 'none'}}, {'eq': {'msg': '登录成功'}}]
+INFO - 2025-02-13 09:20:04,580 - assertions.py:47 -[assertions:contains_assert] - 字符串包含断言成功：预期结果【None】,实际结果【[None]】
+ERROR - 2025-02-13 09:20:04,580 - assertions.py:196 -[assertions:assert_result] - 接口断言异常，请检查yaml预期结果值是否正确填写!
+ERROR - 2025-02-13 09:20:04,580 - apiutil.py:114 -[apiutil:specification_yaml] - unsupported operand type(s) for &: 'list' and 'list'
+ERROR - 2025-02-13 09:20:04,580 - conftest.py:32 -[conftest:system_login] - 登录接口出现异常，导致后续接口无法继续运行，请检查程序！，unsupported operand type(s) for &: 'list' and 'list'
+INFO - 2025-02-13 09:20:04,666 - sendrequest.py:138 -[sendrequest:run_main] - 接口名称：用户登录
+INFO - 2025-02-13 09:20:04,667 - sendrequest.py:139 -[sendrequest:run_main] - 请求地址：http://127.0.0.1:8787/dar/user/login
+INFO - 2025-02-13 09:20:04,667 - sendrequest.py:140 -[sendrequest:run_main] - 请求方式：post
+INFO - 2025-02-13 09:20:04,667 - sendrequest.py:141 -[sendrequest:run_main] - 测试用例名称：用户名和密码正确登录验证
+INFO - 2025-02-13 09:20:04,667 - sendrequest.py:142 -[sendrequest:run_main] - 请求头：{'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
+INFO - 2025-02-13 09:20:04,667 - sendrequest.py:143 -[sendrequest:run_main] - Cookie：None
+INFO - 2025-02-13 09:20:04,668 - sendrequest.py:147 -[sendrequest:run_main] - 请求参数：{'data': {'user_name': 'test01', 'passwd': 'admin123'}}
+INFO - 2025-02-13 09:20:04,675 - sendrequest.py:110 -[sendrequest:send_request] - cookie：{'Cookie': {'access_token_cookie': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTczOTQwOTYwNCwianRpIjoiNDk2YWFjMTgtM2MzMy00NzE0LWIzNGUtMDI0NThiYzM3ZmFlIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImV4YW1wbGVfdXNlciIsIm5iZiI6MTczOTQwOTYwNCwiZXhwIjoxNzM5NDEwNTA0fQ.7ZIFXJwRp3AuTD3aWb9uxWYLW1PjXEBoO_XMlakIfiM'}}
+INFO - 2025-02-13 09:20:04,675 - sendrequest.py:111 -[sendrequest:send_request] - 接口返回信息：{"error_code":null,"msg":"登录成功","msg_code":200,"orgId":"6140913758128971280","token":"cBb92Cea8bBc983fcf5Ad8FFfBe13","userId":"6003463028919123340"}
+
+INFO - 2025-02-13 09:20:04,677 - apiutil.py:153 -[apiutil:extract_data] - 提取接口的返回值：
+INFO - 2025-02-13 09:20:04,678 - assertions.py:172 -[assertions:assert_result] - yaml文件预期结果：[{'contains': {'error_code': 'none'}}, {'eq': {'msg': '登录成功'}}]
+INFO - 2025-02-13 09:20:04,678 - assertions.py:47 -[assertions:contains_assert] - 字符串包含断言成功：预期结果【None】,实际结果【[None]】
+ERROR - 2025-02-13 09:20:04,678 - assertions.py:196 -[assertions:assert_result] - 接口断言异常，请检查yaml预期结果值是否正确填写!
+ERROR - 2025-02-13 09:20:04,678 - apiutil.py:114 -[apiutil:specification_yaml] - unsupported operand type(s) for &: 'list' and 'list'
+ERROR - 2025-02-13 09:20:04,678 - conftest.py:32 -[conftest:system_login] - 登录接口出现异常，导致后续接口无法继续运行，请检查程序！，unsupported operand type(s) for &: 'list' and 'list'
+INFO - 2025-02-13 09:20:04,766 - sendrequest.py:138 -[sendrequest:run_main] - 接口名称：用户登录
+INFO - 2025-02-13 09:20:04,766 - sendrequest.py:139 -[sendrequest:run_main] - 请求地址：http://127.0.0.1:8787/dar/user/login
+INFO - 2025-02-13 09:20:04,766 - sendrequest.py:140 -[sendrequest:run_main] - 请求方式：post
+INFO - 2025-02-13 09:20:04,767 - sendrequest.py:141 -[sendrequest:run_main] - 测试用例名称：用户名和密码正确登录验证
+INFO - 2025-02-13 09:20:04,767 - sendrequest.py:142 -[sendrequest:run_main] - 请求头：{'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
+INFO - 2025-02-13 09:20:04,767 - sendrequest.py:143 -[sendrequest:run_main] - Cookie：None
+INFO - 2025-02-13 09:20:04,768 - sendrequest.py:147 -[sendrequest:run_main] - 请求参数：{'data': {'user_name': 'test01', 'passwd': 'admin123'}}
+INFO - 2025-02-13 09:20:04,797 - sendrequest.py:110 -[sendrequest:send_request] - cookie：{'Cookie': {'access_token_cookie': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTczOTQwOTYwNCwianRpIjoiNTNmNjg0ZTItMTVmNi00OWRlLThkMjYtN2VjMTFiYzA3Yzg5IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImV4YW1wbGVfdXNlciIsIm5iZiI6MTczOTQwOTYwNCwiZXhwIjoxNzM5NDEwNTA0fQ.-KjMZ5vL05MXjDYOl9C_7LduCB2R13PG4FgnCNjJxW4'}}
+INFO - 2025-02-13 09:20:04,797 - sendrequest.py:111 -[sendrequest:send_request] - 接口返回信息：{"error_code":null,"msg":"登录成功","msg_code":200,"orgId":"4140913758110176843","token":"24edC334B2dB7a0fA44AD61FC0568","userId":"6003463028919123340"}
+
+INFO - 2025-02-13 09:20:04,798 - apiutil.py:153 -[apiutil:extract_data] - 提取接口的返回值：
+INFO - 2025-02-13 09:20:04,800 - assertions.py:172 -[assertions:assert_result] - yaml文件预期结果：[{'contains': {'error_code': 'none'}}, {'eq': {'msg': '登录成功'}}]
+INFO - 2025-02-13 09:20:04,800 - assertions.py:47 -[assertions:contains_assert] - 字符串包含断言成功：预期结果【None】,实际结果【[None]】
+ERROR - 2025-02-13 09:20:04,800 - assertions.py:196 -[assertions:assert_result] - 接口断言异常，请检查yaml预期结果值是否正确填写!
+ERROR - 2025-02-13 09:20:04,800 - apiutil.py:114 -[apiutil:specification_yaml] - unsupported operand type(s) for &: 'list' and 'list'
+ERROR - 2025-02-13 09:20:04,800 - conftest.py:32 -[conftest:system_login] - 登录接口出现异常，导致后续接口无法继续运行，请检查程序！，unsupported operand type(s) for &: 'list' and 'list'
+INFO - 2025-02-13 09:20:04,879 - sendrequest.py:138 -[sendrequest:run_main] - 接口名称：用户登录
+INFO - 2025-02-13 09:20:04,879 - sendrequest.py:139 -[sendrequest:run_main] - 请求地址：http://127.0.0.1:8787/dar/user/login
+INFO - 2025-02-13 09:20:04,879 - sendrequest.py:140 -[sendrequest:run_main] - 请求方式：post
+INFO - 2025-02-13 09:20:04,880 - sendrequest.py:141 -[sendrequest:run_main] - 测试用例名称：用户名和密码正确登录验证
+INFO - 2025-02-13 09:20:04,880 - sendrequest.py:142 -[sendrequest:run_main] - 请求头：{'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
+INFO - 2025-02-13 09:20:04,880 - sendrequest.py:143 -[sendrequest:run_main] - Cookie：None
+INFO - 2025-02-13 09:20:04,881 - sendrequest.py:147 -[sendrequest:run_main] - 请求参数：{'data': {'user_name': 'test01', 'passwd': 'admin123'}}
+INFO - 2025-02-13 09:20:04,908 - sendrequest.py:110 -[sendrequest:send_request] - cookie：{'Cookie': {'access_token_cookie': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTczOTQwOTYwNCwianRpIjoiYmJiN2JlNjYtODdlMi00Y2I2LThhZjQtNDcxY2JhYTQwMzJiIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImV4YW1wbGVfdXNlciIsIm5iZiI6MTczOTQwOTYwNCwiZXhwIjoxNzM5NDEwNTA0fQ.uo3z-694EwZPyAQ4aYHMZzfhUpmK_lyrXBaABckt3Fk'}}
+INFO - 2025-02-13 09:20:04,908 - sendrequest.py:111 -[sendrequest:send_request] - 接口返回信息：{"error_code":null,"msg":"登录成功","msg_code":200,"orgId":"6140913758128971280","token":"Cff4fE6C0aFFB3262438666Ed6996","userId":"6003463028919123340"}
+
+INFO - 2025-02-13 09:20:04,910 - apiutil.py:153 -[apiutil:extract_data] - 提取接口的返回值：
+INFO - 2025-02-13 09:20:04,911 - assertions.py:172 -[assertions:assert_result] - yaml文件预期结果：[{'contains': {'error_code': 'none'}}, {'eq': {'msg': '登录成功'}}]
+INFO - 2025-02-13 09:20:04,911 - assertions.py:47 -[assertions:contains_assert] - 字符串包含断言成功：预期结果【None】,实际结果【[None]】
+ERROR - 2025-02-13 09:20:04,911 - assertions.py:196 -[assertions:assert_result] - 接口断言异常，请检查yaml预期结果值是否正确填写!
+ERROR - 2025-02-13 09:20:04,911 - apiutil.py:114 -[apiutil:specification_yaml] - unsupported operand type(s) for &: 'list' and 'list'
+ERROR - 2025-02-13 09:20:04,911 - conftest.py:32 -[conftest:system_login] - 登录接口出现异常，导致后续接口无法继续运行，请检查程序！，unsupported operand type(s) for &: 'list' and 'list'
+INFO - 2025-02-13 09:20:04,989 - sendrequest.py:138 -[sendrequest:run_main] - 接口名称：用户登录
+INFO - 2025-02-13 09:20:04,989 - sendrequest.py:139 -[sendrequest:run_main] - 请求地址：http://127.0.0.1:8787/dar/user/login
+INFO - 2025-02-13 09:20:04,990 - sendrequest.py:140 -[sendrequest:run_main] - 请求方式：post
+INFO - 2025-02-13 09:20:04,990 - sendrequest.py:141 -[sendrequest:run_main] - 测试用例名称：用户名和密码正确登录验证
+INFO - 2025-02-13 09:20:04,990 - sendrequest.py:142 -[sendrequest:run_main] - 请求头：{'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
+INFO - 2025-02-13 09:20:04,990 - sendrequest.py:143 -[sendrequest:run_main] - Cookie：None
+INFO - 2025-02-13 09:20:04,991 - sendrequest.py:147 -[sendrequest:run_main] - 请求参数：{'data': {'user_name': 'test01', 'passwd': 'admin123'}}
+INFO - 2025-02-13 09:20:05,017 - sendrequest.py:110 -[sendrequest:send_request] - cookie：{'Cookie': {'access_token_cookie': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTczOTQwOTYwNSwianRpIjoiN2Y1NTA2ZDYtM2ViYy00MTM2LTgxMTAtNjcxMGNiYjkwNzZlIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImV4YW1wbGVfdXNlciIsIm5iZiI6MTczOTQwOTYwNSwiZXhwIjoxNzM5NDEwNTA1fQ.UltzdQVVn-O7fhZ88mqMTLkIM72YKXLpqKTBYmaZB3M'}}
+INFO - 2025-02-13 09:20:05,018 - sendrequest.py:111 -[sendrequest:send_request] - 接口返回信息：{"error_code":null,"msg":"登录成功","msg_code":200,"orgId":"6140913758128971280","token":"eA2BB1bC9c714Fdd3eD66f89725eC","userId":"6003463028919123340"}
+
+INFO - 2025-02-13 09:20:05,019 - apiutil.py:153 -[apiutil:extract_data] - 提取接口的返回值：
+INFO - 2025-02-13 09:20:05,021 - assertions.py:172 -[assertions:assert_result] - yaml文件预期结果：[{'contains': {'error_code': 'none'}}, {'eq': {'msg': '登录成功'}}]
+INFO - 2025-02-13 09:20:05,022 - assertions.py:47 -[assertions:contains_assert] - 字符串包含断言成功：预期结果【None】,实际结果【[None]】
+ERROR - 2025-02-13 09:20:05,022 - assertions.py:196 -[assertions:assert_result] - 接口断言异常，请检查yaml预期结果值是否正确填写!
+ERROR - 2025-02-13 09:20:05,022 - apiutil.py:114 -[apiutil:specification_yaml] - unsupported operand type(s) for &: 'list' and 'list'
+ERROR - 2025-02-13 09:20:05,022 - conftest.py:32 -[conftest:system_login] - 登录接口出现异常，导致后续接口无法继续运行，请检查程序！，unsupported operand type(s) for &: 'list' and 'list'
+INFO - 2025-02-13 09:20:05,103 - sendrequest.py:138 -[sendrequest:run_main] - 接口名称：用户登录
+INFO - 2025-02-13 09:20:05,103 - sendrequest.py:139 -[sendrequest:run_main] - 请求地址：http://127.0.0.1:8787/dar/user/login
+INFO - 2025-02-13 09:20:05,103 - sendrequest.py:140 -[sendrequest:run_main] - 请求方式：post
+INFO - 2025-02-13 09:20:05,103 - sendrequest.py:141 -[sendrequest:run_main] - 测试用例名称：用户名和密码正确登录验证
+INFO - 2025-02-13 09:20:05,104 - sendrequest.py:142 -[sendrequest:run_main] - 请求头：{'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
+INFO - 2025-02-13 09:20:05,104 - sendrequest.py:143 -[sendrequest:run_main] - Cookie：None
+INFO - 2025-02-13 09:20:05,105 - sendrequest.py:147 -[sendrequest:run_main] - 请求参数：{'data': {'user_name': 'test01', 'passwd': 'admin123'}}
+INFO - 2025-02-13 09:20:05,126 - sendrequest.py:110 -[sendrequest:send_request] - cookie：{'Cookie': {'access_token_cookie': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTczOTQwOTYwNSwianRpIjoiOTNmMjRkZjUtMzQ2OC00ZDAxLWEyNzAtYjIxMjY1ZmYzZGQ5IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImV4YW1wbGVfdXNlciIsIm5iZiI6MTczOTQwOTYwNSwiZXhwIjoxNzM5NDEwNTA1fQ.f-tK3eNe09FHSjE5pu99chIhfpGSoU4mEWhQmkvGah8'}}
+INFO - 2025-02-13 09:20:05,127 - sendrequest.py:111 -[sendrequest:send_request] - 接口返回信息：{"error_code":null,"msg":"登录成功","msg_code":200,"orgId":"4140913758110176843","token":"eC7C6Fa2e66BB67D2d8E9fd7bd16D","userId":"6003463028919123340"}
+
+INFO - 2025-02-13 09:20:05,128 - apiutil.py:153 -[apiutil:extract_data] - 提取接口的返回值：
+INFO - 2025-02-13 09:20:05,129 - assertions.py:172 -[assertions:assert_result] - yaml文件预期结果：[{'contains': {'error_code': 'none'}}, {'eq': {'msg': '登录成功'}}]
+INFO - 2025-02-13 09:20:05,129 - assertions.py:47 -[assertions:contains_assert] - 字符串包含断言成功：预期结果【None】,实际结果【[None]】
+ERROR - 2025-02-13 09:20:05,129 - assertions.py:196 -[assertions:assert_result] - 接口断言异常，请检查yaml预期结果值是否正确填写!
+ERROR - 2025-02-13 09:20:05,130 - apiutil.py:114 -[apiutil:specification_yaml] - unsupported operand type(s) for &: 'list' and 'list'
+ERROR - 2025-02-13 09:20:05,130 - conftest.py:32 -[conftest:system_login] - 登录接口出现异常，导致后续接口无法继续运行，请检查程序！，unsupported operand type(s) for &: 'list' and 'list'
+INFO - 2025-02-13 09:20:05,207 - sendrequest.py:138 -[sendrequest:run_main] - 接口名称：用户登录
+INFO - 2025-02-13 09:20:05,207 - sendrequest.py:139 -[sendrequest:run_main] - 请求地址：http://127.0.0.1:8787/dar/user/login
+INFO - 2025-02-13 09:20:05,207 - sendrequest.py:140 -[sendrequest:run_main] - 请求方式：post
+INFO - 2025-02-13 09:20:05,207 - sendrequest.py:141 -[sendrequest:run_main] - 测试用例名称：用户名和密码正确登录验证
+INFO - 2025-02-13 09:20:05,207 - sendrequest.py:142 -[sendrequest:run_main] - 请求头：{'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
+INFO - 2025-02-13 09:20:05,207 - sendrequest.py:143 -[sendrequest:run_main] - Cookie：None
+INFO - 2025-02-13 09:20:05,209 - sendrequest.py:147 -[sendrequest:run_main] - 请求参数：{'data': {'user_name': 'test01', 'passwd': 'admin123'}}
+INFO - 2025-02-13 09:20:05,217 - sendrequest.py:110 -[sendrequest:send_request] - cookie：{'Cookie': {'access_token_cookie': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTczOTQwOTYwNSwianRpIjoiOTBjNDk1ZjEtODFiOC00Y2YwLWFmZjctZjY1ZWNiYmNiODE5IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImV4YW1wbGVfdXNlciIsIm5iZiI6MTczOTQwOTYwNSwiZXhwIjoxNzM5NDEwNTA1fQ.qdwyC-AGZwCJagVTqwm6RJlqD16uIPZ_u_tctOewa9o'}}
+INFO - 2025-02-13 09:20:05,217 - sendrequest.py:111 -[sendrequest:send_request] - 接口返回信息：{"error_code":null,"msg":"登录成功","msg_code":200,"orgId":"4140913758110176843","token":"fbD0ddc51C675c8F70E7E8B99ab1c","userId":"6003463028919123340"}
+
+INFO - 2025-02-13 09:20:05,219 - apiutil.py:153 -[apiutil:extract_data] - 提取接口的返回值：
+INFO - 2025-02-13 09:20:05,221 - assertions.py:172 -[assertions:assert_result] - yaml文件预期结果：[{'contains': {'error_code': 'none'}}, {'eq': {'msg': '登录成功'}}]
+INFO - 2025-02-13 09:20:05,222 - assertions.py:47 -[assertions:contains_assert] - 字符串包含断言成功：预期结果【None】,实际结果【[None]】
+ERROR - 2025-02-13 09:20:05,222 - assertions.py:196 -[assertions:assert_result] - 接口断言异常，请检查yaml预期结果值是否正确填写!
+ERROR - 2025-02-13 09:20:05,222 - apiutil.py:114 -[apiutil:specification_yaml] - unsupported operand type(s) for &: 'list' and 'list'
+ERROR - 2025-02-13 09:20:05,222 - conftest.py:32 -[conftest:system_login] - 登录接口出现异常，导致后续接口无法继续运行，请检查程序！，unsupported operand type(s) for &: 'list' and 'list'
+INFO - 2025-02-13 09:20:05,350 - sendrequest.py:138 -[sendrequest:run_main] - 接口名称：用户登录
+INFO - 2025-02-13 09:20:05,350 - sendrequest.py:139 -[sendrequest:run_main] - 请求地址：http://127.0.0.1:8787/dar/user/login
+INFO - 2025-02-13 09:20:05,350 - sendrequest.py:140 -[sendrequest:run_main] - 请求方式：post
+INFO - 2025-02-13 09:20:05,350 - sendrequest.py:141 -[sendrequest:run_main] - 测试用例名称：用户名和密码正确登录验证
+INFO - 2025-02-13 09:20:05,350 - sendrequest.py:142 -[sendrequest:run_main] - 请求头：{'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
+INFO - 2025-02-13 09:20:05,351 - sendrequest.py:143 -[sendrequest:run_main] - Cookie：None
+INFO - 2025-02-13 09:20:05,352 - sendrequest.py:147 -[sendrequest:run_main] - 请求参数：{'data': {'user_name': 'test01', 'passwd': 'admin123'}}
+INFO - 2025-02-13 09:20:05,359 - sendrequest.py:110 -[sendrequest:send_request] - cookie：{'Cookie': {'access_token_cookie': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTczOTQwOTYwNSwianRpIjoiZjI2YzRlYTctNjQ4Mi00M2E2LWIwZGUtNDFmMjkxZWYzMTFjIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImV4YW1wbGVfdXNlciIsIm5iZiI6MTczOTQwOTYwNSwiZXhwIjoxNzM5NDEwNTA1fQ.Ffjd6RVyjK1iDbACXRsBSnFZlfTiEKHQZItdu015o2c'}}
+INFO - 2025-02-13 09:20:05,359 - sendrequest.py:111 -[sendrequest:send_request] - 接口返回信息：{"error_code":null,"msg":"登录成功","msg_code":200,"orgId":"6140913758128971280","token":"dcA4A30B181adBf7C768b9F676651","userId":"6003463028919123340"}
+
+INFO - 2025-02-13 09:20:05,362 - apiutil.py:153 -[apiutil:extract_data] - 提取接口的返回值：
+INFO - 2025-02-13 09:20:05,364 - assertions.py:172 -[assertions:assert_result] - yaml文件预期结果：[{'contains': {'error_code': 'none'}}, {'eq': {'msg': '登录成功'}}]
+INFO - 2025-02-13 09:20:05,364 - assertions.py:47 -[assertions:contains_assert] - 字符串包含断言成功：预期结果【None】,实际结果【[None]】
+ERROR - 2025-02-13 09:20:05,365 - assertions.py:196 -[assertions:assert_result] - 接口断言异常，请检查yaml预期结果值是否正确填写!
+ERROR - 2025-02-13 09:20:05,365 - apiutil.py:114 -[apiutil:specification_yaml] - unsupported operand type(s) for &: 'list' and 'list'
+ERROR - 2025-02-13 09:20:05,365 - conftest.py:32 -[conftest:system_login] - 登录接口出现异常，导致后续接口无法继续运行，请检查程序！，unsupported operand type(s) for &: 'list' and 'list'

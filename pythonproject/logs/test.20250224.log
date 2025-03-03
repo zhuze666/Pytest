@@ -1,0 +1,75 @@
+ERROR - 2025-02-24 08:51:24,478 - operationcsv.py:22 -[operationcsv:read_csv] - Traceback (most recent call last):
+  File "D:\PycharmProject\pythonproject\common\operationcsv.py", line 17, in read_csv
+    df = pd.read_csv(filepath, encoding="GBK")
+  File "C:\Users\86135\AppData\Local\Programs\Python\Python39\lib\site-packages\pandas\io\parsers\readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "C:\Users\86135\AppData\Local\Programs\Python\Python39\lib\site-packages\pandas\io\parsers\readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "C:\Users\86135\AppData\Local\Programs\Python\Python39\lib\site-packages\pandas\io\parsers\readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "C:\Users\86135\AppData\Local\Programs\Python\Python39\lib\site-packages\pandas\io\parsers\readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+  File "C:\Users\86135\AppData\Local\Programs\Python\Python39\lib\site-packages\pandas\io\common.py", line 873, in get_handle
+    handle = open(
+FileNotFoundError: [Errno 2] No such file or directory: './data/login_data.json'
+
+ERROR - 2025-02-24 08:54:35,021 - operationcsv.py:22 -[operationcsv:read_csv] - Traceback (most recent call last):
+  File "D:\PycharmProject\pythonproject\common\operationcsv.py", line 17, in read_csv
+    df = pd.read_csv(filepath, encoding="GBK")
+  File "C:\Users\86135\AppData\Local\Programs\Python\Python39\lib\site-packages\pandas\io\parsers\readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "C:\Users\86135\AppData\Local\Programs\Python\Python39\lib\site-packages\pandas\io\parsers\readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "C:\Users\86135\AppData\Local\Programs\Python\Python39\lib\site-packages\pandas\io\parsers\readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "C:\Users\86135\AppData\Local\Programs\Python\Python39\lib\site-packages\pandas\io\parsers\readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+  File "C:\Users\86135\AppData\Local\Programs\Python\Python39\lib\site-packages\pandas\io\common.py", line 873, in get_handle
+    handle = open(
+FileNotFoundError: [Errno 2] No such file or directory: 'pythonproject/data/login_data.csv'
+
+ERROR - 2025-02-24 08:54:57,614 - operationcsv.py:22 -[operationcsv:read_csv] - Traceback (most recent call last):
+  File "D:\PycharmProject\pythonproject\common\operationcsv.py", line 17, in read_csv
+    df = pd.read_csv(filepath, encoding="GBK")
+  File "C:\Users\86135\AppData\Local\Programs\Python\Python39\lib\site-packages\pandas\io\parsers\readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "C:\Users\86135\AppData\Local\Programs\Python\Python39\lib\site-packages\pandas\io\parsers\readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "C:\Users\86135\AppData\Local\Programs\Python\Python39\lib\site-packages\pandas\io\parsers\readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "C:\Users\86135\AppData\Local\Programs\Python\Python39\lib\site-packages\pandas\io\parsers\readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+  File "C:\Users\86135\AppData\Local\Programs\Python\Python39\lib\site-packages\pandas\io\common.py", line 873, in get_handle
+    handle = open(
+FileNotFoundError: [Errno 2] No such file or directory: './pythonproject/data/login_data.csv'
+
+ERROR - 2025-02-24 08:58:56,067 - operationcsv.py:22 -[operationcsv:read_csv] - Traceback (most recent call last):
+  File "D:\PycharmProject\pythonproject\common\operationcsv.py", line 17, in read_csv
+    df = pd.read_csv(filepath, encoding="GBK")
+  File "C:\Users\86135\AppData\Local\Programs\Python\Python39\lib\site-packages\pandas\io\parsers\readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "C:\Users\86135\AppData\Local\Programs\Python\Python39\lib\site-packages\pandas\io\parsers\readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "C:\Users\86135\AppData\Local\Programs\Python\Python39\lib\site-packages\pandas\io\parsers\readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "C:\Users\86135\AppData\Local\Programs\Python\Python39\lib\site-packages\pandas\io\parsers\readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+  File "C:\Users\86135\AppData\Local\Programs\Python\Python39\lib\site-packages\pandas\io\common.py", line 873, in get_handle
+    handle = open(
+FileNotFoundError: [Errno 2] No such file or directory: './pythonproject/data/vehicleNo.csv'
+
+ERROR - 2025-02-24 08:59:13,440 - operationcsv.py:22 -[operationcsv:read_csv] - Traceback (most recent call last):
+  File "D:\PycharmProject\pythonproject\common\operationcsv.py", line 17, in read_csv
+    df = pd.read_csv(filepath, encoding="GBK")
+  File "C:\Users\86135\AppData\Local\Programs\Python\Python39\lib\site-packages\pandas\io\parsers\readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "C:\Users\86135\AppData\Local\Programs\Python\Python39\lib\site-packages\pandas\io\parsers\readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "C:\Users\86135\AppData\Local\Programs\Python\Python39\lib\site-packages\pandas\io\parsers\readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "C:\Users\86135\AppData\Local\Programs\Python\Python39\lib\site-packages\pandas\io\parsers\readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+  File "C:\Users\86135\AppData\Local\Programs\Python\Python39\lib\site-packages\pandas\io\common.py", line 873, in get_handle
+    handle = open(
+FileNotFoundError: [Errno 2] No such file or directory: 'D:/pythonproject/data/vehicleNo.csv'
+

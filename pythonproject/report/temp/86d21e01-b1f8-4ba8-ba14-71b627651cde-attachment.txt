@@ -1,0 +1,29 @@
+INFO     pythonproject.common.recordlog:sendrequest.py:160 接口名称：用户登录
+INFO     pythonproject.common.recordlog:sendrequest.py:161 请求地址：http://127.0.0.1:8787/dar/user/login
+INFO     pythonproject.common.recordlog:sendrequest.py:162 请求方式：post
+INFO     pythonproject.common.recordlog:sendrequest.py:163 测试用例名称：用户名和密码正确登录验证
+INFO     pythonproject.common.recordlog:sendrequest.py:164 请求头：{'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
+INFO     pythonproject.common.recordlog:sendrequest.py:165 Cookie：None
+INFO     pythonproject.common.recordlog:sendrequest.py:170 请求参数：{'data': {'user_name': 'test01', 'passwd': 'admin123'}}
+INFO     pythonproject.common.recordlog:sendrequest.py:128 cookie：{'Cookie': {'access_token_cookie': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc0MDk4NjM5OCwianRpIjoiYzU1NzRjY2EtM2NhOC00NTdiLTg4ZWYtZDE4MzE1NDBiNGNjIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImV4YW1wbGVfdXNlciIsIm5iZiI6MTc0MDk4NjM5OCwiZXhwIjoxNzQwOTg3Mjk4fQ.MXMsMB17OTGUloaJRCIXLQpJREUeMKnYaJRzEdaIf5I'}}
+INFO     pythonproject.common.recordlog:sendrequest.py:129 接口返回信息：{"error_code":null,"msg":"登录成功","msg_code":200,"orgId":"4140913758110176843","token":"9fDc9cc4a2DAC6b03dbaEC3d1d8e2","userId":"1516442349302372272"}
+
+INFO     pythonproject.common.recordlog:apiutil.py:165 提取接口的返回值：
+INFO     pythonproject.common.recordlog:assertions.py:197 yaml文件预期结果：[{'contains': {'error_code': 'none'}}, {'eq': {'msg': '登录成功'}}]
+INFO     pythonproject.common.recordlog:assertions.py:60 字符串包含断言成功：预期结果【None】,实际结果【[None]】
+ERROR    pythonproject.common.recordlog:assertions.py:227 接口断言异常，请检查yaml预期结果值是否正确填写!
+INFO     pythonproject.common.recordlog:assertions.py:232 测试成功
+INFO     pythonproject.common.recordlog:conftest.py:20 -------------接口测试开始--------------
+INFO     pythonproject.common.recordlog:sendrequest.py:160 接口名称：新增用户
+INFO     pythonproject.common.recordlog:sendrequest.py:161 请求地址：http://127.0.0.1:8787/dar/user/addUser
+INFO     pythonproject.common.recordlog:sendrequest.py:162 请求方式：POST
+INFO     pythonproject.common.recordlog:sendrequest.py:163 测试用例名称：正常新增用户
+INFO     pythonproject.common.recordlog:sendrequest.py:164 请求头：{'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
+INFO     pythonproject.common.recordlog:sendrequest.py:165 Cookie：None
+INFO     pythonproject.common.recordlog:sendrequest.py:170 请求参数：{'data': {'username': 'testadduser1', 'password': 'test6789890', 'role_id': 123451789, 'dates': '2023-12-31', 'phone': 13800100000, 'token': '9fDc9cc4a2DAC6b03dbaEC3d1d8e2'}}
+INFO     pythonproject.common.recordlog:sendrequest.py:129 接口返回信息：{"error_code":null,"msg":"新增成功","msg_code":200}
+
+INFO     pythonproject.common.recordlog:assertions.py:197 yaml文件预期结果：[{'contains': {'status_code': 200}}, {'contains': {'msg': '新增成功'}}]
+INFO     pythonproject.common.recordlog:assertions.py:60 字符串包含断言成功：预期结果【新增成功】,实际结果【新增成功】
+INFO     pythonproject.common.recordlog:assertions.py:232 测试成功
+INFO     pythonproject.common.recordlog:conftest.py:22 -------------接口测试结束--------------
