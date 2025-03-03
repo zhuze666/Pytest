@@ -15,7 +15,7 @@ from clickhouse_sqlalchemy import make_session, exceptions
 from sqlalchemy import create_engine
 from pythonproject.conf.operationConfig import OperationConfig
 from pythonproject.common.recordlog import logs
-from common.two_dimension_data import print_table
+from pythonproject.common.two_dimension_data import print_table
 
 conf = OperationConfig()
 
@@ -24,6 +24,8 @@ class ConnectMysql(object):
 
     def __init__(self):
 
+        # 定义一个字典 mysql_conf，用于存储 MySQL 数据库的连接配置信
+        # 调用 OperationConfig 类的 get_section_mysql 方法，获取 MySQL 数据库的连接配置信息(conf/config.ini)，并将其赋值给 mysql_conf 字典。
         mysql_conf = {
             'host': conf.get_section_mysql('host'),
             'port': int(conf.get_section_mysql('port')),
@@ -33,8 +35,10 @@ class ConnectMysql(object):
         }
 
         try:
+            # 使用 pymysql 库的 connect 方法连接到 MySQL 数据库，**mysql_conf 是将字典解包作为参数传入
+            # charset='utf8' 指定字符集为 UTF-8
             self.conn = pymysql.connect(**mysql_conf, charset='utf8')
-            # cursor=pymysql.cursors.DictCursor,将数据库表字段显示，以key-value形式展示
+            # 创建一个游标对象，cursor=pymysql.cursors.DictCursor 表示以字典形式返回查询结果
             self.cursor = self.conn.cursor(cursor=pymysql.cursors.DictCursor)
             logs.info("""成功连接到mysql---
             host：{host}
@@ -52,29 +56,52 @@ class ConnectMysql(object):
 
     def query_all(self, sql):
         try:
+            # 调用游标对象 self.cursor 的 execute 方法，执行传入的 SQL 查询语句
+            # 此操作会将 SQL 语句发送到数据库服务器进行执行
             self.cursor.execute(sql)
+            # 调用数据库连接对象 self.conn 的 commit 方法，提交事务
+            # 对于一些需要持久化的操作（如插入、更新、删除），提交事务可以确保操作生效
+            # 这里对于查询操作，提交事务也是一种良好的编程习惯
             self.conn.commit()
+            # 调用游标对象 self.cursor 的 fetchall 方法，获取查询结果的所有行
+            # res 是一个包含多个字典的列表，每个字典代表查询结果中的一行，键为列名，值为对应列的值
+            # 例如：res = [
+            #     {'id': 1, 'name': 'Alice', 'age': 20},
+            #     {'id': 2, 'name': 'Bob', 'age': 22},
+            #     {'id': 3, 'name': 'Carol', 'age': 21}
+            # ]
             res = self.cursor.fetchall()
 
+            # 初始化变量 keys，用于存储查询结果的列名，初始值为空字符串
             keys = ''
+            # 初始化列表 values，用于存储查询结果中每一行的值
             values = []
+            # 遍历查询结果 res 中的每一行的列名，赋值给keys
             for item in res:
+                # 将当前行的所有键（即['id', 'name', 'age']）转换为列表，并赋值给 keys
+                # 由于每一行的列名是相同的，所以最终 keys 存储的是查询结果的列名列表
                 keys = list(item.keys())
 
+            # 再次遍历查询结果 res 中的每一行（每个字典）
             for ite in res:
+                # 将当前行的所有值转换为列表（即[[1, 'Alice', 20], [2, 'Bob', 22], [3, 'Carol', 21]]），并添加到 values 列表中
                 values.append(list(ite.values()))
 
+            # 遍历存储每行值的列表 values，val 代表其中一行的值列表
             for val in values:
                 # lst_format = [
                 #     keys,
                 #     val
                 # ]
+                # 将当前行的值列表 val 作为元素，创建一个新的列表 lst_format
+                # 例如，当 val 为 [1, 'Alice', 20] 时，lst_format 就是 [[1, 'Alice', 20]]
                 lst_format = [
                     val
                 ]
 
+                # 返回 lst_format，由于 return 语句会终止函数的执行，
+                # 所以该函数只会处理 values 列表中的第一行数据，后续行不会被处理
                 return lst_format
-                # return print_table(lst_format)
 
         except Exception as e:
             logs.error(e)
@@ -364,3 +391,4 @@ class ConnectSSH(object):
 class ConnectOracle(object):
     def __init__(self):
         pass
+

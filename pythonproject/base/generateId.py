@@ -14,7 +14,7 @@ def generate_testcase_id():
     生成测试用例编号
     :return:
     """
-    for i in range(1, 10000):
+    for i in range(1, 1000):
         case_id = 'C' + str(i).zfill(2) + '_'
         yield case_id
 

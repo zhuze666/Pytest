@@ -14,13 +14,21 @@ import warnings
 
 yfd = ReadYamlData()
 
-
+#@pytest.fixture代表用例前置处理器，该函数在测试会话开始前执行一次。
+#scope代表作用域
 @pytest.fixture(scope="session", autouse=True)
 def clear_extract():
+    """
+    清理环境的fixture函数，自动在测试会话开始前执行一次。
+
+    该函数主要进行测试前的环境清理工作，包括忽略特定警告和清理之前的测试数据文件。
+       """
     # 禁用HTTPS告警，ResourceWarning
     warnings.simplefilter('ignore', ResourceWarning)
 
+    ## 清理之前的测试数据
     yfd.clear_yaml_data()
+    # 删除报告临时目录下的指定类型文件
     remove_file("./report/temp", ['json', 'txt', 'attach', 'properties'])
 
 

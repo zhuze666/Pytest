@@ -13,7 +13,7 @@ class TestProductModule(object):
 
     @allure.story(next(c_id) + "获取商品列表")
     @pytest.mark.run(order=1)
-    @pytest.mark.parametrize('base_info,testcase', get_testcase_yaml("/apitest/testcase/product/getProductList.yaml"))
+    @pytest.mark.parametrize('base_info,testcase', get_testcase_yaml("./testcase/product/getProductList.yaml"))
     def test_product_list(self, base_info, testcase):
         allure.dynamic.title(testcase['case_name'])
         RequestBase().specification_yaml(base_info, testcase)

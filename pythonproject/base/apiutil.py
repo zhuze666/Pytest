@@ -60,10 +60,14 @@ class RequestBase(object):
         """
         try:
             params_type = ['data', 'json', 'params']
+            # 获取API环境配置中的host地址
             url_host = self.conf.get_section_for_data('api_envi', 'host')
+            # 接口名称
             api_name = base_info['api_name']
+            # 在测试报告中添加“接口名称”描述的测试步骤
             allure.attach(api_name, f'接口名称：{api_name}', allure.attachment_type.TEXT)
             url = url_host + base_info['url']
+            # 在测试报告中添加“接口地址”描述的测试步骤
             allure.attach(api_name, f'接口地址：{url}', allure.attachment_type.TEXT)
             method = base_info['method']
             allure.attach(api_name, f'请求方法：{method}', allure.attachment_type.TEXT)
@@ -73,6 +77,7 @@ class RequestBase(object):
             cookie = None
             if base_info.get('cookies') is not None:
                 cookie = eval(self.replace_load(base_info['cookies']))
+            #.pop() 方法主要用于列表（list）数据结构，用于移除列表中某一元素，并返回该元素的值。如果指定了索引，则移除该索引处的元素并返回其值。
             case_name = test_case.pop('case_name')
             allure.attach(api_name, f'测试用例名称：{case_name}', allure.attachment_type.TEXT)
             # 处理断言
@@ -93,19 +98,18 @@ class RequestBase(object):
                 for fk, fv in list(file.items()):
                     allure.attach(json.dumps(file), '导入文件')
                     files = {fk: open(fv, mode='rb')}
-
+            #调用sendrequest.py发送请求的SendRequest方法，进行接口调用
             res = self.run.run_main(name=api_name, url=url, case_name=case_name, header=header, method=method,
                                     file=files, cookies=cookie, **test_case)
             status_code = res.status_code
             allure.attach(self.allure_attach_response(res.json()), '接口响应信息', allure.attachment_type.TEXT)
-
             try:
                 res_json = json.loads(res.text)  # 把json格式转换成字典字典
                 if extract is not None:
                     self.extract_data(extract, res.text)
                 if extract_list is not None:
                     self.extract_data_list(extract_list, res.text)
-                # 处理断言
+                # 处理断言，调用assertions.py的assert_result断言方法
                 self.asserts.assert_result(validation, res_json, status_code)
             except JSONDecodeError as js:
                 logs.error('系统异常或接口未请求！')
@@ -125,38 +129,48 @@ class RequestBase(object):
             allure_response = response
         return allure_response
 
+    # 提取接口实际的返回值，支持正则表达式和json提取器
     def extract_data(self, testcase_extarct, response):
         """
-        提取接口的返回值，支持正则表达式和json提取器
+        提取接口实际的返回值，支持正则表达式和json提取器
         :param testcase_extarct: testcase文件yaml中的extract值
         :param response: 接口的实际返回值
         :return:
         """
         try:
+            # 定义正则表达式模式列表，用于后续的匹配
             pattern_lst = ['(.*?)', '(.+?)', r'(\d)', r'(\d*)']
+            # 遍历测试用例提取字典，key为提取的键，value为提取的值
             for key, value in list(testcase_extarct.items()):
-
-                # 处理正则表达式提取
+                # 循环从测试用例中提取的“extarct”的值
                 for pat in pattern_lst:
+                    # 如果测试用例中提取的数据包括，符合上面定义好的正则表达式提取格式
                     if pat in value:
+                        # 使用正则提取response中的值
                         ext_lst = re.search(value, response)
+                        # 如果匹配到的是数字类型，将其转换为整数
                         if pat in [r'(\d+)', r'(\d*)']:
                             extract_data = {key: int(ext_lst.group(1))}
                         else:
+                            #如果是字符串类型，直接提取
                             extract_data = {key: ext_lst.group(1)}
+                        # 将提取的数据写入专门存放提出响应数据值的，extract.yaml文件
                         self.read.write_yaml_data(extract_data)
                 # 处理json提取参数
                 if '$' in value:
+                    # 使用jsonpath提取json数据
                     ext_json = jsonpath.jsonpath(json.loads(response), value)[0]
                     if ext_json:
                         extarct_data = {key: ext_json}
                         logs.info('提取接口的返回值：', extarct_data)
                     else:
                         extarct_data = {key: '未提取到数据，请检查接口返回值是否为空！'}
+                    # 将提取的数据写入yaml文件
                     self.read.write_yaml_data(extarct_data)
         except Exception as e:
             logs.error(e)
 
+    # 提取多个参数，支持正则表达式和json提取，提取结果以列表形式返回
     def extract_data_list(self, testcase_extract_list, response):
         """
         提取多个参数，支持正则表达式和json提取，提取结果以列表形式返回
@@ -185,10 +199,3 @@ class RequestBase(object):
             logs.error('接口返回值提取异常，请检查yaml文件extract_list表达式是否正确！')
 
 
-if __name__ == '__main__':
-    case_info = get_testcase_yaml(FILE_PATH['YAML'] + '/LoginAPI/login.yaml')[0]
-    # print(case_info)
-    req = RequestBase()
-    # res = req.specification_yaml(case_info)
-    res = req.specification_yaml(case_info)
-    print(res)

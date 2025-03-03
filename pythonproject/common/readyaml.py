@@ -140,3 +140,10 @@ class ReadYamlData(object):
         for da in yaml_data:
             data_list.append(da)
         return data_list
+
+#if __name__ == '__main__':
+   # print(get_testcase_yaml('../testcase/Single interface/addUser.yaml'))
+    
+    """col_name = "vno"
+    data = read_csv(filepath, col_name)
+    print(data)"""

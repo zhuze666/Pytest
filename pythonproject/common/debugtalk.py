@@ -45,6 +45,7 @@ class DebugTalk(object):
     def get_extract_order_data(self, data, randoms):
         """获取extract.yaml数据，不为0、-1、-2，则按顺序读取文件key的数据"""
         if randoms not in [0, -1, -2]:
+            # 根据随机数选择数据元素。由于随机数是从1开始的，因此需要减1以适应从0开始的索引
             return data[randoms - 1]
 
     def md5_encryption(self, params):

@@ -28,8 +28,10 @@ def system_login():
     try:
         api_info = get_testcase_yaml('./data/loginName.yaml')
         RequestBase().specification_yaml(api_info[0][0], api_info[0][1])
+
     except Exception as e:
         logs.error(f'登录接口出现异常，导致后续接口无法继续运行，请检查程序！，{e}')
+        #pytest.fail(f'登录接口出现异常，导致后续接口无法继续运行，请检查程序！，{e}')
         exit()
 
 

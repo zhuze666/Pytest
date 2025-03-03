@@ -8,44 +8,49 @@ from pythonproject.conf.operationConfig import OperationConfig
 
 
 class PJenkins(object):
+
+    # 调用operationConfig.py中的OperationConfig类，用于读取配置文件，获取 Jenkins 服务器的配置信息。
     conf = OperationConfig()
 
     def __init__(self):
+        #一个私有字典，包含了连接 Jenkins 服务器所需的配置信息，如 URL、用户名、密码和超时时间。这些信息通过conf.get_section_jenkins方法从配置文件中获取。
         self.__config = {
             'url': self.conf.get_section_jenkins('url'),
             'username': self.conf.get_section_jenkins('username'),
             'password': self.conf.get_section_jenkins('password'),
             'timeout': int(self.conf.get_section_jenkins('timeout'))
         }
+        #使用配置信息创建一个jenkins.Jenkins类的实例__server，用于与 Jenkins 服务器进行交互
         self.__server = jenkins.Jenkins(**self.__config)
 
+        #从配置文件中获取 Jenkins 任务的名称
         self.job_name = self.conf.get_section_jenkins('job_name')
 
     def get_job_number(self):
-        """读取jenkins job构建号"""
+        """获取指定 Jenkins 任务的最后一次构建号。"""
         build_number = self.__server.get_job_info(self.job_name).get('lastBuild').get('number')
         return build_number
 
     def get_build_job_status(self):
-        """读取构建完成的状态"""
+        """获取指定 Jenkins 任务最后一次构建的状态"""
         build_num = self.get_job_number()
         job_status = self.__server.get_build_info(self.job_name, build_num).get('result')
         return job_status
 
     def get_console_log(self):
-        """获取控制台日志"""
+        """获取指定 Jenkins 任务最后一次构建的控制台日志"""
         console_log = self.__server.get_build_console_output(self.job_name, self.get_job_number())
         return console_log
 
     def get_job_description(self):
-        """返回job描述信息"""
+        """获取指定 Jenkins 任务的描述信息和 URL"""
         description = self.__server.get_job_info(self.job_name).get('description')
         url = self.__server.get_job_info(self.job_name).get('url')
 
         return description, url
 
     def get_build_report(self):
-        """返回第n次构建的测试报告"""
+        """获取指定 Jenkins 任务最后一次构建的测试报告"""
         report = self.__server.get_build_test_report(self.job_name, self.get_job_number())
         return report
 

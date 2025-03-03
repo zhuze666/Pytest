@@ -3,8 +3,8 @@ from builtins import object
 import allure
 import pytest
 
-from base.apiutil import RequestBase
-from base.generateId import m_id, c_id
+from apitest.base.apiutil import RequestBase
+from apitest.base.generateId import m_id, c_id
 from common.operyaml import get_testcase_yaml
 from common.recordlog import logs
 

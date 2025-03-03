@@ -7,43 +7,43 @@
   testCase:
     - case_name: 正常新增用户
       data:
-        username: testadduser
-        password: tset6789890
-        role_id: 123456789
+        username: testadduser1
+        password: test6789890
+        role_id: 123451789
         dates: '2023-12-31'
-        phone: 13800000000
+        phone: 13800100000
         token: ${get_extract_data(token)}
       validation:
         - contains: { 'status_code': 200 }
         - contains: { 'msg': '新增成功' }
     - case_name: 无效新增·缺少token
       data:
-        username: testadduser
-        password: tset6789890
-        role_id: 123456789
+        username: testadduser03
+        password: tset6789892
+        role_id: 123456782
         dates: '2023-12-31'
-        phone: 13800000000
-        token:
-      validation:
-        - contains: { 'status_code': 200 }
-        - contains: { 'msg': '新增失败' }
-    - case_name: 无效新增·缺少必填参数username
-      data:
-        password: tset6789890
-        role_id: 123456789
-        dates: '2023-12-31'
-        phone: 13800000000
+        phone: 13800000002
         token:
       validation:
         - contains: { 'status_code': 200 }
         - contains: { 'msg': '新增失败' }
     - case_name: 无效新增·缺少必填参数role_id
       data:
-        username: testadduser
-        password: tset6789890
+        username: testadduser4
+        password: tset6789894
         dates: '2023-12-31'
-        phone: 13800000000
-        token:
+        phone: 13800000004
+        token: ${get_extract_data(token)}
+      validation:
+        - contains: { 'status_code': 200 }
+        - contains: { 'msg': '新增失败' }
+    - case_name: 无效新增·缺少必填参数username
+      data:
+        password: tset6789893
+        role_id: 123456783
+        dates: '2023-12-31'
+        phone: 13800000003
+        token: ${get_extract_data(token)}
       validation:
         - contains: { 'status_code': 200 }
         - contains: { 'msg': '新增失败' }

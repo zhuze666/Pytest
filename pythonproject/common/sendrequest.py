@@ -97,24 +97,46 @@ class SendRequest(object):
         return response_dict
 
     def send_request(self, **kwargs):
+        """
+        发送HTTP请求并处理响应结果。
 
+        使用requests库创建一个会话，并用该会话发送请求。本函数主要负责处理HTTP请求的发送和响应结果的处理，
+        包括异常处理和Cookie的保存。
+
+        参数:
+        **kwargs: 关键字参数，包含请求所需的参数，如url、method等。
+
+        返回:
+        requests.Response: 返回请求的响应结果，包含响应内容、状态码等信息。
+        """
+
+        # 创建一个requests会话
         session = requests.session()
         result = None
         cookie = {}
         try:
-            result = session.request(**kwargs)
+            # 发送请求
+            result = session.request(**kwargs)   #**kwargs 是一个字典，包含了请求所需的参数，如url、method等。
+            # 将响应中的Cookies转换为字典
             set_cookie = requests.utils.dict_from_cookiejar(result.cookies)
             if set_cookie:
+                # 将Cookies保存到Cookie字典中
                 cookie['Cookie'] = set_cookie
+                # 将Cookie信息写入YAML文件
                 self.read.write_yaml_data(cookie)
+                # 记录日志，打印接口返回的信息
                 logs.info("cookie：%s" % cookie)
             logs.info("接口返回信息：%s" % result.text if result.text else result)
         except requests.exceptions.ConnectionError:
+            # 处理连接异常
             logs.error("ConnectionError--连接异常")
+            # 断言失败，在allure报告中抛出异常，否则会按执行通过处理
             pytest.fail("接口请求异常，可能是request的连接数过多或请求速度过快导致程序报错！")
         except requests.exceptions.HTTPError:
+            # 处理HTTP异常
             logs.error("HTTPError--http异常")
         except requests.exceptions.RequestException as e:
+            # 处理其他请求异常
             logs.error(e)
             pytest.fail("请求异常，请检查系统或数据是否正常！")
         return result
@@ -129,7 +151,7 @@ class SendRequest(object):
         :param method:请求方法
         :param cookies：默认为空
         :param file: 上传文件接口
-        :param kwargs: 请求参数，根据yaml文件的参数类型
+        :param kwargs: 请求参数，根据yaml文件的参数类型，一般可能为data、json，params
         :return:
         """
 
@@ -141,7 +163,8 @@ class SendRequest(object):
             logs.info('测试用例名称：%s' % case_name)
             logs.info('请求头：%s' % header)
             logs.info('Cookie：%s' % cookies)
-            req_params = json.dumps(kwargs, ensure_ascii=False)
+            # 处理请求参数
+            req_params = json.dumps(kwargs, ensure_ascii=False)# json.dump(）用于数据序列化，将传入的关键字参数字典转换为JSON格式的字符串
             if "data" in list(kwargs.keys()):
                 allure.attach(req_params, '请求参数', allure.attachment_type.TEXT)
                 logs.info("请求参数：%s" % kwargs)
@@ -154,7 +177,9 @@ class SendRequest(object):
         except Exception as e:
             logs.error(e)
         # time.sleep(0.5)
+        # 控制台输出InsecureRequestWarning错误
         requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
+        # 发送请求
         response = self.send_request(method=method,
                                      url=url,
                                      headers=header,
