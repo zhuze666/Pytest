@@ -78,6 +78,8 @@ class RedisClient(object):
     """
 
     def __init__(self):
+        # 从配置文件中获取 Redis 相关的配置信息，包括主机地址、端口、用户名、密码和数据库编号
+        # 这些信息将用于后续连接 Redis 服务器或集群
         self.__redis_conf = {
             'host': conf.get_section_redis('host'),
             'port': int(conf.get_section_redis('port')),
@@ -85,8 +87,11 @@ class RedisClient(object):
             'password': conf.get_section_redis('password'),
             'db': conf.get_section_redis('db')
         }
+        # 从配置文件中获取 Redis 集群的启动节点信息，该信息是一个字符串
         redis_nodes_str = conf.get_section_redis('startup_nodes')
+        # 初始化一个空列表，用于存储解析后的 Redis 集群节点信息
         self.nodes_list = []
+        #如果获取到了redis集训的启动节点信息，添加到节点列表中
         if redis_nodes_str:
             nodes_str_list = redis_nodes_str.split(',')
             for node_str in nodes_str_list:
@@ -95,9 +100,12 @@ class RedisClient(object):
                 self.nodes_list.append(node_data)
 
             # startup_nodes：集群的格式[{'host':'host','port':'port'},{'host2':'host2','port2':'port2'},{},....]
+            # 使用解析后的节点列表创建 Redis 集群连接对象
             self.redis_cluster = RedisCluster(startup_nodes=self.nodes_list)
+            # 记录日志，表明已成功连接到 Redis 集群服务，并记录集群的主机地址信息
             logs.info(f'连接到Redis集群服务，host：{redis_nodes_str}')
 
+        #否则就按redis单机处理
         elif self.__redis_conf['host'] and self.__redis_conf['port']:
             try:
                 logs.info(f'连接到Redis服务器：ip：{self.__redis_conf["host"]}')

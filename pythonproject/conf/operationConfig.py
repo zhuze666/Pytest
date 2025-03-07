@@ -91,24 +91,24 @@ class OperationConfig(object):
         该函数 get_section_mysql 接收一个参数 option，并调用类的另一个方法 get_section_for_data，
         传入固定字符串 "MYSQL" 和参数 option，最终返回该方法的结果。
         '''
-        return self.get_section_for_data("MYSQL", option)
+        return self.get_section_for_data("MYSQL", option) # option就是config.ini文件中的MYSQL下的选项值
 
 
     def get_section_redis(self, option):
-        return self.get_section_for_data("REDIS", option)
+        return self.get_section_for_data("REDIS", option)  # option就是config.ini文件中的REDIS下的选项值
 
 
     def get_section_clickhouse(self, option):
-        return self.get_section_for_data("CLICKHOUSE", option)
+        return self.get_section_for_data("CLICKHOUSE", option) # option就是config.ini文件中的CLICKHOUSE下的选项值
 
 
     def get_section_mongodb(self, option):
-        return self.get_section_for_data("MongoDB", option)
+        return self.get_section_for_data("MongoDB", option) # option就是config.ini文件中的MongoDB下的选项值
 
 
     def get_report_type(self, option):
-        return self.get_section_for_data('REPORT_TYPE', option)
+        return self.get_section_for_data('REPORT_TYPE', option) # option就是config.ini文件中的REPORT_TYPE下的选项值
 
 
     def get_section_ssh(self, option):
-        return self.get_section_for_data("SSH", option)
+        return self.get_section_for_data("SSH", option) # option就是config.ini文件中的SSH下的选项值

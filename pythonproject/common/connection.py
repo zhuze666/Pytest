@@ -137,7 +137,9 @@ class ConnectRedis(object):
         except Exception:
             logs.error(str(traceback.format_exc()))
 
-    def set_kv(self, key, value, ex=None):
+    # 对Redis设置key-value，ex默认不过期。这行代码的作用是通过 Redis 连接，将指定的键值对存储到 Redis 服务器中，
+    # 并设置该键的过期时间。这在需要缓存数据并自动清理不再需要的数据时非常有用。
+    def set_kv(self, key, value, ex=None): # 设置key对应的value
         """
         :param key:
         :param value:
@@ -149,19 +151,19 @@ class ConnectRedis(object):
         except Exception:
             logs.error(str(traceback.format_exc()))
 
-    def get_kv(self, name):
+    def get_kv(self, name): # 获取key对应的value
         try:
             return self.first_conn.get(name)
         except Exception:
             logs.error(str(traceback.format_exc()))
 
-    def hash_set(self, key, value, ex=None):
+    def hash_set(self, key, value, ex=None): # 这个方法是用来设置hash的
         try:
             return self.first_conn.set(name=key, value=value, ex=ex)
         except Exception:
             logs.error(str(traceback.format_exc()))
 
-    def hash_hget(self, names, keys):
+    def hash_hget(self, names, keys): # 这个方法是用来获取hash的
         """在name对应的hash中获取根据key获取value"""
         try:
             data = self.first_conn.hget(names, keys).decode()
@@ -169,7 +171,7 @@ class ConnectRedis(object):
         except Exception:
             logs.error(str(traceback.format_exc()))
 
-    def hash_hmget(self, name, keys, *args):
+    def hash_hmget(self, name, keys, *args): # 这个方法是用来获取hash的
         """在name对应的hash中获取多个key的值"""
         if not isinstance(keys, list):
             raise ("keys应为列表")
